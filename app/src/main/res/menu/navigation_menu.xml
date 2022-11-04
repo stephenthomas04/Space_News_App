@@ -15,18 +15,4 @@
     <item
         android:id="@+id/menuOrders"
         android:title="ROCKET LAUNCHES"/>
-    <item
-        android:title="Others">
-        <menu>
-            <item
-                android:id="@+id/menuSettings"
-                android:title="Monkey"/>
-            <item
-                android:id="@+id/menuSupport"
-                android:title="Donkey"/>
-            <item
-                android:id="@+id/menuAboutUs"
-                android:title="Rat"/>
-        </menu>
-    </item>
 </menu>
