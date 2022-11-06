@@ -31,7 +31,7 @@ import java.util.ArrayList;
  * Use the {@link Apod#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Apod extends Fragment {
+public class Apod extends Fragment{
     Context thisContext;
     ArrayList<NewsObj> newsArrayList = new ArrayList<>();
     String articleName = "Astronomy Picture of the Day";
@@ -58,7 +58,7 @@ public class Apod extends Fragment {
      * @return A new instance of fragment ProfileFragment_Apod.
      */
     // TODO: Rename and change types and number of parameters
-    public static Apod newInstance(String param1, String param2) {
+    public Apod newInstance(String param1, String param2) {
         Apod fragment = new Apod();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -86,6 +86,7 @@ public class Apod extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_apod, container, false);
 
+
     }
 
 
@@ -106,10 +107,10 @@ public class Apod extends Fragment {
                 try {
                     ApodObj apod = gson.fromJson(response, ApodObj.class);
                     Log.d("objstatus", "object parsed");
-                    //NewsObj apodToNews = new NewsObj(ApodObj.getTitle(),ApodObj.getUrl(),ApodObj.getUrl(),
-                    //  ApodObj.getExplanation(),ApodObj.getDate(), articleName);
-                    // Log.d("objstatus", "object Created");
-                    // newsArrayList.add(0, apodToNews);
+                    NewsObj apodToNews = new NewsObj(apod.getTitle(),apod.getUrl(),apod.getUrl(),
+                            apod.getExplanation(),apod.getDate(), articleName);
+                    Log.d("objstatus", "object Created");
+                    newsArrayList.add(0, apodToNews);
                     Log.d("objstatus", "object added");
 
                 } catch (Exception e){
@@ -153,6 +154,7 @@ public class Apod extends Fragment {
                     }
 
                     RecyclerView recyclerView = getView().findViewById(R.id.nRecyclerView);
+
                     news_RecyclerViewAdapter adapter = new news_RecyclerViewAdapter(context, newsArrayList);
                     recyclerView.setLayoutManager(new LinearLayoutManager(context));
                     recyclerView.setAdapter(adapter);
@@ -172,4 +174,6 @@ public class Apod extends Fragment {
 
         requestQueue.add(objectRequest);
     }
+
+
 }

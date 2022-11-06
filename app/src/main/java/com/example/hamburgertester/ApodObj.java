@@ -1,11 +1,11 @@
 package com.example.hamburgertester;
 
 public class ApodObj {
-    private String date;
-    private String explanation;
-    private String url;
+    private  String date;
+    private  String explanation;
+    private  String url;
 
-    private String title;
+    private  String title;
 
     public ApodObj(String date, String explanation, String url, String title) {
         this.date = date;
@@ -14,7 +14,7 @@ public class ApodObj {
         this.title = title;
     }
 
-    public String getDate() {
+    public  String getDate() {
         return date;
     }
 
@@ -22,7 +22,7 @@ public class ApodObj {
         this.date = date;
     }
 
-    public String getExplanation() {
+    public  String getExplanation() {
         return explanation;
     }
 
@@ -30,7 +30,7 @@ public class ApodObj {
         this.explanation = explanation;
     }
 
-    public String getUrl() {
+    public  String getUrl() {
         return url;
     }
 
@@ -45,4 +45,5 @@ public class ApodObj {
     public void setTitle(String title) {
         this.title = title;
     }
+
 }

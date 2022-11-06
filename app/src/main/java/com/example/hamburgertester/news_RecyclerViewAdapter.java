@@ -2,6 +2,8 @@ package com.example.hamburgertester;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +25,8 @@ import com.bumptech.glide.request.target.Target;
 import java.util.ArrayList;
 
 public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_RecyclerViewAdapter.MyViewHolder> {
+
+
     Context context;
     ArrayList<NewsObj> newsArrayList;
 
@@ -43,12 +47,6 @@ public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_Recycler
     public void onBindViewHolder(@NonNull news_RecyclerViewAdapter.MyViewHolder holder, int position) {
         String imageUrl = newsArrayList.get(position).imageUrl;
 
-        //holder.image.setImageDrawable(Helper.LoadImageFromWebOperations(imageUrl));
-
-        /*Picasso.get().load(imageUrl)
-                .placeholder(R.drawable.ic_baseline_downloading_24)
-                .error(R.drawable.ic_baseline_error_outline_24)
-                .into(holder.image);*/
         Glide.with(context)
                 .load(imageUrl)
                 .placeholder(R.drawable.ic_baseline_downloading_24)
@@ -69,7 +67,9 @@ public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_Recycler
                 })
                 .into(holder.image);
 
-        holder.article.setText(newsArrayList.get(position).getNewsSite());
+        SpannableString content = new SpannableString(newsArrayList.get(position).getNewsSite());
+        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+        holder.article.setText(content);
         holder.title.setText(newsArrayList.get(position).getTitle());
         holder.desc.setText(newsArrayList.get(position).getSummary());
         holder.date.setText(newsArrayList.get(position).getPublishedAt());
@@ -97,7 +97,6 @@ public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_Recycler
             title = itemView.findViewById(R.id.newsHeadline);
             desc = itemView.findViewById(R.id.newsDesc);
             date = itemView.findViewById(R.id.publishDate);
-
 
         }
     }

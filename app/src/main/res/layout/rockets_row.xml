@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="@color/light_blue">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/rocketImage"
+                android:layout_width="150dp"
+                android:layout_height="210dp"
+                android:layout_marginLeft="0dp"
+                android:scaleType="centerCrop"
+                android:cropToPadding="true"
+                app:srcCompat="@drawable/default_rocket" />
+
+            <TextView
+                android:id="@+id/rocketName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="61dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/rocketImage"
+                android:text="Rocket Name" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rocketName"
+                android:layout_alignLeft="@id/rocketName"
+                android:layout_marginTop="10dp"
+                android:text="Date/Time" />
+
+            <TextView
+                android:id="@+id/company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/time"
+                android:layout_alignLeft="@id/time"
+                android:layout_marginTop="10dp"
+                android:text="Company Name" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/company_name"
+                android:layout_alignLeft="@id/company_name"
+                android:layout_marginTop="10dp"
+                android:text="Location" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/location"
+                android:layout_alignLeft="@id/location"
+                android:layout_marginTop="10dp"
+                android:text="Description" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/description"
+                android:layout_alignLeft="@id/description"
+                android:layout_marginTop="10dp"
+                android:text="Status" />
+
+            <TextView
+                android:id="@+id/country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/status"
+                android:layout_alignLeft="@id/status"
+                android:layout_marginTop="10dp"
+                android:text="Country" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

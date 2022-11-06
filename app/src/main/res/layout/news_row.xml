@@ -24,17 +24,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
+
             <TextView
                 android:id="@+id/newsHeadline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:text="Title"
-                android:layout_centerHorizontal="true"
-                android:textSize="20dp"
                 android:layout_below="@id/imageView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/open_sans"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Title"
+                android:textColor="@color/white"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -42,12 +46,14 @@
                 android:id="@+id/publishDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/newsDesc"
+                android:layout_centerHorizontal="true"
+
                 android:layout_marginEnd="16dp"
                 android:layout_toRightOf="@id/newsName"
-                android:layout_marginTop="10dp"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/newsDesc"
+                android:fontFamily="@font/open_sans"
                 android:text="Date"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -55,17 +61,18 @@
                 android:id="@+id/newsDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_below="@id/newsHeadline"
                 android:layout_centerHorizontal="true"
-                android:text="summary"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/open_sans"
                 android:gravity="center"
+                android:text="summary"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.183"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/newsHeadline"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/newsHeadline" />
 
             <TextView
                 android:id="@+id/newsName"
@@ -73,7 +80,15 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/open_sans"
                 android:text="Article"
+                android:textStyle="bold"
+                android:textColor="@color/purple_500"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:textAllCaps="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

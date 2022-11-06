@@ -51,6 +51,8 @@ public class NewsObj {
     }
 
     public String getPublishedAt() {
+        publishedAt = publishedAt.substring(0,10);
+
         return publishedAt;
     }
 
@@ -65,4 +67,6 @@ public class NewsObj {
     public void setNewsSite(String newsSite) {
         this.newsSite = newsSite;
     }
+
+
 }

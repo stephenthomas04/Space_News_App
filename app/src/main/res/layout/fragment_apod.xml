@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/hostFragmentLayout"
     android:layout_width="match_parent"
-    android:background="@drawable/img1"
+    android:background="@drawable/stars"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
