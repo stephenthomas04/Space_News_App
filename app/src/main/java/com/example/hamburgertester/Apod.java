@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SettingsFragment_Mars#newInstance} factory method to
+ * Use the {@link Apod#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SettingsFragment_Mars extends Fragment {
+public class Apod extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +24,7 @@ public class SettingsFragment_Mars extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public SettingsFragment_Mars() {
+    public Apod() {
         // Required empty public constructor
     }
 
@@ -34,11 +34,11 @@ public class SettingsFragment_Mars extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SettingsFragment_Mars.
+     * @return A new instance of fragment ProfileFragment_Apod.
      */
     // TODO: Rename and change types and number of parameters
-    public static SettingsFragment_Mars newInstance(String param1, String param2) {
-        SettingsFragment_Mars fragment = new SettingsFragment_Mars();
+    public static Apod newInstance(String param1, String param2) {
+        Apod fragment = new Apod();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +59,6 @@ public class SettingsFragment_Mars extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings__mars, container, false);
+        return inflater.inflate(R.layout.fragment_apod, container, false);
     }
 }

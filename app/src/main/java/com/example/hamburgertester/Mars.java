@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link NotifactionsFragment_Earth#newInstance} factory method to
+ * Use the {@link Mars#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class NotifactionsFragment_Earth extends Fragment {
+public class Mars extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +24,7 @@ public class NotifactionsFragment_Earth extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public NotifactionsFragment_Earth() {
+    public Mars() {
         // Required empty public constructor
     }
 
@@ -34,11 +34,11 @@ public class NotifactionsFragment_Earth extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment NotifactionsFragment_Earth.
+     * @return A new instance of fragment SettingsFragment_Mars.
      */
     // TODO: Rename and change types and number of parameters
-    public static NotifactionsFragment_Earth newInstance(String param1, String param2) {
-        NotifactionsFragment_Earth fragment = new NotifactionsFragment_Earth();
+    public static Mars newInstance(String param1, String param2) {
+        Mars fragment = new Mars();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +59,6 @@ public class NotifactionsFragment_Earth extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notifactions__earth, container, false);
+        return inflater.inflate(R.layout.fragment_mars, container, false);
     }
 }

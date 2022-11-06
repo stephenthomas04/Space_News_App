@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menuProfile"
+        android:id="@+id/homeMenu"
         android:title="HOME"/>
     <item
-        android:id="@+id/menuNotifications"
+        android:id="@+id/earthMenu"
         android:title="EARTH"/>
     <item
-        android:id="@+id/menuCollection"
+        android:id="@+id/marsMenu"
         android:title="MARS"/>
     <item
-        android:id="@+id/menuInbox"
+        android:id="@+id/issMenu"
         android:title="ISS"/>
     <item
-        android:id="@+id/menuOrders"
+        android:id="@+id/rocket_launchesMenu"
         android:title="ROCKET LAUNCHES"/>
 </menu>
