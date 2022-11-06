@@ -9,104 +9,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/apodTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="5dp"
-        android:layout_gravity="center"
-        android:layout_weight="3"
-        android:paddingLeft="15dp"
-        android:text="APOD"
-        android:textColor="@color/white"
-        android:textSize="60sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/apodPic"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/nRecyclerView"
         android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50sp"
-        android:layout_marginRight="50sp"
-        android:layout_marginBottom="15dp"
-        android:layout_weight="4"
-        android:background="@color/textBackground"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="numberDecimal"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textColorHint="@color/design_default_color_on_secondary"
-        android:textSize="60sp" />
-
-    <TextView
-        android:id="@+id/apodDesc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20sp"
-        android:layout_marginRight="20sp"
-        android:layout_marginBottom="15dp"
-        android:background="@color/textBackground"
-        android:layout_weight="2"
-        android:ems="10"
-        android:hint="Description: "
-        android:minHeight="48dp"
-        android:padding="6dp"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textColorHint="@color/design_default_color_on_secondary"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/newsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:paddingLeft="15dp"
-        android:text="News"
-        android:textColor="@color/white"
-        android:textSize="60sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/newsPic"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="50sp"
-        android:layout_marginRight="50sp"
-        android:layout_marginBottom="15dp"
-        android:layout_weight="4"
-        android:background="@color/textBackground"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="numberDecimal"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textColorHint="@color/design_default_color_on_secondary"
-        android:textSize="60sp" />
-
-    <TextView
-        android:id="@+id/newsDesc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20sp"
-        android:layout_marginRight="20sp"
-        android:layout_marginBottom="15dp"
-        android:background="@color/textBackground"
-        android:layout_weight="1"
-        android:ems="10"
-        android:hint="Description: "
-        android:minHeight="48dp"
-        android:padding="6dp"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textColorHint="@color/design_default_color_on_secondary"
-        android:textSize="25sp" />
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 
 </LinearLayout>

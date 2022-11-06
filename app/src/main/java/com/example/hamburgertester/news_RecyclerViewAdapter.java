@@ -1,0 +1,104 @@
+package com.example.hamburgertester;
+
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
+
+import java.util.ArrayList;
+
+public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_RecyclerViewAdapter.MyViewHolder> {
+    Context context;
+    ArrayList<NewsObj> newsArrayList;
+
+    public news_RecyclerViewAdapter(Context context, ArrayList<NewsObj> newsArrayList){
+        this.context = context;
+        this.newsArrayList = newsArrayList;
+    }
+
+    @NonNull
+    @Override
+    public news_RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.news_row,parent,false);
+        return new news_RecyclerViewAdapter.MyViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull news_RecyclerViewAdapter.MyViewHolder holder, int position) {
+        String imageUrl = newsArrayList.get(position).imageUrl;
+
+        //holder.image.setImageDrawable(Helper.LoadImageFromWebOperations(imageUrl));
+
+        /*Picasso.get().load(imageUrl)
+                .placeholder(R.drawable.ic_baseline_downloading_24)
+                .error(R.drawable.ic_baseline_error_outline_24)
+                .into(holder.image);*/
+        Glide.with(context)
+                .load(imageUrl)
+                .placeholder(R.drawable.ic_baseline_downloading_24)
+                .error(R.drawable.ic_baseline_error_outline_24)
+                .override(320, 133)
+                .listener(new RequestListener<Drawable>() {
+                    @Override
+                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                        // log exception
+                        Log.e("TAG", "Error loading image", e);
+                        return false; // important to return false so the error placeholder can be placed
+                    }
+
+                    @Override
+                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                        return false;
+                    }
+                })
+                .into(holder.image);
+
+        holder.article.setText(newsArrayList.get(position).getNewsSite());
+        holder.title.setText(newsArrayList.get(position).getTitle());
+        holder.desc.setText(newsArrayList.get(position).getSummary());
+        holder.date.setText(newsArrayList.get(position).getPublishedAt());
+
+    }
+
+    @Override
+    public int getItemCount() {
+        String num = String.valueOf(newsArrayList.size());
+
+        Log.d("ArraySize", num);
+        return newsArrayList.size();
+
+    }
+
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
+        ImageView image;
+        TextView article, title, desc, date;
+
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            image = itemView.findViewById(R.id.imageView);
+            article = itemView.findViewById(R.id.newsName);
+            title = itemView.findViewById(R.id.newsHeadline);
+            desc = itemView.findViewById(R.id.newsDesc);
+            date = itemView.findViewById(R.id.publishDate);
+
+
+        }
+    }
+}
