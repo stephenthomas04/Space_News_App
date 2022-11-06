@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/menuProfile">
+
+    <fragment
+        android:id="@+id/menuProfile"
+        android:name="com.example.hamburgertester.ProfileFragment_Apod"
+        android:label="Profile_Apod"
+        tools:layout="@layout/fragment_profile__apod" />
+    <fragment
+        android:id="@+id/menuNotifications"
+        android:name="com.example.hamburgertester.NotifactionsFragment_Earth"
+        android:label="Notifactions_Earth"
+        tools:layout="@layout/fragment_notifactions__earth" />
+    <fragment
+        android:id="@+id/menuCollection"
+        android:name="com.example.hamburgertester.SettingsFragment_Mars"
+        android:label="Settings_Mars"
+        tools:layout="@layout/fragment_settings__mars" />
+</navigation>
