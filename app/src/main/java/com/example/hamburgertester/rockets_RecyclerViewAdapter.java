@@ -1,6 +1,7 @@
 package com.example.hamburgertester;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -48,6 +49,12 @@ public  class rockets_RecyclerViewAdapter extends RecyclerView.Adapter<rockets_R
         holder.location.setText(results.get(position).getPad().getLocation().getName());
         holder.company_name.setText(results.get(position).getName());
        // holder.description.setText(results.get(position).getMission().getDescription());
+
+        if(results.get(position).getStatus().abbrev.equals("Go")|| (results.get(position).getStatus().abbrev.equals("Success"))){
+            holder.status.setBackgroundColor(Color.parseColor("#00ab66"));
+        }else if((results.get(position).getStatus().abbrev.equals("TBC") || (results.get(position).getStatus().abbrev.equals("TBD")))){
+            holder.status.setBackgroundColor(Color.parseColor("#FF5F1F"));
+        }
         holder.status.setText(results.get(position).getStatus().abbrev);
         holder.country.setText(results.get(position).getPad().getLocation().getCountry_code());
 

@@ -50,7 +50,7 @@ public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_Recycler
         Glide.with(context)
                 .load(imageUrl)
                 .placeholder(R.drawable.ic_baseline_downloading_24)
-                .error(R.drawable.ic_baseline_error_outline_24)
+                .error(R.drawable.galaxy)
                 .override(320, 133)
                 .listener(new RequestListener<Drawable>() {
                     @Override

@@ -93,6 +93,7 @@ public class Apod extends Fragment{
     public void apodRequest(Context context){
         String api_key = "vzch0p2dvpdzzKxLNnosLvbbwDxVxb3nqsjlXkYB";
         String Url = "https://api.nasa.gov/planetary/apod?api_key=" + api_key;
+        String defaultImage = "https://cdn.mos.cms.futurecdn.net/Tqq3BVZZAkbUyGvZmSfjQW-970-80.jpg";
 
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
@@ -103,14 +104,19 @@ public class Apod extends Fragment{
                 Log.d("Response", response);
                 GsonBuilder gsonBuilder = new GsonBuilder();
                 Gson gson = gsonBuilder.create();
+                NewsObj apodToNews = new NewsObj("Retriving Data...",
+                        defaultImage,defaultImage,"NO DATA" , "00-00-00", articleName);
+                newsArrayList.add(0, apodToNews);
+
 
                 try {
                     ApodObj apod = gson.fromJson(response, ApodObj.class);
                     Log.d("objstatus", "object parsed");
-                    NewsObj apodToNews = new NewsObj(apod.getTitle(),apod.getUrl(),apod.getUrl(),
-                            apod.getExplanation(),apod.getDate(), articleName);
-                    Log.d("objstatus", "object Created");
-                    newsArrayList.add(0, apodToNews);
+
+                    newsArrayList.get(0).setTitle(apod.getTitle());
+                    newsArrayList.get(0).setSummary(apod.getExplanation());
+                    newsArrayList.get(0).setImageUrl(apod.getUrl());
+                    newsArrayList.get(0).setPublishedAt(apod.getDate());
                     Log.d("objstatus", "object added");
 
                 } catch (Exception e){
