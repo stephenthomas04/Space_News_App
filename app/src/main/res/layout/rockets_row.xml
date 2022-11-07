@@ -28,7 +28,7 @@
             <ImageView
                 android:id="@+id/rocketImage"
                 android:layout_width="150dp"
-                android:layout_height="210dp"
+                android:layout_height="315dp"
                 android:layout_marginLeft="0dp"
                 android:scaleType="centerCrop"
                 android:cropToPadding="true"
@@ -38,7 +38,7 @@
                 android:id="@+id/rocketName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="75dp"
+                android:layout_marginLeft="45dp"
                 android:layout_marginRight="61dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/rocketImage"

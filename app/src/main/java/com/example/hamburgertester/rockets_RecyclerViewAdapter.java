@@ -42,14 +42,14 @@ public  class rockets_RecyclerViewAdapter extends RecyclerView.Adapter<rockets_R
 
     @Override
     public void onBindViewHolder(@NonNull rockets_RecyclerViewAdapter.rocketsViewHolder holder, int position) {
-        //holder.rocketName.setText(results.get(position).getName());
-        //holder.time.setText(results.get(position).getNet());
-        //holder.company_name.setText((results.get(position).getLaunch_service_provider().getName()));
-        //holder.location.setText(results.get(position).getPad().getLocation().getName());
-       // holder.company_name.setText(results.get(position).getName());
+        holder.rocketName.setText(results.get(position).getName());
+        holder.time.setText(results.get(position).getNet());
+        holder.company_name.setText((results.get(position).getLaunch_service_provider().getName()));
+        holder.location.setText(results.get(position).getPad().getLocation().getName());
+        holder.company_name.setText(results.get(position).getName());
        // holder.description.setText(results.get(position).getMission().getDescription());
-       // holder.status.setText(results.get(position).getStatus().abbrev);
-       // holder.country.setText(results.get(position).getPad().getLocation().getCountry_code());
+        holder.status.setText(results.get(position).getStatus().abbrev);
+        holder.country.setText(results.get(position).getPad().getLocation().getCountry_code());
 
         String imageUrl = results.get(position).getImage();
 

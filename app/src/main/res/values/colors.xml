@@ -15,4 +15,5 @@
     <color name="light_purple">#CBC3E3</color>
     <color name="textBackground">#eceff1</color>
     <color name="light_blue">#076AE0</color>
+    <color name="grey">#111f28</color>
 </resources>

@@ -85,7 +85,7 @@
                 android:fontFamily="@font/open_sans"
                 android:text="Article"
                 android:textStyle="bold"
-                android:textColor="@color/purple_500"
+                android:textColor="@color/white"
                 android:textSize="25dp"
                 android:gravity="center"
                 android:textAllCaps="true"

@@ -36,9 +36,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textTitle"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="0dp"
                 android:text="SPACE APP"
                 android:gravity="center"
+                android:paddingRight="27dp"
                 android:textColor="@color/white"
                 android:textSize="30dp"
                 android:textStyle="bold"/>
