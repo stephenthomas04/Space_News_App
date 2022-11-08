@@ -1,8 +1,8 @@
 package com.example.hamburgertester;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +21,8 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 public  class rockets_RecyclerViewAdapter extends RecyclerView.Adapter<rockets_RecyclerViewAdapter.rocketsViewHolder>{
 
@@ -44,19 +46,32 @@ public  class rockets_RecyclerViewAdapter extends RecyclerView.Adapter<rockets_R
     @Override
     public void onBindViewHolder(@NonNull rockets_RecyclerViewAdapter.rocketsViewHolder holder, int position) {
         holder.rocketName.setText(results.get(position).getName());
-        holder.time.setText(results.get(position).getNet());
+
+        String date = results.get(position).getNet().substring(0,10);
+        String time = results.get(position).getNet().substring(11,19);
+
+
+        if (results.get(position).getStatus().abbrev.equals("Success")){
+            holder.countDown.setText("Launched!");
+        }else{
+            holder.countDown.setText(time);
+        }
+        holder.date.setText(date);
         holder.company_name.setText((results.get(position).getLaunch_service_provider().getName()));
         holder.location.setText(results.get(position).getPad().getLocation().getName());
-        holder.company_name.setText(results.get(position).getName());
-       // holder.description.setText(results.get(position).getMission().getDescription());
+        holder.company_name.setText(results.get(position).getLaunch_service_provider().getName());
+        //holder.description.setText(results.get(position).getMission().getDescription());
+
+
+
 
         if(results.get(position).getStatus().abbrev.equals("Go")|| (results.get(position).getStatus().abbrev.equals("Success"))){
-            holder.status.setBackgroundColor(Color.parseColor("#00ab66"));
+            holder.status.setBackgroundResource(R.drawable.status_go);
         }else if((results.get(position).getStatus().abbrev.equals("TBC") || (results.get(position).getStatus().abbrev.equals("TBD")))){
-            holder.status.setBackgroundColor(Color.parseColor("#FF5F1F"));
+            holder.status.setBackgroundResource(R.drawable.status_tbc);
         }
         holder.status.setText(results.get(position).getStatus().abbrev);
-        holder.country.setText(results.get(position).getPad().getLocation().getCountry_code());
+
 
         String imageUrl = results.get(position).getImage();
 
@@ -95,18 +110,20 @@ public  class rockets_RecyclerViewAdapter extends RecyclerView.Adapter<rockets_R
 
         ImageView rocketImage;
 
-        TextView rocketName, time, company_name, location, description, status, country;
+        TextView rocketName, date, company_name, location, description, status, countDown;
 
         public rocketsViewHolder(@NonNull View itemView) {
             super(itemView);
             rocketImage = itemView.findViewById(R.id.rocketImage);
             rocketName = itemView.findViewById(R.id.rocketName);
-            time = itemView.findViewById(R.id.time);
+            date = itemView.findViewById(R.id.date);
             company_name = itemView.findViewById(R.id.company_name);
             location = itemView.findViewById(R.id.location);
-            description = itemView.findViewById(R.id.description);
+            //description = itemView.findViewById(R.id.description);
             status = itemView.findViewById(R.id.status);
-            country = itemView.findViewById(R.id.country);
+            countDown = itemView.findViewById(R.id.countDown);
         }
+
+
     }
 }

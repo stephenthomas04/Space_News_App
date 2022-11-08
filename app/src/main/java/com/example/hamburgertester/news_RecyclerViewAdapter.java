@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,14 +24,15 @@ import com.bumptech.glide.request.target.Target;
 import java.util.ArrayList;
 
 public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_RecyclerViewAdapter.MyViewHolder> {
-
+    private final NewsInterface newsInterface;
 
     Context context;
     ArrayList<NewsObj> newsArrayList;
 
-    public news_RecyclerViewAdapter(Context context, ArrayList<NewsObj> newsArrayList){
+    public news_RecyclerViewAdapter(Context context, ArrayList<NewsObj> newsArrayList,  NewsInterface newsInterface){
         this.context = context;
         this.newsArrayList = newsArrayList;
+        this.newsInterface =newsInterface;
     }
 
     @NonNull
@@ -40,7 +40,7 @@ public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_Recycler
     public news_RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.news_row,parent,false);
-        return new news_RecyclerViewAdapter.MyViewHolder(view);
+        return new news_RecyclerViewAdapter.MyViewHolder(view, newsInterface);
     }
 
     @Override
@@ -89,7 +89,7 @@ public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_Recycler
         ImageView image;
         TextView article, title, desc, date;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, NewsInterface newsInterface) {
             super(itemView);
 
             image = itemView.findViewById(R.id.imageView);
@@ -97,6 +97,18 @@ public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_Recycler
             title = itemView.findViewById(R.id.newsHeadline);
             desc = itemView.findViewById(R.id.newsDesc);
             date = itemView.findViewById(R.id.publishDate);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(newsInterface != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            newsInterface.onItemClick(position);
+                        }
+                    }
+                }
+            });
 
         }
     }

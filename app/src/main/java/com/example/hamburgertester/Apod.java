@@ -1,6 +1,8 @@
 package com.example.hamburgertester;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -31,7 +33,8 @@ import java.util.ArrayList;
  * Use the {@link Apod#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Apod extends Fragment{
+public class Apod extends Fragment implements NewsInterface {
+    NewsInterface newsInterface = this;
     Context thisContext;
     ArrayList<NewsObj> newsArrayList = new ArrayList<>();
     String articleName = "Astronomy Picture of the Day";
@@ -90,10 +93,10 @@ public class Apod extends Fragment{
     }
 
 
-    public void apodRequest(Context context){
+    public void apodRequest(Context context, news_RecyclerViewAdapter adapter){
         String api_key = "vzch0p2dvpdzzKxLNnosLvbbwDxVxb3nqsjlXkYB";
         String Url = "https://api.nasa.gov/planetary/apod?api_key=" + api_key;
-        String defaultImage = "https://cdn.mos.cms.futurecdn.net/Tqq3BVZZAkbUyGvZmSfjQW-970-80.jpg";
+
 
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
@@ -104,19 +107,19 @@ public class Apod extends Fragment{
                 Log.d("Response", response);
                 GsonBuilder gsonBuilder = new GsonBuilder();
                 Gson gson = gsonBuilder.create();
-                NewsObj apodToNews = new NewsObj("Retriving Data...",
-                        defaultImage,defaultImage,"NO DATA" , "00-00-00", articleName);
-                newsArrayList.add(0, apodToNews);
+
 
 
                 try {
                     ApodObj apod = gson.fromJson(response, ApodObj.class);
                     Log.d("objstatus", "object parsed");
 
-                    newsArrayList.get(0).setTitle(apod.getTitle());
-                    newsArrayList.get(0).setSummary(apod.getExplanation());
-                    newsArrayList.get(0).setImageUrl(apod.getUrl());
-                    newsArrayList.get(0).setPublishedAt(apod.getDate());
+                    NewsObj apodToNews = new NewsObj( apod.getTitle(),
+                            apod.getUrl(), apod.getUrl(),
+                            apod.getExplanation() , apod.getDate(), articleName);
+
+                    newsArrayList.set(0, apodToNews);
+                    adapter.notifyItemChanged(0);
                     Log.d("objstatus", "object added");
 
                 } catch (Exception e){
@@ -138,6 +141,7 @@ public class Apod extends Fragment{
     public void newsRequest(Context context){
 
         String Url = "https://api.spaceflightnewsapi.net/v3/articles";
+        String defaultImage = "https://cdn.mos.cms.futurecdn.net/Tqq3BVZZAkbUyGvZmSfjQW-970-80.jpg";
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
@@ -148,12 +152,17 @@ public class Apod extends Fragment{
                 GsonBuilder gsonBuilder = new GsonBuilder();
                 Gson gson = gsonBuilder.create();
 
+
+
                 try {
                     Type listType = new TypeToken<ArrayList<NewsObj>>(){}.getType();
                     newsArrayList = gson.fromJson(response, listType);
 
-                    apodRequest(context);
+                    NewsObj tempObj = new NewsObj("Retriving Data...",
+                            defaultImage,defaultImage,"NO DATA" , "0000-00-00", articleName);
 
+                    Log.d("objectResponse", "Temp Added");
+                    newsArrayList.add(0, tempObj);
 
                     for(NewsObj n : newsArrayList) {
                         Log.d("NewsInfo", n.toString());
@@ -161,14 +170,15 @@ public class Apod extends Fragment{
 
                     RecyclerView recyclerView = getView().findViewById(R.id.nRecyclerView);
 
-                    news_RecyclerViewAdapter adapter = new news_RecyclerViewAdapter(context, newsArrayList);
+                    news_RecyclerViewAdapter adapter = new news_RecyclerViewAdapter(context, newsArrayList, newsInterface);
                     recyclerView.setLayoutManager(new LinearLayoutManager(context));
                     recyclerView.setAdapter(adapter);
 
-
+                    apodRequest(thisContext, adapter);
                 } catch (Exception e){
                     e.printStackTrace();
                 }
+
 
             }
         }, new Response.ErrorListener() {
@@ -182,4 +192,12 @@ public class Apod extends Fragment{
     }
 
 
+    @Override
+    public void onItemClick(int position) {
+        String url = newsArrayList.get(position).getUrl();
+
+        Intent viewIntent = new Intent("android.intent.action.VIEW",
+                        Uri.parse(url));
+        startActivity(viewIntent);
+    }
 }
