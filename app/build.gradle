@@ -48,4 +48,6 @@ dependencies {
     implementation 'com.makeramen:roundedimageview:2.3.0' // rounded image view
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.0-rc03' // navigation component
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.0-rc03' // navigation component
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0' // circular image shape
 }
