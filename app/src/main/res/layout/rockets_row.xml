@@ -96,14 +96,14 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/date"
                     android:layout_centerHorizontal="true"
-                    android:gravity="center"
                     android:layout_marginTop="10dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:background="@drawable/status_go"
-                    android:textSize="25dp"
                     android:layout_marginBottom="5dp"
-                    android:text="TBC" />
+                    android:background="@drawable/status_go"
+                    android:gravity="center"
+                    android:text="TBC"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
