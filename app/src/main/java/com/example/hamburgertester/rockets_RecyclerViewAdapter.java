@@ -48,14 +48,21 @@ public  class rockets_RecyclerViewAdapter extends RecyclerView.Adapter<rockets_R
         holder.rocketName.setText(results.get(position).getName());
 
         String date = results.get(position).getNet().substring(0,10);
-        String time = results.get(position).getNet().substring(11,19);
 
 
-        if (results.get(position).getStatus().abbrev.equals("Success")){
-            holder.countDown.setText("Launched!");
-        }else{
-            holder.countDown.setText(time);
-        }
+        CountDownTimer countDownTimer = new CountDownTimer(5000000, 1000) {
+            public void onTick(long millisUntilFinished) {
+                long millis = millisUntilFinished;
+                //Convert milliseconds into hour,minute and seconds
+                String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+                holder.countDown.setText(hms);//set text
+            }
+            public void onFinish() {
+                holder.countDown.setText("Launched");//On finish change timer text
+            }
+        }.start();
+
+        //holder.countDown.setText( results.get(position).getTime());
         holder.date.setText(date);
         holder.company_name.setText((results.get(position).getLaunch_service_provider().getName()));
         holder.location.setText(results.get(position).getPad().getLocation().getName());
