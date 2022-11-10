@@ -1,12 +1,24 @@
 package com.example.hamburgertester;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.appcompat.view.menu.MenuView;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +35,8 @@ public class ISS extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private TextView issLocation;
+    private Context context;
 
     public ISS() {
         // Required empty public constructor
@@ -49,16 +63,61 @@ public class ISS extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        context = getActivity();
+        Log.d("Praneet", "onCreateView is displaying" );
+        apiRequestMethod();
+
         return inflater.inflate(R.layout.fragment_iss, container, false);
+    }
+
+    public void apiRequestMethod() {
+
+        String Url = "https://api.wheretheiss.at/v1/satellites/25544";
+
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+
+        StringRequest objectRequest = new StringRequest(Url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d("Response", response);
+                GsonBuilder gsonBuilder = new GsonBuilder();
+                Gson gson = gsonBuilder.create();
+
+                try {
+                    ISS_Object iss = gson.fromJson(response, ISS_Object.class);
+
+
+                    //set info from class here
+                    issLocation = (TextView) getView().findViewById(R.id.issLocation);
+                    issLocation.setText(iss.getLatitude() + " , " + iss.getLongitude());
+                    Log.d("Enguerran", "overshot");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Log.d("Enguerran", "catch");
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("Response", "error");
+            }
+        });
+
     }
 }
