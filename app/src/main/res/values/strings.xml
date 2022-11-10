@@ -7,4 +7,8 @@
     <string name="settings">settings</string>
     <string name="notifactions">notifactions</string>
     <string name="profile">profile</string>
+
+    <string name="Title"><u>Title</u></string>
+
+
 </resources>

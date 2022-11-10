@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardBackgroundColor="@color/vanilla">
+        app:cardBackgroundColor="@color/baige">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -39,11 +39,11 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:fontFamily="casual"
+                    android:fontFamily="@font/comfortaa"
                     android:text="00:00:00"
+                    android:textColor="@color/black"
                     android:textSize="50dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/rocketName"

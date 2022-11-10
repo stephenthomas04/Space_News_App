@@ -158,7 +158,7 @@ public class Apod extends Fragment implements NewsInterface {
                     Type listType = new TypeToken<ArrayList<NewsObj>>(){}.getType();
                     newsArrayList = gson.fromJson(response, listType);
 
-                    NewsObj tempObj = new NewsObj("Retriving Data...",
+                    NewsObj tempObj = new NewsObj("Retrieving Data...",
                             defaultImage,defaultImage,"NO DATA" , "0000-00-00", articleName);
 
                     Log.d("objectResponse", "Temp Added");
