@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardBackgroundColor="@color/light_blue">
+        app:cardBackgroundColor="@color/vanilla">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -28,8 +28,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/rocketImage"
-                android:layout_alignTop="@id/rocketImage">
+                android:layout_alignTop="@id/rocketImage"
+                android:layout_toRightOf="@id/rocketImage">
 
                 <TextView
                     android:id="@+id/countDown"
@@ -39,8 +39,11 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
+                    android:fontFamily="casual"
+                    android:text="00:00:00"
                     android:textSize="50dp"
-                    android:text="00:00:00" />
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/rocketName"
@@ -48,12 +51,13 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:layout_marginRight="10dp"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:text="Rocket Name" />
+                    android:fontFamily="@font/open_sans"
+                    android:gravity="center"
+                    android:text="Rocket Name"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/date"
@@ -61,34 +65,39 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/countDown"
                     android:layout_centerHorizontal="true"
-                    android:textColor="@color/white"
-
-                    android:textSize="15dp"
-                    android:text="Date" />
+                    android:fontFamily="@font/comic_neue_light"
+                    android:text="Date"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold|italic" />
 
                 <TextView
                     android:id="@+id/location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/company_name"
-                    android:layout_marginTop="5dp"
                     android:layout_centerHorizontal="true"
-                    android:textColor="@color/white"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/comfortaa"
                     android:gravity="center"
+                    android:text="Location"
+                    android:textColor="@color/black"
                     android:textSize="15dp"
-                    android:text="Location" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/company_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/rocketName"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/white"
-                    android:gravity="center"
                     android:layout_centerHorizontal="true"
-                    android:textSize="15dp"
-                    android:text="Company Name" />
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/chivo_regular"
+                    android:gravity="center"
+                    android:text="Company Name"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/status"
@@ -99,9 +108,10 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/status_go"
+                    android:fontFamily="@font/open_sans"
                     android:gravity="center"
                     android:text="TBC"
-                    android:textColor="@color/white"
+                    android:textColor="@color/grey"
                     android:textSize="25dp"
                     android:textStyle="bold" />
 

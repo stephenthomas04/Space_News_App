@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/hostFragmentLayout"
         android:layout_width="match_parent"
-        android:background="@color/light_blue"
+        android:background="@drawable/blue"
         android:orientation="vertical"
         android:layout_height="match_parent"
         tools:context=".ApodActivity">
@@ -24,6 +24,7 @@
             android:paddingLeft="15dp"
             android:layout_marginTop="40dp"
             android:gravity="bottom"
+            android:fontFamily="@font/comfortaa"
             android:text="EARTH"
             android:textColor="@color/white"
             android:textSize="60sp"
@@ -59,6 +60,7 @@
             android:layout_gravity="center"
             android:layout_weight=".5"
             android:paddingLeft="15dp"
+            android:fontFamily="@font/comic_neue_light"
             android:text="Earth News"
             android:textColor="@color/white"
             android:textSize="60sp"

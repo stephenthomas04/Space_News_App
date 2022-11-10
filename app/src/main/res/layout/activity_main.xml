@@ -16,7 +16,7 @@
             android:id="@+id/layoutToolBar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            android:background="@color/colorPrimary"
+            android:background="@color/grey"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingStart="15dp"
@@ -33,16 +33,17 @@
                 android:tintMode="@color/white"/>
 
             <TextView
+                android:id="@+id/textTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textTitle"
                 android:layout_marginStart="0dp"
-                android:text="SPACE APP"
+                android:fontFamily="@font/amiko_semibold"
                 android:gravity="center"
                 android:paddingRight="27dp"
+                android:text="SPACE APP"
                 android:textColor="@color/white"
-                android:textSize="30dp"
-                android:textStyle="bold"/>
+                android:textSize="45sp"
+                android:textStyle="bold" />
         </LinearLayout>
         <fragment
             android:layout_width="match_parent"

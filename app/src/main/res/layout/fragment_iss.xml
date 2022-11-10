@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/hostFragmentLayout"
         android:layout_width="match_parent"
-        android:background="@color/teal_200"
+        android:background="@drawable/blackgrey"
         android:orientation="vertical"
         android:layout_height="match_parent"
         tools:context=".ApodActivity">
@@ -22,6 +22,7 @@
             android:layout_gravity="center"
             android:layout_weight=".99"
             android:paddingLeft="15dp"
+            android:fontFamily="@font/comfortaa"
             android:gravity="center"
             android:text="ISS"
             android:textColor="@color/white"
@@ -59,6 +60,7 @@
             android:layout_gravity="center"
             android:layout_weight=".5"
             android:paddingLeft="15dp"
+            android:fontFamily="@font/comic_neue_light"
             android:text="ISS Reports"
             android:textColor="@color/white"
             android:textSize="60sp"
