@@ -15,4 +15,7 @@
     <item
         android:id="@+id/rocket_launchesMenu"
         android:title="ROCKET LAUNCHES"/>
+    <item
+        android:id="@+id/search_barMenu"
+        android:title="SEARCH BAR"/>
 </menu>
