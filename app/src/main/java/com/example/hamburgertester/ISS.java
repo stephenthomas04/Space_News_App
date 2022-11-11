@@ -36,6 +36,7 @@ public class ISS extends Fragment {
     private String mParam1;
     private String mParam2;
     private TextView issLocation;
+    private TextView issDescription;
     private Context context;
 
     public ISS() {
@@ -80,13 +81,14 @@ public class ISS extends Fragment {
         // Inflate the layout for this fragment
         context = getActivity();
         Log.d("Praneet", "onCreateView is displaying" );
-        apiRequestMethod();
+        locationApi();
+        reportAPi();
         Log.d("Praneet", "onCreateView is displaying 12212" );
 
         return inflater.inflate(R.layout.fragment_iss, container, false);
     }
 
-    public void apiRequestMethod() {
+    public void locationApi() {
         Log.d("Response", "loded api req");
         String Url = "https://api.wheretheiss.at/v1/satellites/25544";
 
@@ -123,5 +125,44 @@ public class ISS extends Fragment {
         });
         requestQueue.add(objectRequest);
 
+    }
+
+    public void reportAPi(){
+
+        Log.d("Response", "Loaded report Api");
+        String Url = "https://api.spaceflightnewsapi.net/v3/reports";
+
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+
+        StringRequest objectRequest = new StringRequest(Url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d("Response", response);
+                GsonBuilder gsonBuilder = new GsonBuilder();
+                Gson gson = gsonBuilder.create();
+
+                try {
+                    ISS_Updates iss = gson.fromJson(response, ISS_Updates.class);
+
+                    String description = iss.getSummary();
+
+                    //set info from class here
+                    issDescription = (TextView) getView().findViewById(R.id.issDesc);
+                    issDescription.setText(description);
+
+                    Log.d("Enguerran", "overshot report");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Log.d("Enguerran", "catch report api");
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("Response", "error");
+            }
+        });
+        requestQueue.add(objectRequest);
     }
 }
