@@ -29,9 +29,4 @@
         android:id="@+id/rocket_launchesMenu"
         android:name="com.example.hamburgertester.Rocket_Launches"
         android:label="Rocket_Launches" />
-    <fragment
-        android:id="@+id/search_barMenu"
-        android:name="com.example.hamburgertester.Search_Bar"
-        android:label="fragment_search__bar"
-        tools:layout="@layout/fragment_search__bar" />
 </navigation>
