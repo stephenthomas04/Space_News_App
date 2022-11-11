@@ -50,7 +50,7 @@
             android:inputType="text"
             android:textColor="@color/design_default_color_on_secondary"
             android:textColorHint="@color/design_default_color_on_secondary"
-            android:textSize="40sp" />
+            android:textSize="50sp" />
 
         <TextView
             android:id="@+id/issReports"

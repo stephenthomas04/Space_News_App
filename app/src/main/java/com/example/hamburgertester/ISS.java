@@ -81,12 +81,13 @@ public class ISS extends Fragment {
         context = getActivity();
         Log.d("Praneet", "onCreateView is displaying" );
         apiRequestMethod();
+        Log.d("Praneet", "onCreateView is displaying 12212" );
 
         return inflater.inflate(R.layout.fragment_iss, container, false);
     }
 
     public void apiRequestMethod() {
-
+        Log.d("Response", "loded api req");
         String Url = "https://api.wheretheiss.at/v1/satellites/25544";
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
@@ -101,10 +102,12 @@ public class ISS extends Fragment {
                 try {
                     ISS_Object iss = gson.fromJson(response, ISS_Object.class);
 
+                    double getLat =  Math.round(iss.getLatitude());
+                    double getLong =  Math.round(iss.getLongitude());
 
                     //set info from class here
                     issLocation = (TextView) getView().findViewById(R.id.issLocation);
-                    issLocation.setText(iss.getLatitude() + " , " + iss.getLongitude());
+                    issLocation.setText(getLat + " , " + getLong);
                     Log.d("Enguerran", "overshot");
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -118,6 +121,7 @@ public class ISS extends Fragment {
                 Log.d("Response", "error");
             }
         });
+        requestQueue.add(objectRequest);
 
     }
 }
