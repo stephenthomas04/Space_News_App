@@ -7,12 +7,14 @@
     android:background="@drawable/spacebackground"
     tools:context=".Earth">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="100dp"
-        android:background="@color/tan"
+        android:background="@drawable/marsbg"
+        android:backgroundTint="@color/dark_grey"
         android:paddingLeft="15dp"
         android:paddingTop="2dp"
         android:paddingRight="15dp" />
@@ -20,7 +22,8 @@
     <RelativeLayout
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="190dp"
+        android:layout_marginLeft="290dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/circleview">
 
         <com.airbnb.lottie.LottieAnimationView

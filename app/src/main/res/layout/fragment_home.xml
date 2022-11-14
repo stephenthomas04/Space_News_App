@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:background="@color/tan"
+    tools:context=".Home">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="130dp"
+        android:background="@drawable/search_view_background"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:text="HOME SCREEN Loading...."
+        android:textColor="@color/black"
+        android:textSize="40dp" />
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/black" />
+
+</FrameLayout>
