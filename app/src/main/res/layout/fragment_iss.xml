@@ -10,85 +10,64 @@
     <LinearLayout
         android:id="@+id/hostFragmentLayout"
         android:layout_width="match_parent"
-        android:background="@drawable/blackgrey"
+        android:background="@drawable/spacebackground"
         android:orientation="vertical"
         android:layout_height="match_parent"
         tools:context=".ApodActivity">
 
-        <TextView
-            android:id="@+id/issTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="5dp"
-            android:layout_gravity="center"
-            android:layout_weight=".99"
-            android:paddingLeft="15dp"
-            android:fontFamily="@font/comfortaa"
-            android:gravity="center"
-            android:text="ISS"
-            android:textColor="@color/white"
-            android:textSize="60sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-
-        <TextView
-            android:id="@+id/issLocation"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="50sp"
-            android:layout_marginRight="50sp"
-            android:layout_marginBottom="15dp"
-            android:layout_weight="1"
-            android:background="@color/textBackground"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="ISS LOCATION"
-            android:inputType="text"
-            android:textColor="@color/design_default_color_on_secondary"
-            android:textColorHint="@color/design_default_color_on_secondary"
-            android:textSize="50sp" />
-
-        <TextView
-            android:id="@+id/issReports"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:gravity="bottom"
-            android:layout_gravity="center"
-            android:layout_weight=".5"
-            android:paddingLeft="15dp"
-            android:fontFamily="@font/comic_neue_light"
-            android:text="ISS Reports"
-            android:textColor="@color/white"
-            android:textSize="60sp"
-            android:inputType="text"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            android:contentDescription="scroll view">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
 
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/gifImageView"
+                    android:layout_height="250dp"
+                    android:layout_width="250dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/astronaut"
+                    android:layout_gravity="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/issDesc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20sp"
-            android:layout_marginRight="20sp"
-            android:layout_marginBottom="15dp"
-            android:background="@color/textBackground"
-            android:layout_weight="2"
-            android:ems="10"
-            android:hint="Description: "
-            android:minHeight="48dp"
-            android:padding="6dp"
-            android:textColor="@color/design_default_color_on_secondary"
-            android:textColorHint="@color/design_default_color_on_secondary"
-            android:textSize="25sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/marsbg">
+                    <TextView
+                        android:id="@+id/issLocation"
+                        android:layout_width="300dp"
+                        android:layout_height="200dp"
+                        android:gravity="center"
+                        android:textSize="30dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/iss_viewbg"
+                        android:layout_centerHorizontal="true"
+                        android:text="Iss location" />
+
+                    <TextView
+                        android:id="@+id/issDesc"
+                        android:layout_width="300dp"
+                        android:layout_height="200dp"
+                        android:gravity="center"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/issLocation"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="300dp"
+                        android:background="@drawable/iss_viewbg"
+                        android:textSize="30dp"
+                        android:text="Iss Desc" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 
