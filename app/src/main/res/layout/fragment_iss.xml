@@ -41,30 +41,36 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/marsbg">
+
                     <TextView
                         android:id="@+id/issLocation"
                         android:layout_width="300dp"
                         android:layout_height="200dp"
-                        android:gravity="center"
-                        android:textSize="30dp"
+                        android:layout_centerHorizontal="true"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/iss_viewbg"
-                        android:layout_centerHorizontal="true"
-                        android:text="Iss location" />
+                        android:gravity="center"
+                        android:text="Iss location"
+                        android:textSize="30dp" />
 
                     <TextView
                         android:id="@+id/issDesc"
                         android:layout_width="300dp"
                         android:layout_height="200dp"
-                        android:gravity="center"
-                        android:layout_centerHorizontal="true"
                         android:layout_below="@id/issLocation"
+                        android:layout_centerHorizontal="true"
                         android:layout_marginTop="20dp"
-                        android:layout_marginBottom="300dp"
                         android:background="@drawable/iss_viewbg"
-                        android:textSize="30dp"
-                        android:text="Iss Desc" />
+                        android:gravity="center"
+                        android:text="Iss Desc"
+                        android:textSize="30dp" />
+
                 </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/issRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
             </LinearLayout>
         </ScrollView>

@@ -2,6 +2,7 @@ package com.example.hamburgertester;
 
 public class ISS_Updates {
 
+
     private String title;
     private String websiteUrl;
     private String imageUrl;
