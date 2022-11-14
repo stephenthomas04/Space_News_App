@@ -103,10 +103,10 @@
                     android:id="@+id/status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/date"
+                    android:layout_below="@id/statusTitle"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
                     android:background="@drawable/status_go"
                     android:fontFamily="@font/open_sans"
                     android:gravity="center"
@@ -114,6 +114,17 @@
                     android:textColor="@color/grey"
                     android:textSize="25dp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/statusTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/date"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:textSize="25dp"
+                    android:text="Status: " />
 
             </RelativeLayout>
 

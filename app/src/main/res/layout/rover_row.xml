@@ -28,6 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="50dp"
+                android:gravity="left"
                 android:textColor="@color/white"
                 android:textSize="30dp"
                 android:textStyle="bold"
@@ -49,14 +50,17 @@
                 android:id="@+id/earthDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:textColor="@color/white"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:layout_toRightOf="@id/sol"
                 android:layout_alignTop="@id/sol"
                 android:layout_alignBottom="@id/sol"
-                android:text="Date" />
+                android:layout_marginStart="100dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="1dp"
+                android:layout_toRightOf="@id/sol"
+                android:gravity="right"
+                android:text="Date"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
