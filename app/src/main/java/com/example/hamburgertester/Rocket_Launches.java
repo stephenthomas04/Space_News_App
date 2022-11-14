@@ -106,6 +106,7 @@ public class Rocket_Launches extends Fragment {
                     RecyclerView recyclerView = getView().findViewById(R.id.rRecyclerView);
 
                     rockets_RecyclerViewAdapter adapter = new rockets_RecyclerViewAdapter(context, rockets.getResults());
+                    recyclerView.setNestedScrollingEnabled(false);
                     recyclerView.setLayoutManager(new LinearLayoutManager(context));
                     recyclerView.setAdapter(adapter);
 
