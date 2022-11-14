@@ -10,5 +10,8 @@
 
     <string name="Title"><u>Title</u></string>
 
+    <string name="mars_info">Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. In the English language, Mars is named for the Roman god of war. Mars is a terrestrial planet with a thin atmosphere, and has a crust primarily composed of elements similar to Earth crust, as well as a core made of iron and nickel. Mars has surface features such as impact craters, valleys, dunes, and polar ice caps.</string>
 
+    <string name="rover_info">Curiosity is a car-sized Mars rover designed to explore the Gale crater on Mars as part of NASAs Mars Science Laboratory mission. Curiosity was launched from Cape Canaveral on 26 November 2011, at 15:02:00 UTC and landed on Aeolis Palus inside Gale crater on Mars on 6 August 2012, 05:17:57 UTC.</string>
+    <string name="marsTitle"><u>Mars</u></string>
 </resources>
