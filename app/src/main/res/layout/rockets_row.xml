@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardBackgroundColor="@color/baige">
+        app:cardBackgroundColor="#F5F5F5">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -131,10 +131,10 @@
             <ImageView
                 android:id="@+id/rocketImage"
                 android:layout_width="125dp"
-                android:layout_height="315dp"
+                android:layout_height="450dp"
                 android:layout_marginLeft="0dp"
-                android:scaleType="centerCrop"
                 android:cropToPadding="true"
+                android:scaleType="centerCrop"
                 app:srcCompat="@drawable/default_rocket" />
 
         </RelativeLayout>

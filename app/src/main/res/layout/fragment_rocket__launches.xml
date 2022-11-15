@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
 
                 android:background="@drawable/marsbg"
-                android:backgroundTint="@color/dark_grey"
+                android:backgroundTint="#6699CC"
                 android:layout_marginTop="5dp"
                 android:paddingLeft="15dp"
                 android:paddingTop="2dp"

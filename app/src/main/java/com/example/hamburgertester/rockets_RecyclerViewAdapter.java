@@ -86,7 +86,7 @@ public  class rockets_RecyclerViewAdapter extends RecyclerView.Adapter<rockets_R
                 .load(imageUrl)
                 .placeholder(R.drawable.ic_baseline_downloading_24)
                 .error(R.drawable.ic_baseline_error_outline_24)
-                .override(150, 210)
+                .override(150, 450)
                 .centerCrop()
                 .listener(new RequestListener<Drawable>() {
                     @Override

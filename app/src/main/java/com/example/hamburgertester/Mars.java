@@ -84,8 +84,10 @@ public class Mars extends Fragment {
     }
 
     public void roverRequest(Context context){
+        int sol = 3651;
+
         String api_key = "vzch0p2dvpdzzKxLNnosLvbbwDxVxb3nqsjlXkYB";
-        String Url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=3649&camera=navcam&api_key=" + api_key;
+        String Url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=" +sol+"&camera=navcam&api_key=" + api_key;
 
 
 
@@ -115,7 +117,7 @@ public class Mars extends Fragment {
                     recyclerView.setLayoutManager(layoutManager);
 
                     for(Images n : imagesArrayList) {
-                        Log.d("marsstatusSol", n.getSol());
+                        Log.d("marsstatusSol", n.getImg_src());
                     }
 
 
