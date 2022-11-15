@@ -1,10 +1,14 @@
 package com.example.hamburgertester;
 
+import static java.lang.Math.floor;
+
 import android.content.Context;
 import android.os.Bundle;
 
 import androidx.appcompat.view.menu.MenuView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -39,6 +43,7 @@ public class ISS extends Fragment {
     private TextView issDescription;
     private Context context;
 
+
     public ISS() {
         // Required empty public constructor
     }
@@ -71,7 +76,11 @@ public class ISS extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-
+        RecyclerView recyclerView =  getView().findViewById(R.id.issRecyclerView);
+        
+        IssUpdates_RecyclerViewAdapter adapter = new IssUpdates_RecyclerViewAdapter(this, iss_updates);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
     }
 
@@ -84,6 +93,8 @@ public class ISS extends Fragment {
         locationApi();
         reportAPi();
         Log.d("Praneet", "onCreateView is displaying 12212" );
+
+
 
         return inflater.inflate(R.layout.fragment_iss, container, false);
     }
@@ -104,8 +115,11 @@ public class ISS extends Fragment {
                 try {
                     ISS_Object iss = gson.fromJson(response, ISS_Object.class);
 
-                    double getLat =  Math.round(iss.getLatitude());
-                    double getLong =  Math.round(iss.getLongitude());
+
+                    //The round num function rounds things to the decimal place
+
+                    double getLat =  roundNum(iss.getLatitude());
+                    double getLong =  roundNum(iss.getLongitude());
 
                     //set info from class here
                     issLocation = (TextView) getView().findViewById(R.id.issLocation);
@@ -148,7 +162,7 @@ public class ISS extends Fragment {
                     String description = iss.getSummary();
 
                     //set info from class here
-                    issDescription = (TextView) getView().findViewById(R.id.issDesc);
+                    issDescription = getView().findViewById(R.id.issDesc);
                     issDescription.setText(description);
 
                     Log.d("Enguerran", "overshot report");
@@ -165,5 +179,13 @@ public class ISS extends Fragment {
             }
         });
         requestQueue.add(objectRequest);
+    }
+
+    public double roundNum(double x){
+
+        double total;
+        total = 0.01 * floor(x * 100.0);
+        return total;
+
     }
 }
