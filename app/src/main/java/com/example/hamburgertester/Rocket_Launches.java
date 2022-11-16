@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -98,17 +99,14 @@ public class Rocket_Launches extends Fragment {
                 try {
                     RocketsResults rockets = gson.fromJson(response, RocketsResults.class);
 
-
-                    for(Results n : rockets.results) {
-                        Log.d("NewsInfo", n.toString());
-                    }
-
                     RecyclerView recyclerView = getView().findViewById(R.id.rRecyclerView);
 
                     rockets_RecyclerViewAdapter adapter = new rockets_RecyclerViewAdapter(context, rockets.getResults());
                     recyclerView.setNestedScrollingEnabled(false);
                     recyclerView.setLayoutManager(new LinearLayoutManager(context));
                     recyclerView.setAdapter(adapter);
+
+
 
 
                 } catch (Exception e){

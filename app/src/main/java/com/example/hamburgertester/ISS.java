@@ -78,9 +78,9 @@ public class ISS extends Fragment {
 
         RecyclerView recyclerView =  getView().findViewById(R.id.issRecyclerView);
         
-        IssUpdates_RecyclerViewAdapter adapter = new IssUpdates_RecyclerViewAdapter(this, iss_updates);
+        /*IssUpdates_RecyclerViewAdapter adapter = new IssUpdates_RecyclerViewAdapter();
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));*/
 
     }
 

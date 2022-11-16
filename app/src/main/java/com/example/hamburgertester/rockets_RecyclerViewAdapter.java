@@ -20,8 +20,13 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Clock;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public  class rockets_RecyclerViewAdapter extends RecyclerView.Adapter<rockets_RecyclerViewAdapter.rocketsViewHolder>{
@@ -50,17 +55,6 @@ public  class rockets_RecyclerViewAdapter extends RecyclerView.Adapter<rockets_R
         String date = results.get(position).getNet().substring(0,10);
 
 
-        CountDownTimer countDownTimer = new CountDownTimer(5000000, 1000) {
-            public void onTick(long millisUntilFinished) {
-                long millis = millisUntilFinished;
-                //Convert milliseconds into hour,minute and seconds
-                String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
-                holder.countDown.setText(hms);//set text
-            }
-            public void onFinish() {
-                holder.countDown.setText("Launched");//On finish change timer text
-            }
-        }.start();
 
         //holder.countDown.setText( results.get(position).getTime());
         holder.date.setText(date);
@@ -70,7 +64,36 @@ public  class rockets_RecyclerViewAdapter extends RecyclerView.Adapter<rockets_R
         //holder.description.setText(results.get(position).getMission().getDescription());
 
 
+        if (holder.timer != null) {
+            holder.timer.cancel();
+        }
 
+        String myDate = "2022/11/16 00:00:00";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date predate = null;
+        try {
+            predate = sdf.parse(myDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        long launchDate = predate.getTime();
+
+        Date todayDate = new Date();
+
+        long difference = launchDate - todayDate.getTime();
+
+        holder.timer = new CountDownTimer(difference, 1000) {
+            public void onTick(long millisUntilFinished) {
+                long millis = millisUntilFinished;
+                //Convert milliseconds into hour,minute and seconds
+                String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+
+                holder.countDown.setText(hms);//set text
+            }
+            public void onFinish() {
+                holder.countDown.setText("Launched");//On finish change timer text
+            }
+        }.start();
 
         if(results.get(position).getStatus().abbrev.equals("Go")|| (results.get(position).getStatus().abbrev.equals("Success"))){
             holder.status.setBackgroundResource(R.drawable.status_go);
@@ -116,7 +139,7 @@ public  class rockets_RecyclerViewAdapter extends RecyclerView.Adapter<rockets_R
     public static class rocketsViewHolder extends RecyclerView.ViewHolder{
 
         ImageView rocketImage;
-
+        CountDownTimer timer;
         TextView rocketName, date, company_name, location, description, status, countDown;
 
         public rocketsViewHolder(@NonNull View itemView) {
@@ -129,6 +152,7 @@ public  class rockets_RecyclerViewAdapter extends RecyclerView.Adapter<rockets_R
             //description = itemView.findViewById(R.id.description);
             status = itemView.findViewById(R.id.status);
             countDown = itemView.findViewById(R.id.countDown);
+            timer = null;
         }
 
 
