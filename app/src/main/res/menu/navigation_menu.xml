@@ -18,8 +18,12 @@
         android:title="MARS"/>
     <item
         android:id="@+id/issMenu"
-        android:icon="@drawable/satelittle"
+        android:icon="@drawable/iss"
         android:title="ISS"/>
+    <item
+        android:id="@+id/satelliteMenu"
+        android:icon="@drawable/satelittle"
+        android:title="SATELLITE"/>
     <item
         android:id="@+id/rocket_launchesMenu"
         android:icon="@drawable/rocket"
