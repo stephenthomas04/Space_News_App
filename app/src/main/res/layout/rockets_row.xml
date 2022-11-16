@@ -42,7 +42,7 @@
                     android:fontFamily="@font/comfortaa"
                     android:text="00:00:00"
                     android:textColor="@color/black"
-                    android:textSize="50dp"
+                    android:textSize="35dp"
                     android:textStyle="bold" />
 
                 <TextView

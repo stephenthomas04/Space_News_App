@@ -68,7 +68,10 @@ public  class rockets_RecyclerViewAdapter extends RecyclerView.Adapter<rockets_R
             holder.timer.cancel();
         }
 
-        String myDate = "2022/11/16 00:00:00";
+        String year = date.substring(0,4);
+        String month = date.substring(5,7);
+        String day = date.substring(8,10);
+        String myDate = year +"/"+month+"/"+day+" 00:00:00";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date predate = null;
         try {
