@@ -1,7 +1,21 @@
 package com.example.hamburgertester;
 
-public class ISS_Updates {
+import java.util.ArrayList;
 
+public class ISS_Updates {
+    ArrayList<ISS_Updates> iss_updates;
+
+    public ISS_Updates(ArrayList<ISS_Updates> iss_updates) {
+        this.iss_updates = iss_updates;
+    }
+
+    public ArrayList<ISS_Updates> getIss_updates() {
+        return iss_updates;
+    }
+
+    public void setIss_updates(ArrayList<ISS_Updates> iss_updates) {
+        this.iss_updates = iss_updates;
+    }
 
     private String title;
     private String websiteUrl;

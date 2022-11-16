@@ -16,12 +16,18 @@ public class IssUpdates_RecyclerViewAdapter extends RecyclerView.Adapter<IssUpda
 //Timestamp 17:36 inside the video
     Context context;
     ArrayList<ISS_Updates> issModelArray;
+    Results results;
 
 
-    public IssUpdates_RecyclerViewAdapter(Context context, ArrayList<ISS_Updates> issModelArray){
+
+
+    public IssUpdates_RecyclerViewAdapter(Context context, ArrayList<ISS_Updates> issModelArray, Results
+                                          results){
         this.context = context;
         this.issModelArray = issModelArray;
+        this.results = results;
     }
+
 
     @NonNull
     @Override
@@ -42,6 +48,8 @@ public class IssUpdates_RecyclerViewAdapter extends RecyclerView.Adapter<IssUpda
         holder.title.setText(issModelArray.get(position).getTitle());
         holder.date.setText(issModelArray.get(position).getDatePublished());
         holder.summary.setText(issModelArray.get(position).getSummary());
+
+
 
 
     }

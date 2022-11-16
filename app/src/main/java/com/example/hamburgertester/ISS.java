@@ -24,6 +24,8 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ISS#newInstance} factory method to
@@ -35,6 +37,8 @@ public class ISS extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    ArrayList<ISS_Updates> iss_objectArrayList = new ArrayList<>();
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -76,9 +80,9 @@ public class ISS extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        RecyclerView recyclerView =  getView().findViewById(R.id.issRecyclerView);
+       // RecyclerView recyclerView =  getView().findViewById(R.id.issRecyclerView);
         
-        /*IssUpdates_RecyclerViewAdapter adapter = new IssUpdates_RecyclerViewAdapter();
+      /*  IssUpdates_RecyclerViewAdapter adapter = new IssUpdates_RecyclerViewAdapter(context, iss_objectArrayList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));*/
 
@@ -126,6 +130,7 @@ public class ISS extends Fragment {
                     issLocation.setText(getLat + " , " + getLong);
                     Log.d("Enguerran", "overshot");
                 } catch (Exception e) {
+
                     e.printStackTrace();
                     Log.d("Enguerran", "catch");
                 }
@@ -142,7 +147,6 @@ public class ISS extends Fragment {
     }
 
     public void reportAPi(){
-
 
         Log.d("Response", "Loaded report Api");
         String Url = "https://api.spaceflightnewsapi.net/v3/reports";
@@ -162,6 +166,7 @@ public class ISS extends Fragment {
                     String description = iss.getSummary();
 
                     //set info from class here
+
                     issDescription = getView().findViewById(R.id.issDesc);
                     issDescription.setText(description);
 
