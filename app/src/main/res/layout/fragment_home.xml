@@ -64,8 +64,7 @@
             android:background="@drawable/search_view_background"
             android:gravity="top"
             android:paddingLeft="5dp"
-            android:text="Our app is special due to the immerisve experince
-        it provides the user by indulging thier knowledge of space.  "
+            android:text="Our app is special due to the immersive experience it provides the user by indulging their knowledge of space.  "
             android:textColor="@color/white"
             android:textSize="19dp"
             app:layout_constraintBottom_toBottomOf="parent"
