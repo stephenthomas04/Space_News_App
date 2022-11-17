@@ -9,6 +9,7 @@
     tools:context=".Home">
 
 
+
         <TextView
             android:id="@+id/textView4"
             android:layout_width="310dp"
@@ -45,7 +46,7 @@
             android:layout_height="105dp"
             android:layout_gravity="top"
             android:gravity="center"
-            android:text="Features of App"
+            android:text="Our App"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold"
@@ -58,15 +59,16 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="320dp"
-            android:layout_height="110dp"
+            android:layout_width="330dp"
+            android:layout_height="180dp"
             android:layout_gravity="top"
             android:background="@drawable/search_view_background"
-            android:gravity="top"
-            android:paddingLeft="5dp"
-            android:text="Our app is special due to the immersive experience it provides the user by indulging their knowledge of space.  "
+            android:gravity="center"
+            android:layout_marginTop="70dp"
+            android:paddingLeft="1dp"
+            android:text="The purpose of our app is to provide daily space content to users who use our app. We would do this by including a homepage which contains things like the astronomy picture of the day, the headlines of the day, the next rocket launches coming up and info about planets like earth and mars. All our info is requested by NASA Api's that help us reach our target audience is anyone who enjoys learning and reading about space and takes passion to the current events going on around space."
             android:textColor="@color/white"
-            android:textSize="19dp"
+            android:textSize="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.549"
@@ -74,32 +76,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.545" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="310dp"
-            android:layout_height="105dp"
-            android:layout_gravity="top"
-            android:layout_marginLeft="50dp"
-            android:layout_marginBottom="130dp"
-            android:gravity="center"
-            android:text="Team"
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.913" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/mRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="550dp"
-            android:foregroundGravity="center"
-            android:scrollbars="horizontal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
