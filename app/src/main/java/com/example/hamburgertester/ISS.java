@@ -23,7 +23,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 /**
@@ -37,7 +39,9 @@ public class ISS extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    ArrayList<ISS_Updates> iss_objectArrayList = new ArrayList<>();
+
+    ISS_Updates iss_updates;
+    ArrayList<ISS_Updates> iss_objectArrayList;
 
 
     // TODO: Rename and change types of parameters
@@ -95,7 +99,6 @@ public class ISS extends Fragment {
         context = getActivity();
         Log.d("Praneet", "onCreateView is displaying" );
         locationApi();
-        reportAPi();
         Log.d("Praneet", "onCreateView is displaying 12212" );
 
 
@@ -148,42 +151,6 @@ public class ISS extends Fragment {
 
     public void reportAPi(){
 
-        Log.d("Response", "Loaded report Api");
-        String Url = "https://api.spaceflightnewsapi.net/v3/reports";
-
-        RequestQueue requestQueue = Volley.newRequestQueue(context);
-
-        StringRequest objectRequest = new StringRequest(Url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Log.d("Response", response);
-                GsonBuilder gsonBuilder = new GsonBuilder();
-                Gson gson = gsonBuilder.create();
-
-                try {
-                    ISS_Updates iss = gson.fromJson(response, ISS_Updates.class);
-
-                    String description = iss.getSummary();
-
-                    //set info from class here
-
-                    issDescription = getView().findViewById(R.id.issDesc);
-                    issDescription.setText(description);
-
-                    Log.d("Enguerran", "overshot report");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Log.d("Enguerran", "catch report api");
-                }
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("Response", "error");
-            }
-        });
-        requestQueue.add(objectRequest);
     }
 
     public double roundNum(double x){

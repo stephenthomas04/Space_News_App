@@ -3,35 +3,20 @@ package com.example.hamburgertester;
 import java.util.ArrayList;
 
 public class ISS_Updates {
-    ArrayList<ISS_Updates> iss_updates;
+    String title;
+    String url;
+    String imageUrl;
+    String summary;
+    String date;
 
-    public ISS_Updates(ArrayList<ISS_Updates> iss_updates) {
-        this.iss_updates = iss_updates;
-    }
-
-    public ArrayList<ISS_Updates> getIss_updates() {
-        return iss_updates;
-    }
-
-    public void setIss_updates(ArrayList<ISS_Updates> iss_updates) {
-        this.iss_updates = iss_updates;
-    }
-
-    private String title;
-    private String websiteUrl;
-    private String imageUrl;
-    private String summary;
-    private String datePublished;
-
-    public ISS_Updates(String title, String websiteUrl, String imageUrl,
-                       String summary, String datePublished) {
-
+    public ISS_Updates(String title, String url, String imageUrl, String summary, String date) {
         this.title = title;
-        this.websiteUrl = websiteUrl;
+        this.url = url;
         this.imageUrl = imageUrl;
         this.summary = summary;
-        this.datePublished = datePublished;
+        this.date = date;
     }
+
 
     public String getTitle() {
         return title;
@@ -41,12 +26,12 @@ public class ISS_Updates {
         this.title = title;
     }
 
-    public String getWebsiteUrl() {
-        return websiteUrl;
+    public String getUrl() {
+        return url;
     }
 
-    public void setWebsiteUrl(String websiteUrl) {
-        this.websiteUrl = websiteUrl;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getImageUrl() {
@@ -65,13 +50,11 @@ public class ISS_Updates {
         this.summary = summary;
     }
 
-    public String getDatePublished() {
-        datePublished = datePublished.substring(0,10);
-
-        return getDatePublished();
+    public String getDate() {
+        return date;
     }
 
-    public void setDatePublished(String datePublished) {
-        this.datePublished = datePublished;
+    public void setDate(String date) {
+        this.date = date;
     }
 }

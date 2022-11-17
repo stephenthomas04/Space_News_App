@@ -14,4 +14,7 @@
 
     <string name="rover_info">Curiosity is a car-sized Mars rover designed to explore the Gale crater on Mars as part of NASAs Mars Science Laboratory mission. Curiosity was launched from Cape Canaveral on 26 November 2011, at 15:02:00 UTC and landed on Aeolis Palus inside Gale crater on Mars on 6 August 2012, 05:17:57 UTC.</string>
     <string name="marsTitle"><u>Mars</u></string>
+
+
+    <string name="issDefaultInfo">Payloads: Antioxidant Protection: Experiment Containers were installed into Kubik-5. The PROtection MEdiated by antioxidant nanoTEchnOlogy against neuronal damage in space (PROMETEO) (Antioxidant Protection) investigation proposes the use of biocompatible and biodegradable polydopamine-based nanoparticles to provide antioxidant protection to neurons undergoing exposure to altered gravity and cosmic radiation. Cellbox-3: Cellbox-3 Experiment Containers were installed into the …</string>
 </resources>
