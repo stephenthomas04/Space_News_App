@@ -1,4 +1,137 @@
 package com.example.hamburgertester;
 
-public class Satellite {// https://api.n2yo.com/rest/v1/satellite/above/41.702/-76.014/0/70/18/&apiKey=ULABLY-ZTED3R-TZA269-4YF2
+public class Satellite {
+    // https://api.n2yo.com/rest/v1/satellite/above/41.702/-76.014/0/70/18/&apiKey=ULABLY-ZTED3R-TZA269-4YF2
+
+     //https://www.geeksforgeeks.org/how-to-extract-data-from-json-array-in-android-using-volley-library/
+
+     private String name;
+     private double satLatitude;
+     private double satLongitude;
+     private double satAltitude;
+     private double azimuth;
+     private double elevation;
+     private double ra;
+     private double dec;
+     private int timeStamp;
+
+     public Satellite(String name, double satLatitude, double satLongitude, double satAltitude, double azimuth, double elevation, double ra, double dec, int timeStamp) {
+          this.name = name;
+          this.satLatitude = satLatitude;
+          this.satLongitude = satLongitude;
+          this.satAltitude = satAltitude;
+          this.azimuth = azimuth;
+          this.elevation = elevation;
+          this.ra = ra;
+          this.dec = dec;
+          this.timeStamp = timeStamp;
+     }
+
+     public String getName() {
+          return name;
+     }
+
+     public void setName(String name) {
+          this.name = name;
+     }
+
+     public double getSatLatitude() {
+          return satLatitude;
+     }
+
+     public void setSatLatitude(double satLatitude) {
+          this.satLatitude = satLatitude;
+     }
+
+     public double getSatLongitude() {
+          return satLongitude;
+     }
+
+     public void setSatLongitude(double satLongitude) {
+          this.satLongitude = satLongitude;
+     }
+
+     public double getSatAltitude() {
+          return satAltitude;
+     }
+
+     public void setSatAltitude(double satAltitude) {
+          this.satAltitude = satAltitude;
+     }
+
+     public double getAzimuth() {
+          return azimuth;
+     }
+
+     public void setAzimuth(double azimuth) {
+          this.azimuth = azimuth;
+     }
+
+     public double getElevation() {
+          return elevation;
+     }
+
+     public void setElevation(double elevation) {
+          this.elevation = elevation;
+     }
+
+     public double getRa() {
+          return ra;
+     }
+
+     public void setRa(double ra) {
+          this.ra = ra;
+     }
+
+     public double getDec() {
+          return dec;
+     }
+
+     public void setDec(double dec) {
+          this.dec = dec;
+     }
+
+     public int getTimeStamp() {
+          return timeStamp;
+     }
+
+     public void setTimeStamp(int timeStamp) {
+          this.timeStamp = timeStamp;
+     }
+
+
+      /*
+        THIS IS THE REFERENCE
+
+        {
+  "info": {
+    "satname": "SPACE STATION",
+    "satid": 25544,
+    "transactionscount": 5
+  },
+  "positions": [
+    {
+      "satlatitude": -39.90318514,
+      "satlongitude": 158.28897924,
+      "sataltitude": 417.85,
+      "azimuth": 254.31,
+      "elevation": -69.09,
+      "ra": 44.77078138,
+      "dec": -43.99279118,
+      "timestamp": 1521354418
+    },
+    {
+      "satlatitude": -39.86493451,
+      "satlongitude": 158.35261287,
+      "sataltitude": 417.84,
+      "azimuth": 254.33,
+      "elevation": -69.06,
+      "ra": 44.81676119,
+      "dec": -43.98086419,
+      "timestamp": 1521354419
+    }
+  ]
 }
+         */
+}
+

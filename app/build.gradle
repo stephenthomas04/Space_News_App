@@ -48,6 +48,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2' //url image proccesor
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'// gif usage
 
+    implementation 'com.squareup.picasso:picasso:2.71828' //Enguerran's Image Loading Do Not touch
+
     implementation 'com.google.android.material:material:1.2.0-alpha02' // material design
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.0-rc03' // navigation component
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.0-rc03' // navigation component
