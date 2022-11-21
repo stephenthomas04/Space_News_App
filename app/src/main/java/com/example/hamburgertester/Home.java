@@ -1,12 +1,15 @@
 package com.example.hamburgertester;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,24 +68,35 @@ public class Home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        //createTeams();
         return inflater.inflate(R.layout.fragment_home, container, false);
+
     }
 
 
     public void createTeams(){
 
+        Drawable aash = ContextCompat.getDrawable(getActivity(), R.drawable.aashman_pic);
+        Drawable steph = ContextCompat.getDrawable(getActivity(), R.drawable.stephen_profilepic);
+
+        Log.d("Aash", "82 ");
         ArrayList<TeamsObj> team = new ArrayList<>();
 
+        TeamsObj aashman = new TeamsObj(aash, "Aashman", getString(R.string.sampleDesc));
+        team.add(aashman);
+
+        TeamsObj Stephen = new TeamsObj(steph, "Stephen", getString(R.string.sampleDesc));
+        team.add(Stephen);
         
 
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
 
-        RecyclerView recyclerView = getView().findViewById(R.id.tRecyclerView);
+        RecyclerView recyclerView = getView().findViewById(R.id.teamRecycler);
 
         Teams_RecyclerViewAdapter adapter = new Teams_RecyclerViewAdapter(thisContext, team);
 
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(thisContext));
+        recyclerView.setAdapter(adapter);
     }
 }

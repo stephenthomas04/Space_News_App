@@ -168,7 +168,7 @@ public class Apod extends Fragment implements NewsInterface {
                         Log.d("NewsInfo", n.toString());
                     }
 
-                    RecyclerView recyclerView = getView().findViewById(R.id.tRecyclerView);
+                    RecyclerView recyclerView = getView().findViewById(R.id.sRecyclerView);
 
                     news_RecyclerViewAdapter adapter = new news_RecyclerViewAdapter(context, newsArrayList, newsInterface);
                     recyclerView.setLayoutManager(new LinearLayoutManager(context));

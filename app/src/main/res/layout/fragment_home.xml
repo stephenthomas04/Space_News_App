@@ -67,10 +67,9 @@
                             android:textSize="14dp" />
 
                         <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/tRecyclerView"
+                            android:id="@+id/teamRecycler"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:scrollbars="horizontal"
                             />
 
 

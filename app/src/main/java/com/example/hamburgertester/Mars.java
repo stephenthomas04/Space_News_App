@@ -116,7 +116,7 @@ public class Mars extends Fragment {
 
                     LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
 
-                    RecyclerView recyclerView = getView().findViewById(R.id.rRecyclerView);
+                    RecyclerView recyclerView = getView().findViewById(R.id.sRecyclerView);
 
                     MarsRover_RecyclerViewAdapter adapter = new MarsRover_RecyclerViewAdapter(context, newImagesArrayList);
 
