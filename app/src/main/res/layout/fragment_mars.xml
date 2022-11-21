@@ -86,7 +86,7 @@
                         android:text="@string/rover_info" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/mRecyclerView"
+                        android:id="@+id/tRecyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_below="@id/roverInfo"

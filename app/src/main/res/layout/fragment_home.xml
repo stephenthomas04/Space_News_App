@@ -9,72 +9,76 @@
     tools:context=".Home">
 
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text="Welcome, get ready to explore..."
+                            android:textColor="@color/white"
+                            android:textSize="30dp"
+                            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="310dp"
-            android:layout_height="105dp"
-            android:layout_gravity="top"
-            android:gravity="top"
-            android:text="Welcome, get ready to explore..."
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.025" />
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="300dp"
+                            android:layout_height="200dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/homepic1"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.549"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.208" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="300dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:src="@drawable/homepic1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.549"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.208" />
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Our App"
+                            android:textColor="@color/white"
+                            android:textSize="30dp"
+                            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="310dp"
-            android:layout_height="105dp"
-            android:layout_gravity="top"
-            android:gravity="center"
-            android:text="Our App"
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.412" />
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/search_view_background"
+                            android:gravity="center"
+                            android:paddingLeft="1dp"
+                            android:text="The purpose of our app is to provide daily space content to users who use our app. We would do this by including a homepage which contains things like the astronomy picture of the day, the headlines of the day, the next rocket launches coming up and info about planets like earth and mars. All our info is requested by NASA Api's that help us reach our target audience is anyone who enjoys learning and reading about space and takes passion to the current events going on around space."
+                            android:textColor="@color/white"
+                            android:textSize="14dp" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="330dp"
-            android:layout_height="180dp"
-            android:layout_gravity="top"
-            android:background="@drawable/search_view_background"
-            android:gravity="center"
-            android:layout_marginTop="70dp"
-            android:paddingLeft="1dp"
-            android:text="The purpose of our app is to provide daily space content to users who use our app. We would do this by including a homepage which contains things like the astronomy picture of the day, the headlines of the day, the next rocket launches coming up and info about planets like earth and mars. All our info is requested by NASA Api's that help us reach our target audience is anyone who enjoys learning and reading about space and takes passion to the current events going on around space."
-            android:textColor="@color/white"
-            android:textSize="14dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.549"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.545" />
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/tRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scrollbars="horizontal"
+                            />
+
+
+
+                </LinearLayout>
+        </ScrollView>
+
+
 
 
 

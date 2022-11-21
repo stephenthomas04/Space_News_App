@@ -16,6 +16,11 @@ public class Teams_RecyclerViewAdapter extends RecyclerView.Adapter<Teams_Recycl
     Context context;
     ArrayList<TeamsObj> team;
 
+    public Teams_RecyclerViewAdapter(Context context, ArrayList<TeamsObj> team) {
+        this.context = context;
+        this.team = team;
+    }
+
     @NonNull
     @Override
     public Teams_RecyclerViewAdapter.personViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

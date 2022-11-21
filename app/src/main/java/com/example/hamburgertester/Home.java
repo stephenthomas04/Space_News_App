@@ -1,12 +1,17 @@
 package com.example.hamburgertester;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +19,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class Home extends Fragment {
+    Context thisContext;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,5 +66,23 @@ public class Home extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+
+
+    public void createTeams(){
+
+        ArrayList<TeamsObj> team = new ArrayList<>();
+
+        
+
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+
+        RecyclerView recyclerView = getView().findViewById(R.id.tRecyclerView);
+
+        Teams_RecyclerViewAdapter adapter = new Teams_RecyclerViewAdapter(thisContext, team);
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(layoutManager);
     }
 }
