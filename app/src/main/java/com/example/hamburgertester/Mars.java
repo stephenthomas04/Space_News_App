@@ -103,15 +103,24 @@ public class Mars extends Fragment {
 
 
                 try {
+
+                    ArrayList<Images> newImagesArrayList = new ArrayList<>();
+
                     rover = gson.fromJson(response, MarsObj.class);
                     imagesArrayList = rover.getPhotos();
                     Log.d("marsstatus", "object parsed");
+
+                    if(imagesArrayList.size() >= 15){
+                        for (int i = 0; i < 15; i++) {
+                            newImagesArrayList.add(imagesArrayList.get(i));
+                        }
+                    }
 
                     LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
 
                     RecyclerView recyclerView = getView().findViewById(R.id.mRecyclerView);
 
-                    MarsRover_RecyclerViewAdapter adapter = new MarsRover_RecyclerViewAdapter(context, imagesArrayList);
+                    MarsRover_RecyclerViewAdapter adapter = new MarsRover_RecyclerViewAdapter(context, newImagesArrayList);
 
                     recyclerView.setAdapter(adapter);
                     recyclerView.setLayoutManager(layoutManager);
