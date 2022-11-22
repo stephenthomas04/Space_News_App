@@ -78,6 +78,9 @@ public class Home extends Fragment {
 
         Drawable aash = ContextCompat.getDrawable(getActivity(), R.drawable.aashman_pic);
         Drawable steph = ContextCompat.getDrawable(getActivity(), R.drawable.stephen_profilepic);
+        Drawable eng = ContextCompat.getDrawable(getActivity(), R.drawable.astronaut); //Placeholder image
+
+        //The Png is working for me at home its weird ill do it in class - Enguerran
 
         Log.d("Aash", "82 ");
         ArrayList<TeamsObj> team = new ArrayList<>();
@@ -87,6 +90,11 @@ public class Home extends Fragment {
 
         TeamsObj Stephen = new TeamsObj(steph, "Stephen", getString(R.string.sampleDesc));
         team.add(Stephen);
+
+        TeamsObj Enguerran = new TeamsObj(eng, "Enguerran", getString(R.string.sampleDesc));
+        team.add(Enguerran);
+
+
         
 
 
