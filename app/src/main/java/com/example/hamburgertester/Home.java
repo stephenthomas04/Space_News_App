@@ -72,9 +72,8 @@ public class Home extends Fragment {
         // Inflate the layout for this fragment
         Drawable aash = ContextCompat.getDrawable(getActivity(), R.drawable.aashman_pic);
         Drawable steph = ContextCompat.getDrawable(getActivity(), R.drawable.stephen_profilepic);
-        Drawable eng = ContextCompat.getDrawable(getActivity(), R.drawable.astronaut); //Placeholder image
+        Drawable eng = ContextCompat.getDrawable(getActivity(), R.drawable.enguerranpfp);
 
-        //The Png is working for me at home its weird ill do it in class - Enguerran
 
 
         ArrayList<TeamsObj> team = new ArrayList<>();
@@ -85,7 +84,7 @@ public class Home extends Fragment {
         TeamsObj Stephen = new TeamsObj(steph, "Stephen", getString(R.string.ST_desc));
         team.add(Stephen);
 
-        TeamsObj Enguerran = new TeamsObj(eng, "Enguerran", getString(R.string.sampleDesc));
+        TeamsObj Enguerran = new TeamsObj(eng, "Enguerran", getString(R.string.EP_desc));
         team.add(Enguerran);
 
 

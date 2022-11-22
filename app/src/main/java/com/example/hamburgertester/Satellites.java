@@ -1,5 +1,6 @@
 package com.example.hamburgertester;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -12,10 +13,12 @@ import android.view.ViewGroup;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,6 +48,10 @@ public class Satellites extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     private RecyclerView satelliteRecyclerView;
+
+
+    Activity activity = getActivity();
+
 
     private Satellite_RecyclerViewAdapter satelliteAdapter;
     private ArrayList<Satellite> satelliteArrayListMainActivity;
@@ -82,10 +89,12 @@ public class Satellites extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+
         satelliteArrayListMainActivity = new ArrayList<>();
         getData();
 
-        satelliteRecyclerView = getView().findViewById(R.id.satelliteRecyclerView);
+
 
 
 
@@ -168,8 +177,20 @@ public class Satellites extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View rootView = inflater.inflate(R.layout.fragment_satellites, container, false);
+        final FragmentActivity c = getActivity();
+        satelliteArrayListMainActivity = new ArrayList<>();
+
+        final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(c);
+        satelliteRecyclerView.setLayoutManager(linearLayoutManager );
 
 
-        return inflater.inflate(R.layout.fragment_satellites, container, false);
+        satelliteRecyclerView = (RecyclerView) rootView.findViewById(R.id.satelliteRecyclerView);
+
+        //https://stackoverflow.com/questions/35489177/recyclerview-with-null-pointer-exception
+
+
+       // Old return return inflater.inflate(R.layout.fragment_satellites, container, false);
+        return rootView;
     }
 }

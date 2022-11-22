@@ -28,4 +28,7 @@
     <string name="satelliteSampleLong">Longitude: 88.0648</string>
     <string name="satelliteSampleAlt">Altitude: 741</string>
     <!-- These are the fremd coords :) -->
+
+    <string name="EP_desc">ITS LIGHTS OUT AND AWAY WE GO</string>
+
 </resources>
