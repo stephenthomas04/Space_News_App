@@ -6,25 +6,18 @@ public class Satellite {
      //https://www.geeksforgeeks.org/how-to-extract-data-from-json-array-in-android-using-volley-library/
 
      private String name;
-     private double satLatitude;
-     private double satLongitude;
-     private double satAltitude;
-     private double azimuth;
-     private double elevation;
-     private double ra;
-     private double dec;
-     private int timeStamp;
+     private String satLatitude;
+     private String satLongitude;
+     private String satAltitude;
 
-     public Satellite(String name, double satLatitude, double satLongitude, double satAltitude, double azimuth, double elevation, double ra, double dec, int timeStamp) {
+
+
+     public Satellite(String name, String satLatitude, String satLongitude, String satAltitude) {
           this.name = name;
           this.satLatitude = satLatitude;
           this.satLongitude = satLongitude;
           this.satAltitude = satAltitude;
-          this.azimuth = azimuth;
-          this.elevation = elevation;
-          this.ra = ra;
-          this.dec = dec;
-          this.timeStamp = timeStamp;
+
      }
 
      public String getName() {
@@ -35,69 +28,30 @@ public class Satellite {
           this.name = name;
      }
 
-     public double getSatLatitude() {
+     public String getSatLatitude() {
           return satLatitude;
      }
 
-     public void setSatLatitude(double satLatitude) {
+     public void setSatLatitude(String satLatitude) {
           this.satLatitude = satLatitude;
      }
 
-     public double getSatLongitude() {
+     public String getSatLongitude() {
           return satLongitude;
      }
 
-     public void setSatLongitude(double satLongitude) {
+     public void setSatLongitude(String satLongitude) {
           this.satLongitude = satLongitude;
      }
 
-     public double getSatAltitude() {
+     public String getSatAltitude() {
           return satAltitude;
      }
 
-     public void setSatAltitude(double satAltitude) {
+     public void setSatAltitude(String satAltitude) {
           this.satAltitude = satAltitude;
      }
 
-     public double getAzimuth() {
-          return azimuth;
-     }
-
-     public void setAzimuth(double azimuth) {
-          this.azimuth = azimuth;
-     }
-
-     public double getElevation() {
-          return elevation;
-     }
-
-     public void setElevation(double elevation) {
-          this.elevation = elevation;
-     }
-
-     public double getRa() {
-          return ra;
-     }
-
-     public void setRa(double ra) {
-          this.ra = ra;
-     }
-
-     public double getDec() {
-          return dec;
-     }
-
-     public void setDec(double dec) {
-          this.dec = dec;
-     }
-
-     public int getTimeStamp() {
-          return timeStamp;
-     }
-
-     public void setTimeStamp(int timeStamp) {
-          this.timeStamp = timeStamp;
-     }
 
 
       /*
