@@ -13,10 +13,11 @@
         android:layout_gravity="top"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="0dp"
+        android:fontFamily="@font/open_sans"
         android:background="@drawable/search_view_background"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/dark_grey"
         android:gravity="center"
-        android:text="Satellite Screen"
+        android:text="Satellites"
         android:textColor="@color/white"
         android:textSize="40dp"
         android:textStyle="bold" />

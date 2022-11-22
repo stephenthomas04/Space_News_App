@@ -48,8 +48,9 @@ public class Satellites extends Fragment {
 
     private Satellite_RecyclerViewAdapter satelliteAdapter;
     private ArrayList<Satellite> satelliteArrayListMainActivity;
-    //This is the url for the api
-    String url = "https://api.n2yo.com/rest/v1/satellite/above/41.702/-76.014/0/70/18/&apiKey=ULABLY-ZTED3R-TZA269-4YF2";
+    //This is the url for one of the Satellite's Apis
+    //There might be more urls based off how the APi works, still gotta look into that.
+    String url1 = "https://api.n2yo.com/rest/v1/satellite/above/41.702/-76.014/0/70/18/&apiKey=ULABLY-ZTED3R-TZA269-4YF2";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -99,7 +100,7 @@ public class Satellites extends Fragment {
 
         RequestQueue queue = Volley.newRequestQueue(getContext());
 
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url1, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 satelliteRecyclerView.setVisibility(View.VISIBLE);

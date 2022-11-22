@@ -22,11 +22,10 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/satelliteHeadingRow"
+                android:id="@+id/satelliteNameRow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/satelliteImageRow"
@@ -35,7 +34,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/chivo_regular"
                 android:gravity="center"
-                android:text="@string/Title"
+                android:text="@string/sampleSatelliteName"
                 android:textColor="@color/light_blue"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -44,10 +43,10 @@
 
 
             <TextView
-                android:id="@+id/satelliteDesc"
+                android:id="@+id/satelliteLatitude"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/satelliteHeadingRow"
+                android:layout_below="@id/SatelliteTitleNameRow"
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
@@ -55,13 +54,54 @@
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
-                android:text="@string/issDefaultInfo"
+                android:text="@string/satelliteSampleLat"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/satelliteHeadingRow" />
+                app:layout_constraintTop_toBottomOf="@+id/satelliteNameRow" />
+
+
+            <TextView
+                android:id="@+id/SatelliteLongitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/satelliteLatitude"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:text="@string/satelliteSampleLong"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/satelliteLatitude" />
+
+            <TextView
+                android:id="@+id/SatelliteAltitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/SatelliteLongitude"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:text="@string/satelliteSampleAlt"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SatelliteLongitude" />
 
             <TextView
                 android:id="@+id/SatelliteTitleNameRow"
@@ -93,10 +133,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/SatelliteTitleNameRow"
                 app:srcCompat="@drawable/satelittle" />
+
         </RelativeLayout>
 
 
 
     </androidx.cardview.widget.CardView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

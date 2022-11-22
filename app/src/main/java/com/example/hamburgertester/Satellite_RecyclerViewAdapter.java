@@ -38,8 +38,9 @@ public class Satellite_RecyclerViewAdapter extends RecyclerView.Adapter<Satellit
         // setting data to our views of recycler view.
         Satellite satellite = satelliteArrayList.get(position);
         holder.SatelliteNameTV.setText(satellite.getName());
-        //holder.SatelliteHeadingTV.setText(//satellite.getSatLatitude());
-       // holder.SatelliteDesc.setText(satellite.getName()); //TEMPORARY
+        holder.SatelliteLatitude.setText(satellite.getSatLongitude());
+        holder.SatelliteLongitude.setText(satellite.getSatLongitude()); //TEMPORARY
+        holder.SatelliteAltitude.setText(satellite.getSatAltitude());
 
     }
 
@@ -51,16 +52,17 @@ public class Satellite_RecyclerViewAdapter extends RecyclerView.Adapter<Satellit
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // creating variables for our views.
-        private TextView SatelliteNameTV, SatelliteHeadingTV, SatelliteDesc;
+        private TextView SatelliteNameTV, SatelliteLatitude, SatelliteLongitude,SatelliteAltitude;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             // initializing our views with their ids.
-            SatelliteDesc = itemView.findViewById(R.id.satelliteDesc);
-            SatelliteHeadingTV = itemView.findViewById(R.id.satelliteHeadingRow);
-            SatelliteNameTV = itemView.findViewById(R.id.satelliteMenu);
+            SatelliteLatitude = itemView.findViewById(R.id.satelliteLatitude);
+            SatelliteLongitude = itemView.findViewById(R.id.SatelliteLongitude);
+            SatelliteAltitude = itemView.findViewById(R.id.SatelliteAltitude);
+            SatelliteNameTV = itemView.findViewById(R.id.satelliteNameRow);
         }
     }
 }
