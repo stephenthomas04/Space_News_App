@@ -81,9 +81,11 @@ public class Satellites extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        satelliteRecyclerView = getView().findViewById(R.id.satelliteRecyclerView);
         satelliteArrayListMainActivity = new ArrayList<>();
         getData();
+
+        satelliteRecyclerView = getView().findViewById(R.id.satelliteRecyclerView);
+
 
 
 

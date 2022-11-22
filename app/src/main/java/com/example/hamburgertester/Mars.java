@@ -20,7 +20,10 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -82,10 +85,14 @@ public class Mars extends Fragment {
     }
 
     public void roverRequest(Context context){
-        int sol = 3651;
+        String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+
+        Integer offsetDay = Integer.parseInt(date.substring(0,2)) - 2;
+
+        date = date.substring(6) + "-" + date.substring(3,5) + "-" + offsetDay;
 
         String api_key = "vzch0p2dvpdzzKxLNnosLvbbwDxVxb3nqsjlXkYB";
-        String Url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=" +sol+"&camera=navcam&api_key=" + api_key;
+        String Url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date="+date+ "&api_key=" + api_key;
 
 
 

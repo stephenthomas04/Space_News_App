@@ -67,22 +67,16 @@ public class Home extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         // Inflate the layout for this fragment
-        //createTeams();
-        return inflater.inflate(R.layout.fragment_home, container, false);
-
-    }
-
-
-    public void createTeams(){
-
         Drawable aash = ContextCompat.getDrawable(getActivity(), R.drawable.aashman_pic);
         Drawable steph = ContextCompat.getDrawable(getActivity(), R.drawable.stephen_profilepic);
         Drawable eng = ContextCompat.getDrawable(getActivity(), R.drawable.astronaut); //Placeholder image
 
         //The Png is working for me at home its weird ill do it in class - Enguerran
 
-        Log.d("Aash", "82 ");
+
         ArrayList<TeamsObj> team = new ArrayList<>();
 
         TeamsObj aashman = new TeamsObj(aash, "Aashman", getString(R.string.sampleDesc));
@@ -95,16 +89,25 @@ public class Home extends Fragment {
         team.add(Enguerran);
 
 
-        
 
 
 
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+
+
+/*
         RecyclerView recyclerView = getView().findViewById(R.id.teamRecycler);
+
 
         Teams_RecyclerViewAdapter adapter = new Teams_RecyclerViewAdapter(thisContext, team);
 
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(thisContext));
-        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(layoutManager);
+*/
+
+        return inflater.inflate(R.layout.fragment_home, container, false);
+
     }
+
 }
