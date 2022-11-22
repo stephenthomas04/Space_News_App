@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardBackgroundColor="#F5F5F5">
+        app:cardBackgroundColor="@color/baige">
 
         <RelativeLayout
             android:layout_width="match_parent"
