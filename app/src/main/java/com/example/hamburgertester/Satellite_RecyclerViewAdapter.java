@@ -62,7 +62,7 @@ public class Satellite_RecyclerViewAdapter extends RecyclerView.Adapter<Satellit
             SatelliteLatitude = itemView.findViewById(R.id.satelliteLatitude);
             SatelliteLongitude = itemView.findViewById(R.id.SatelliteLongitude);
             SatelliteAltitude = itemView.findViewById(R.id.SatelliteAltitude);
-            SatelliteNameTV = itemView.findViewById(R.id.satelliteNameRow);
+            //SatelliteNameTV = itemView.findViewById(R.id.satelliteNameRow);
         }
     }
 }
