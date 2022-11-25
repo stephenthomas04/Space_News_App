@@ -92,15 +92,6 @@ public class Satellites extends Fragment {
         super.onCreate(savedInstanceState);
 
 
-
-        satelliteArrayListMainActivity = new ArrayList<>();
-        getData();
-
-
-
-
-
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -185,6 +176,9 @@ public class Satellites extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        satelliteArrayListMainActivity = new ArrayList<>();
+        getData();
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_satellites, container, false);
         FragmentActivity c = getActivity();
