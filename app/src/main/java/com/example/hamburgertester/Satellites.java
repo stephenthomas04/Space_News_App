@@ -109,7 +109,7 @@ public class Satellites extends Fragment {
 
     private void getData(){
 
-        RequestQueue queue = Volley.newRequestQueue(context);
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url1, null, new Response.Listener<JSONArray>() {
             @Override
@@ -134,7 +134,30 @@ public class Satellites extends Fragment {
 
                         satelliteArrayListMainActivity.add(new Satellite(satName,satelliteLatitude,satelliteLongitude,satAltitude));
 
-                        buildRecyclerView();
+                        LinearLayoutManager manager = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
+
+                        // initializing our adapter class.
+                        RecyclerView recyclerView = getView().findViewById(R.id.satelliteRecyclerView);
+
+
+                        satelliteAdapter = new Satellite_RecyclerViewAdapter(satelliteArrayListMainActivity,context);
+
+                        // adding layout manager
+                        // to our recycler view.
+
+                        recyclerView.setHasFixedSize(true);
+
+                        recyclerView.setAdapter(satelliteAdapter);
+
+                        // setting layout manager
+                        // to our recycler view.
+                        recyclerView.setLayoutManager(manager);
+
+                        // setting adapter to
+                        // our recycler view.
+
+
+
                         Log.i("Enguerran" , "Satellite items put in array");
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -156,32 +179,6 @@ public class Satellites extends Fragment {
         });
         queue.add(jsonArrayRequest);
     }
-    private void buildRecyclerView() {
-
-        LinearLayoutManager manager = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
-
-        // initializing our adapter class.
-        RecyclerView recyclerView = getView().findViewById(R.id.satelliteRecyclerView);
-
-
-        satelliteAdapter = new Satellite_RecyclerViewAdapter(satelliteArrayListMainActivity,context);
-
-        // adding layout manager
-        // to our recycler view.
-
-        recyclerView.setHasFixedSize(true);
-
-        recyclerView.setAdapter(satelliteAdapter);
-
-        // setting layout manager
-        // to our recycler view.
-        recyclerView.setLayoutManager(manager);
-
-        // setting adapter to
-        // our recycler view.
-
-    }
-
 
 
 
@@ -190,11 +187,11 @@ public class Satellites extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_satellites, container, false);
-        final FragmentActivity c = getActivity();
+        FragmentActivity c = getActivity();
         satelliteArrayListMainActivity = new ArrayList<>();
 
-        final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(c);
-        satelliteRecyclerView.setLayoutManager(linearLayoutManager );
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(c);
+        satelliteRecyclerView.setLayoutManager(linearLayoutManager);
 
 
         satelliteRecyclerView = (RecyclerView) rootView.findViewById(R.id.satelliteRecyclerView);

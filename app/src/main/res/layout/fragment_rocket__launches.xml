@@ -5,11 +5,9 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/spacebackground"
-    tools:context=".Earth">
+    tools:context=".MainActivity">
 
-
-
-
+    
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
