@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -110,6 +111,7 @@ public class Satellites extends Fragment {
                     // creating a new json object and
                     // getting each object from our json array.
                     try {
+                        TextView textView = getView().findViewById(R.id.satNameTestTV);
                         // we are getting each json object.
                         JSONObject responseObj = response.getJSONObject(i);
 
@@ -122,7 +124,9 @@ public class Satellites extends Fragment {
                         String satAltitude = responseObj.getString("sataltitude");
                         String satName = responseObj.getString("satname");
 
+                        textView.setText(satelliteLatitude);
 
+                        /*
                         satelliteArrayListMainActivity.add(new Satellite(satName,satelliteLatitude,satelliteLongitude,satAltitude));
 
                         LinearLayoutManager manager = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
@@ -146,15 +150,13 @@ public class Satellites extends Fragment {
 
                         // setting adapter to
                         // our recycler view.
-
+                        */
 
 
                         Log.i("Enguerran" , "Satellite items put in array");
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-
-
 
                 }
 
@@ -179,19 +181,21 @@ public class Satellites extends Fragment {
 
         context = getActivity();
 
-        satelliteArrayListMainActivity = new ArrayList<>();
+        //satelliteArrayListMainActivity = new ArrayList<>();
         getData(context);
         // Inflate the layout for this fragment
 
 
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
-        satelliteRecyclerView.setLayoutManager(linearLayoutManager);
+        //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+        //satelliteRecyclerView.setLayoutManager(linearLayoutManager);
 
 
-        satelliteRecyclerView =  getView().findViewById(R.id.satelliteRecyclerView);
+        //satelliteRecyclerView =  getView().findViewById(R.id.satelliteRecyclerView);
 
         //https://stackoverflow.com/questions/35489177/recyclerview-with-null-pointer-exception
+
+
 
 
        // Old return return inflater.inflate(R.layout.fragment_satellites, container, false);
