@@ -10,10 +10,7 @@
         android:id="@+id/apodMenu"
         android:icon="@drawable/apod"
         android:title="APOD"/>
-    <item
-        android:id="@+id/earthMenu"
-        android:icon="@drawable/earth"
-        android:title="EARTH"/>
+
     <item
         android:id="@+id/marsMenu"
         android:icon="@drawable/mars"

@@ -14,11 +14,7 @@
         android:name="com.example.hamburgertester.Apod"
         android:label="APOD"
         tools:layout="@layout/fragment_apod" />
-    <fragment
-        android:id="@+id/earthMenu"
-        android:name="com.example.hamburgertester.Earth"
-        android:label="Earth"
-        tools:layout="@layout/fragment_earth" />
+
     <fragment
         android:id="@+id/marsMenu"
         android:name="com.example.hamburgertester.Mars"
