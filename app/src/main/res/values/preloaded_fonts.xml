@@ -9,5 +9,8 @@
         <item>@font/comfortaa</item>
         <item>@font/comic_neue_light</item>
         <item>@font/coming_soon</item>
+        <item>@font/space_grotesk</item>
+        <item>@font/space_grotesk_light</item>
+        <item>@font/space_mono</item>
     </array>
 </resources>

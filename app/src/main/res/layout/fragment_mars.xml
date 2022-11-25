@@ -68,6 +68,7 @@
                         android:background="@drawable/mars_viewbg"
                         android:fontFamily="@font/open_sans"
                         android:gravity="center"
+
                         android:text="@string/mars_info"
                         android:textColor="@color/black"
                         android:textSize="15dp" />

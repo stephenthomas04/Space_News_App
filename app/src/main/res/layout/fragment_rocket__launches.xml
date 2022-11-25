@@ -8,6 +8,8 @@
     tools:context=".Earth">
 
 
+
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,24 +21,26 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/animationView"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_gravity="center"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/rocketanim_green" />
+                android:id="@+id/animationView"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/rocketanim_green" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:background="@drawable/blue_gradient"
                 android:layout_marginTop="5dp"
+                android:background="@drawable/blue_gradient"
                 android:paddingLeft="15dp"
                 android:paddingTop="2dp"
-                android:paddingRight="15dp" /></LinearLayout>
+                android:paddingRight="15dp" />
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </RelativeLayout>
