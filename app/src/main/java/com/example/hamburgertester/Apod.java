@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -169,6 +171,7 @@ public class Apod extends Fragment implements NewsInterface {
                     }
 
                     RecyclerView recyclerView = getView().findViewById(R.id.sRecyclerView);
+
 
                     news_RecyclerViewAdapter adapter = new news_RecyclerViewAdapter(context, newsArrayList, newsInterface);
                     recyclerView.setLayoutManager(new LinearLayoutManager(context));

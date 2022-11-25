@@ -42,6 +42,8 @@ import java.util.ArrayList;
  */
 public class Satellites extends Fragment {
 
+    Context context;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -107,7 +109,7 @@ public class Satellites extends Fragment {
 
     private void getData(){
 
-        RequestQueue queue = Volley.newRequestQueue(getContext());
+        RequestQueue queue = Volley.newRequestQueue(context);
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url1, null, new Response.Listener<JSONArray>() {
             @Override
@@ -128,7 +130,10 @@ public class Satellites extends Fragment {
                         String satelliteLongitude = responseObj.getString("satlongitude");
                         String satAltitude = responseObj.getString("sataltitude");
                         String satName = responseObj.getString("satname");
+
+
                         satelliteArrayListMainActivity.add(new Satellite(satName,satelliteLatitude,satelliteLongitude,satAltitude));
+
                         buildRecyclerView();
                         Log.i("Enguerran" , "Satellite items put in array");
                     } catch (JSONException e) {
@@ -153,21 +158,28 @@ public class Satellites extends Fragment {
     }
     private void buildRecyclerView() {
 
+        LinearLayoutManager manager = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
+
         // initializing our adapter class.
-        satelliteAdapter = new Satellite_RecyclerViewAdapter(satelliteArrayListMainActivity,getContext());
+        RecyclerView recyclerView = getView().findViewById(R.id.satelliteRecyclerView);
+
+
+        satelliteAdapter = new Satellite_RecyclerViewAdapter(satelliteArrayListMainActivity,context);
 
         // adding layout manager
         // to our recycler view.
-        LinearLayoutManager manager = new LinearLayoutManager(getContext());
-        satelliteRecyclerView.setHasFixedSize(true);
+
+        recyclerView.setHasFixedSize(true);
+
+        recyclerView.setAdapter(satelliteAdapter);
 
         // setting layout manager
         // to our recycler view.
-        satelliteRecyclerView.setLayoutManager(manager);
+        recyclerView.setLayoutManager(manager);
 
         // setting adapter to
         // our recycler view.
-        satelliteRecyclerView.setAdapter(satelliteAdapter);
+
     }
 
 
