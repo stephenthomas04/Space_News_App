@@ -103,7 +103,7 @@ public class ISS extends Fragment {
 
         // below line we are creating a new array list
         iss_objectArrayList = new ArrayList<>();
-        getData();
+        issReportsApi();
 
         // calling method to
         // build recycler view.
@@ -187,7 +187,7 @@ public class ISS extends Fragment {
 
 
     //Start of the Report API
-    private void getData() {
+    private void issReportsApi() {
         // creating a new variable for our request queue
         RequestQueue queue = Volley.newRequestQueue(context);
         // in this case the data we are getting is in the form
