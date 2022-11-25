@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -79,6 +80,7 @@ public class Mars extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         thisContext = getActivity();
+
         roverRequest(thisContext);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_mars, container, false);
@@ -122,6 +124,9 @@ public class Mars extends Fragment {
                     }
 
                     LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+
+                    TextView v = getView().findViewById(R.id.mars_title);
+                    Log.d("cheese", v.toString());
 
                     RecyclerView recyclerView = getView().findViewById(R.id.sRecyclerView);
 
