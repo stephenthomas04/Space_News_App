@@ -24,7 +24,7 @@
         android:title="ISS"/>
     <item
         android:id="@+id/satelliteMenu"
-        android:icon="@drawable/satelittle"
+        android:icon="@drawable/satellite"
         android:title="SATELLITE"/>
     <item
         android:id="@+id/rocket_launchesMenu"
