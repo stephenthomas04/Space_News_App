@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     app:startDestination="@id/homeMenu">
-
     <fragment
         android:id="@+id/homeMenu"
-        android:name="com.example.hamburgertester.Home"
+        android:name="com.example.hamburgertester.home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
@@ -40,4 +39,5 @@
         android:name="com.example.hamburgertester.Rocket_Launches"
         android:label="Rocket_Launches"
         tools:layout="@layout/fragment_rocket__launches"/>
+
 </navigation>
