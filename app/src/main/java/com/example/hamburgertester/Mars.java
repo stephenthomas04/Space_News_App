@@ -87,7 +87,7 @@ public class Mars extends Fragment {
     public void roverRequest(Context context){
         String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
-        Integer offsetDay = Integer.parseInt(date.substring(0,2)) - 2;
+        Integer offsetDay = Integer.parseInt(date.substring(0,2)) - 5;
 
         date = date.substring(6) + "-" + date.substring(3,5) + "-" + offsetDay;
 
