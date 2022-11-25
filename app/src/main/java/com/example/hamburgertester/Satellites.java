@@ -98,9 +98,9 @@ public class Satellites extends Fragment {
         }
     }
 
-    private void getData(){
+    private void getData(Context context){
 
-        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        RequestQueue queue = Volley.newRequestQueue(context);
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url1, null, new Response.Listener<JSONArray>() {
             @Override
@@ -177,23 +177,24 @@ public class Satellites extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        satelliteArrayListMainActivity = new ArrayList<>();
-        getData();
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_satellites, container, false);
-        FragmentActivity c = getActivity();
-        satelliteArrayListMainActivity = new ArrayList<>();
+        context = getActivity();
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(c);
+        satelliteArrayListMainActivity = new ArrayList<>();
+        getData(context);
+        // Inflate the layout for this fragment
+
+
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         satelliteRecyclerView.setLayoutManager(linearLayoutManager);
 
 
-        satelliteRecyclerView = (RecyclerView) rootView.findViewById(R.id.satelliteRecyclerView);
+        satelliteRecyclerView =  getView().findViewById(R.id.satelliteRecyclerView);
 
         //https://stackoverflow.com/questions/35489177/recyclerview-with-null-pointer-exception
 
 
        // Old return return inflater.inflate(R.layout.fragment_satellites, container, false);
-        return rootView;
+        return inflater.inflate(R.layout.fragment_satellites, container, false);
     }
 }
