@@ -44,20 +44,19 @@ import java.util.ArrayList;
 public class Satellites extends Fragment {
 
     Context context;
+    Satellite_RecyclerViewAdapter satelliteAdapter;
+    ArrayList<Satellite> satelliteArrayListMainActivity;
+    RecyclerView satelliteRecyclerView;
+    Activity activity = getActivity();
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private RecyclerView satelliteRecyclerView;
 
 
-    Activity activity = getActivity();
-
-
-    private Satellite_RecyclerViewAdapter satelliteAdapter;
-    private ArrayList<Satellite> satelliteArrayListMainActivity;
     //This is the url for one of the Satellite's Apis
     //There might be more urls based off how the APi works, still gotta look into that.
     String url1 = "https://api.n2yo.com/rest/v1/satellite/above/41.702/-76.014/0/70/18/&apiKey=ULABLY-ZTED3R-TZA269-4YF2";
@@ -98,6 +97,22 @@ public class Satellites extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        context = getActivity();
+
+        //satelliteArrayListMainActivity = new ArrayList<>();
+        getData(context);
+        // Inflate the layout for this fragment
+
+        //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+        //satelliteRecyclerView.setLayoutManager(linearLayoutManager);
+        //satelliteRecyclerView =  getView().findViewById(R.id.satelliteRecyclerView);
+        //https://stackoverflow.com/questions/35489177/recyclerview-with-null-pointer-exception
+        // Old return return inflater.inflate(R.layout.fragment_satellites, container, false);
+        return inflater.inflate(R.layout.fragment_satellites, container, false);
+    }
 
     private void getData(Context context){
 
@@ -105,12 +120,15 @@ public class Satellites extends Fragment {
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url1, null, new Response.Listener<JSONArray>() {
             @Override
+
             public void onResponse(JSONArray response) {
                 satelliteRecyclerView.setVisibility(View.VISIBLE);
                 for (int i = 0; i < response.length(); i++) {
                     // creating a new json object and
                     // getting each object from our json array.
+                    Log.i("Enguerran", "Before Try");
                     try {
+                        Log.i("Enguerran", "After Try");
                         TextView textView = getView().findViewById(R.id.satNameTestTV);
                         // we are getting each json object.
                         JSONObject responseObj = response.getJSONObject(i);
@@ -126,11 +144,12 @@ public class Satellites extends Fragment {
 
                         textView.setText(satelliteLatitude);
 
+                        Log.i("Enguerran", satelliteLatitude);
+
+                        Satellite SatelliteTryCatch = new Satellite(satName,satelliteLatitude,satelliteLongitude,satAltitude);
+
+                       // LinearLayoutManager manager = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
                         /*
-                        satelliteArrayListMainActivity.add(new Satellite(satName,satelliteLatitude,satelliteLongitude,satAltitude));
-
-                        LinearLayoutManager manager = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
-
                         // initializing our adapter class.
                         RecyclerView recyclerView = getView().findViewById(R.id.satelliteRecyclerView);
 
@@ -151,6 +170,8 @@ public class Satellites extends Fragment {
                         // setting adapter to
                         // our recycler view.
                         */
+                        satelliteArrayListMainActivity.set(0,SatelliteTryCatch);
+                        satelliteAdapter.notifyItemChanged(0);
 
 
                         Log.i("Enguerran" , "Satellite items put in array");
@@ -170,35 +191,9 @@ public class Satellites extends Fragment {
                 Log.i("Enguerran", "Satellites failed to get data");
             }
         });
+
         queue.add(jsonArrayRequest);
     }
 
 
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        context = getActivity();
-
-        //satelliteArrayListMainActivity = new ArrayList<>();
-        getData(context);
-        // Inflate the layout for this fragment
-
-
-
-        //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
-        //satelliteRecyclerView.setLayoutManager(linearLayoutManager);
-
-
-        //satelliteRecyclerView =  getView().findViewById(R.id.satelliteRecyclerView);
-
-        //https://stackoverflow.com/questions/35489177/recyclerview-with-null-pointer-exception
-
-
-
-
-       // Old return return inflater.inflate(R.layout.fragment_satellites, container, false);
-        return inflater.inflate(R.layout.fragment_satellites, container, false);
-    }
 }
