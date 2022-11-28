@@ -103,11 +103,11 @@ public class ISS extends Fragment {
 
         // below line we are creating a new array list
         iss_objectArrayList = new ArrayList<>();
-        issReportsApi();
+//        issReportsApi();
 
         // calling method to
         // build recycler view.
-        buildRecyclerView();
+//        buildRecyclerView();
         
       /*  IssUpdates_RecyclerViewAdapter adapter = new IssUpdates_RecyclerViewAdapter(context, iss_objectArrayList);
         recyclerView.setAdapter(adapter);
@@ -120,12 +120,7 @@ public class ISS extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         context = getActivity();
-        Log.d("Enguerran", "onCreateView is displaying" );
         locationApi();
-        Log.d("Enguerran", "onCreateView is displaying 12212" );
-
-
-
         return inflater.inflate(R.layout.fragment_iss, container, false);
     }
 
@@ -148,8 +143,8 @@ public class ISS extends Fragment {
 
                     //The round num function rounds things to the decimal place
 
-                    double getLat =  roundNum(iss.getLatitude());
-                    double getLong =  roundNum(iss.getLongitude());
+                    double getLat = roundNum(iss.getLatitude());
+                    double getLong = roundNum(iss.getLongitude());
 
                     //set info from class here
                     issLocation = (TextView) getView().findViewById(R.id.issLocation);
@@ -173,82 +168,84 @@ public class ISS extends Fragment {
 
     }
 
-    public void reportAPi(){
+//    public void reportAPi(){
+//
+//    }
 
-    }
-
-    public double roundNum(double x){
+    public double roundNum(double x) {
 
         double total;
         total = 0.001 * floor(x * 1000.0); // Before it was 0.01 * floor(x * 100) to return a single decimal point
         return total;
 
     }
-
-
-    //Start of the Report API
-    private void issReportsApi() {
-        // creating a new variable for our request queue
-        RequestQueue queue = Volley.newRequestQueue(context);
-        // in this case the data we are getting is in the form
-        // of array so we are making a json array request.
-        // below is the line where we are making an json array
-        // request and then extracting data from each json object.
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, Iss_UpdatesUrl, null, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                iss_UpdatesRecyclerView.setVisibility(View.VISIBLE);
-                for (int i = 0; i < response.length(); i++) {
-                    // creating a new json object and
-                    // getting each object from our json array.
-                    try {
-                        // we are getting each json object.
-                        JSONObject responseObj = response.getJSONObject(i);
-
-                        // now we get our response from API in json object format.
-                        // in below line we are extracting a string with
-                        // its key value from our json object.
-                        // similarly we are extracting all the strings from our json object.
-                        String updateTitles = responseObj.getString("title");
-                        String updateUrl = responseObj.getString("url");
-                        String updateDate = responseObj.getString("publishedAt");
-                        String updateSummary = responseObj.getString("summary");
-                        String updateImageURl = responseObj.getString("imageUrl");
-
-
-                        iss_objectArrayList.add(new ISS_Updates(updateTitles, updateUrl, updateImageURl,
-                                updateSummary, updateDate));
-                        buildRecyclerView();
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(context, "Fail to get the data..", Toast.LENGTH_SHORT).show();
-            }
-        });
-        queue.add(jsonArrayRequest);
-    }
-
-    private void buildRecyclerView() {
-
-        // initializing our adapter class.
-        iss_UpdatesAdapter = new ISS_RecyclerViewAdapter(iss_objectArrayList,context);
-
-        // adding layout manager
-        // to our recycler view.
-        LinearLayoutManager manager = new LinearLayoutManager(context);
-        iss_UpdatesRecyclerView.setHasFixedSize(true);
-
-        // setting layout manager
-        // to our recycler view.
-        iss_UpdatesRecyclerView.setLayoutManager(manager);
-
-        // setting adapter to
-        // our recycler view.
-        iss_UpdatesRecyclerView.setAdapter(iss_UpdatesAdapter);
-    }
 }
+
+
+
+//    //Start of the Report API
+//    private void issReportsApi() {
+//        // creating a new variable for our request queue
+//        RequestQueue queue = Volley.newRequestQueue(context);
+//        // in this case the data we are getting is in the form
+//        // of array so we are making a json array request.
+//        // below is the line where we are making an json array
+//        // request and then extracting data from each json object.
+//        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, Iss_UpdatesUrl, null, new Response.Listener<JSONArray>() {
+//            @Override
+//            public void onResponse(JSONArray response) {
+//                iss_UpdatesRecyclerView.setVisibility(View.VISIBLE);
+//                for (int i = 0; i < response.length(); i++) {
+//                    // creating a new json object and
+//                    // getting each object from our json array.
+//                    try {
+//                        // we are getting each json object.
+//                        JSONObject responseObj = response.getJSONObject(i);
+//
+//                        // now we get our response from API in json object format.
+//                        // in below line we are extracting a string with
+//                        // its key value from our json object.
+//                        // similarly we are extracting all the strings from our json object.
+//                        String updateTitles = responseObj.getString("title");
+//                        String updateUrl = responseObj.getString("url");
+//                        String updateDate = responseObj.getString("publishedAt");
+//                        String updateSummary = responseObj.getString("summary");
+//                        String updateImageURl = responseObj.getString("imageUrl");
+//
+//
+//                        iss_objectArrayList.add(new ISS_Updates(updateTitles, updateUrl, updateImageURl,
+//                                updateSummary, updateDate));
+//                        buildRecyclerView();
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                Toast.makeText(context, "Fail to get the data..", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        queue.add(jsonArrayRequest);
+//    }
+//
+//    private void buildRecyclerView() {
+//
+//        // initializing our adapter class.
+//        iss_UpdatesAdapter = new ISS_RecyclerViewAdapter(iss_objectArrayList,context);
+//
+//        // adding layout manager
+//        // to our recycler view.
+//        LinearLayoutManager manager = new LinearLayoutManager(context);
+//        iss_UpdatesRecyclerView.setHasFixedSize(true);
+//
+//        // setting layout manager
+//        // to our recycler view.
+//        iss_UpdatesRecyclerView.setLayoutManager(manager);
+//
+//        // setting adapter to
+//        // our recycler view.
+//        iss_UpdatesRecyclerView.setAdapter(iss_UpdatesAdapter);
+//    }
+//}
