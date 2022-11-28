@@ -91,7 +91,7 @@ public class Mars extends Fragment {
 
         String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
-        Integer offsetDay = Integer.parseInt(date.substring(0,2)) - 5;
+        Integer offsetDay = Integer.parseInt(date.substring(0,2)) - 6;
 
         date = date.substring(6) + "-" + date.substring(3,5) + "-" + offsetDay;
 
@@ -104,11 +104,11 @@ public class Mars extends Fragment {
 
         StringRequest objectRequest = new StringRequest(Url, new Response.Listener<String>() {
             @Override
+
             public void onResponse(String response) {
                 Log.d("marsstatus", response);
                 GsonBuilder gsonBuilder = new GsonBuilder();
                 Gson gson = gsonBuilder.create();
-
 
 
                 try {

@@ -97,8 +97,10 @@ public class home extends Fragment {
 
 
         try{
+            Log.i("Aash", getView().findViewById(R.id.homeDesc).toString());
             RecyclerView recyclerView = getView().findViewById(R.id.teamRecycler);
             Teams_RecyclerViewAdapter adapter = new Teams_RecyclerViewAdapter(thisContext, team);
+
 
             recyclerView.setAdapter(adapter);
             recyclerView.setLayoutManager(layoutManager);
