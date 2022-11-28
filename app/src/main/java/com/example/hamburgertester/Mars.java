@@ -87,6 +87,8 @@ public class Mars extends Fragment {
     }
 
     public void roverRequest(Context context){
+
+
         String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
         Integer offsetDay = Integer.parseInt(date.substring(0,2)) - 5;
@@ -125,8 +127,7 @@ public class Mars extends Fragment {
 
                     LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
 
-                    TextView v = getView().findViewById(R.id.mars_title);
-                    Log.d("cheese", v.toString());
+
 
                     RecyclerView recyclerView = getView().findViewById(R.id.sRecyclerView);
 
