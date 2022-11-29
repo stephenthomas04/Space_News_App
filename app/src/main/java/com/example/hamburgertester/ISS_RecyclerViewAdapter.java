@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
+
 
 import java.util.ArrayList;
 
@@ -46,7 +46,6 @@ public class ISS_RecyclerViewAdapter extends RecyclerView.Adapter<ISS_RecyclerVi
         holder.IssHeadlineTV.setText(updates.getTitle());
         holder.IssPublishDateTV.setText(updates.getDate());
         holder.IssDescriptionTV.setText(updates.getSummary());
-        Picasso.get().load(updates.getImageUrl()).into(holder.IssUpdateImg);
     }
 
     @Override
