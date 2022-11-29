@@ -7,30 +7,7 @@
     android:background="@drawable/spacebackground"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="170dp"
-        android:layout_height="30dp"
-        android:backgroundTint="@color/orange"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="235dp"
-        android:gravity="center"
-        android:background="@drawable/search_view_background"
-        android:text="TBD - To be Determined"
-        android:textColor="@color/black"
-        android:textStyle="bold"/>
-    <TextView
-        android:layout_width="170dp"
-        android:layout_height="30dp"
-        android:backgroundTint="@color/orange"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:gravity="center"
-        android:background="@drawable/search_view_background"
-        android:text="TBC - To be Confirmed"
-        android:textColor="@color/black"
-        android:textStyle="bold"/>
+
 
 
     <androidx.core.widget.NestedScrollView
@@ -44,6 +21,36 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="30dp"
+                    android:backgroundTint="@color/orange"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="235dp"
+                    android:gravity="center"
+                    android:background="@drawable/search_view_background"
+                    android:text="TBD - To be Determined"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="30dp"
+                    android:backgroundTint="@color/orange"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:background="@drawable/search_view_background"
+                    android:text="TBC - To be Confirmed"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/animationView"

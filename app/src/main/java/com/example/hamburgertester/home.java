@@ -96,13 +96,13 @@ public class home extends Fragment {
 
 
 
-        TeamsObj aashman = new TeamsObj(aash, "Aashman", getString(R.string.sampleDesc));
+        TeamsObj aashman = new TeamsObj(aash, "Aashman", getString(R.string.aashmanDesc));
         team.add(aashman);
 
         TeamsObj Stephen = new TeamsObj(steph, "Stephen", getString(R.string.ST_desc));
         team.add(Stephen);
 
-        TeamsObj Enguerran = new TeamsObj(eng, "Enguerran", getString(R.string.EP_desc));
+        TeamsObj Enguerran = new TeamsObj(eng, "Enguerran", getString(R.string.aashmanDesc));
         team.add(Enguerran);
 
 
