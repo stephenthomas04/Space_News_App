@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 /**
@@ -23,8 +25,7 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class home extends Fragment {
-    Context thisContext;
-
+  
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -68,21 +69,32 @@ public class home extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        thisContext = getActivity();
-        teamMethod();
+        ArrayList<TeamsObj> team = new ArrayList<>();
+        teamMethod(team);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View v = inflater.inflate(R.layout.fragment_home, container, false);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+
+
+        RecyclerView recyclerView = v.findViewById(R.id.teamRecycler);
+        Teams_RecyclerViewAdapter adapter = new Teams_RecyclerViewAdapter(v.getContext(), team);
+
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(layoutManager);
+
+        return v;
     }
 
 
-    public void teamMethod(){
+    public void teamMethod(ArrayList<TeamsObj> team){
         Drawable aash = ContextCompat.getDrawable(getActivity(), R.drawable.aashman_pic);
         Drawable steph = ContextCompat.getDrawable(getActivity(), R.drawable.stephen_profilepic);
         Drawable eng = ContextCompat.getDrawable(getActivity(), R.drawable.enguerranpfp);
 
 
 
-        ArrayList<TeamsObj> team = new ArrayList<>();
 
         TeamsObj aashman = new TeamsObj(aash, "Aashman", getString(R.string.sampleDesc));
         team.add(aashman);
@@ -93,20 +105,7 @@ public class home extends Fragment {
         TeamsObj Enguerran = new TeamsObj(eng, "Enguerran", getString(R.string.EP_desc));
         team.add(Enguerran);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
 
 
-        try{
-            Log.i("Aash", getView().findViewById(R.id.homeDesc).toString());
-            RecyclerView recyclerView = getView().findViewById(R.id.teamRecycler);
-            Teams_RecyclerViewAdapter adapter = new Teams_RecyclerViewAdapter(thisContext, team);
-
-
-            recyclerView.setAdapter(adapter);
-            recyclerView.setLayoutManager(layoutManager);
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
     }
 }
