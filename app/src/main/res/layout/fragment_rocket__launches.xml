@@ -7,18 +7,28 @@
     android:background="@drawable/spacebackground"
     tools:context=".MainActivity">
 
-
-
     <TextView
         android:layout_width="170dp"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:backgroundTint="@color/orange"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="235dp"
         android:gravity="center"
         android:background="@drawable/search_view_background"
-        android:text="TBD - To be Determined TBC - To be Confirmed"
+        android:text="TBD - To be Determined"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="170dp"
+        android:layout_height="30dp"
+        android:backgroundTint="@color/orange"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:gravity="center"
+        android:background="@drawable/search_view_background"
+        android:text="TBC - To be Confirmed"
         android:textColor="@color/black"
         android:textStyle="bold"/>
 
@@ -54,7 +64,6 @@
                 android:paddingLeft="15dp"
                 android:paddingTop="2dp"
                 android:paddingRight="15dp" />
-
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </RelativeLayout>
