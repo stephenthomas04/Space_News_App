@@ -102,8 +102,8 @@ public class Satellites extends Fragment {
 
         context = getActivity();
 
-        //satelliteArrayListMainActivity = new ArrayList<>();
-        getData(context);
+        satelliteArrayListMainActivity = new ArrayList<>();
+        getData(context, satelliteArrayListMainActivity);
         // Inflate the layout for this fragment
 
         //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
@@ -111,12 +111,29 @@ public class Satellites extends Fragment {
         //satelliteRecyclerView =  getView().findViewById(R.id.satelliteRecyclerView);
         //https://stackoverflow.com/questions/35489177/recyclerview-with-null-pointer-exception
         // Old return return inflater.inflate(R.layout.fragment_satellites, container, false);
-        return inflater.inflate(R.layout.fragment_satellites, container, false);
+
+        View rootView = inflater.inflate(R.layout.fragment_satellites, container, false);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+
+
+        RecyclerView recyclerView = rootView.findViewById(R.id.satelliteRecyclerView);
+        Satellite_RecyclerViewAdapter adapter = new Satellite_RecyclerViewAdapter(satelliteArrayListMainActivity,rootView.getContext());
+
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(layoutManager);
+
+        return rootView;
+
+
+       // return inflater.inflate(R.layout.fragment_satellites, container, false);
     }
 
-    private void getData(Context context){
+    public void getData(Context context, ArrayList<Satellite> Satellite){
 
         RequestQueue queue = Volley.newRequestQueue(context);
+        //JSONArray satellite = jsonResponse.getJSONArray("positions");
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url1, null, new Response.Listener<JSONArray>() {
             @Override
@@ -128,11 +145,11 @@ public class Satellites extends Fragment {
                     // getting each object from our json array.
                     Log.i("Enguerran", "Before Try");
                     try {
+                        //https://stackoverflow.com/questions/17136769/how-to-parse-jsonarray-in-android
                         Log.i("Enguerran", "After Try");
                         TextView textView = getView().findViewById(R.id.satNameTestTV);
                         // we are getting each json object.
                         JSONObject responseObj = response.getJSONObject(i);
-
                         // now we get our response from API in json object format.
                         // in below line we are extracting a string with
                         // its key value from our json object.
@@ -148,29 +165,10 @@ public class Satellites extends Fragment {
 
                         Satellite SatelliteTryCatch = new Satellite(satName,satelliteLatitude,satelliteLongitude,satAltitude);
 
-                       // LinearLayoutManager manager = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
-                        /*
-                        // initializing our adapter class.
-                        RecyclerView recyclerView = getView().findViewById(R.id.satelliteRecyclerView);
-
-
-                        satelliteAdapter = new Satellite_RecyclerViewAdapter(satelliteArrayListMainActivity,context);
-
-                        // adding layout manager
-                        // to our recycler view.
-
-                        recyclerView.setHasFixedSize(true);
-
-                        recyclerView.setAdapter(satelliteAdapter);
-
-                        // setting layout manager
-                        // to our recycler view.
-                        recyclerView.setLayoutManager(manager);
-
                         // setting adapter to
                         // our recycler view.
-                        */
-                        satelliteArrayListMainActivity.set(0,SatelliteTryCatch);
+
+                        Satellite.set(0,SatelliteTryCatch);
                         satelliteAdapter.notifyItemChanged(0);
 
 
