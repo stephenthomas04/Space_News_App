@@ -4,7 +4,7 @@ public class ISS_Object {
 
     private double longitude;
     private double latitude;
-    private double iss_position[];
+    private double[] iss_position;
 
     public ISS_Object(int longitude, int latitude, double[] iss_position){
             longitude = longitude;

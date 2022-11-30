@@ -13,67 +13,60 @@
         android:background="@drawable/spacebackground"
         android:orientation="vertical"
         android:layout_height="match_parent"
-        tools:context=".ApodActivity">
+        tools:context=".MainActivity">
 
-
-        <androidx.core.widget.NestedScrollView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="scroll view">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
-                <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/animationView"
-                    android:layout_width="226dp"
-                    android:layout_height="200dp"
-                    android:layout_gravity="center"
-                    app:lottie_autoPlay="true"
-                    app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/iss_anim" />
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gifImageView"
+            android:layout_height="250dp"
+            android:layout_width="250dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/astronaut"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="568dp"
-                    android:background="@drawable/marsbg">
 
-                    <TextView
-                        android:id="@+id/issLocation"
-                        android:layout_width="300dp"
-                        android:layout_height="200dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="45dp"
-                        android:background="@drawable/iss_viewbg"
-                        android:gravity="center"
-                        android:text="Iss location"
-                        android:textSize="30dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/marsbg">
+            <TextView
+                android:id="@+id/issLocation"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/iss_viewbg"
+                android:layout_centerHorizontal="true"
+                android:text="Iss location" />
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/issRecyclerView"
-                        android:layout_width="300dp"
-                        android:layout_height="200dp"
-                        android:layout_below="@id/issLocation"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="45dp"
-                        android:background="@drawable/iss_viewbg"
-                        android:gravity="center"
-                        android:text="Iss Desc"
-                        android:textSize="30dp" />
-
-                </RelativeLayout>
-            </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
+            <TextView
+                android:id="@+id/issDesc"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/issLocation"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="300dp"
+                android:background="@drawable/iss_viewbg"
+                android:textSize="30dp"
+                android:text="Iss Desc" />
+        </RelativeLayout>
 
     </LinearLayout>
-
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:menu="@menu/navigation_menu"
-        android:layout_gravity="start"/>
+        </ScrollView>
+    </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
