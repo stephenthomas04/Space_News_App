@@ -14,7 +14,7 @@
     <item
         android:id="@+id/marsMenu"
         android:icon="@drawable/marsbetter"
-        android:title="MARS"/>
+        android:title="MARS ROVER"/>
     <item
         android:id="@+id/issMenu"
         android:icon="@drawable/issssssslol"
