@@ -9,7 +9,7 @@
     <item
         android:id="@+id/apodMenu"
         android:icon="@drawable/apod"
-        android:title="APOD"/>
+        android:title="NEWS"/>
 
     <item
         android:id="@+id/marsMenu"
@@ -23,6 +23,10 @@
         android:id="@+id/satelliteMenu"
         android:icon="@drawable/satellite"
         android:title="SATELLITE"/>
+    <item
+        android:id="@+id/solar_systemMenu"
+        android:icon="@drawable/solarsystem"
+        android:title="SOLAR SYSTEM"/>
     <item
         android:id="@+id/rocket_launchesMenu"
         android:icon="@drawable/rocket"

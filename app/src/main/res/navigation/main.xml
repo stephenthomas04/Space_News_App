@@ -31,6 +31,11 @@
         android:label="fragment_satellites"
         tools:layout="@layout/fragment_satellites" />
     <fragment
+        android:id="@+id/solar_systemMenu"
+        android:name="com.example.hamburgertester.Solar_System"
+        android:label="fragment_solar__system"
+        tools:layout="@layout/fragment_solar__system" />
+    <fragment
         android:id="@+id/rocket_launchesMenu"
         android:name="com.example.hamburgertester.Rocket_Launches"
         android:label="Rocket_Launches"

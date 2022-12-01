@@ -3,12 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/spacebackground"
     tools:context=".Solar_System">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="310dp"
+        android:layout_height="105dp"
+        android:gravity="center"
+        android:layout_gravity="top"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="50dp"
+        android:textStyle="bold"
+        android:text="Solar Systems Loading...."
+        android:textColor="@color/white"
+        android:textSize="40dp" />
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginTop="100dp"
+        android:scrollbarSize="24dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/white" />
+
 
 </FrameLayout>
