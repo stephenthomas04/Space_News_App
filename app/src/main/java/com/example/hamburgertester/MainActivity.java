@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<NewsObj> newsArrayList = new ArrayList<>();
     String articleName = "Astronomy Picture of the Day";
 
-    ArrayList<ISS_Updates> iss_updates = new ArrayList<>();
+
 
 
     @Override

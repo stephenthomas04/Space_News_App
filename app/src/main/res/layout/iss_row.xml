@@ -25,42 +25,15 @@
             android:layout_height="wrap_content"
             >
 
-            <TextView
-                android:id="@+id/issHeadline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/issImageView"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/chivo_regular"
-                android:gravity="center"
-                android:text="@string/Title"
-                android:textColor="@color/light_blue"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/issImageView" />
 
-            <TextView
-                android:id="@+id/issPublishDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/issDesc"
-                android:layout_centerHorizontal="true"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/coming_soon"
-                android:text="Date"
-                android:textColor="@color/black"
-                android:textStyle="bold|italic"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+
+
 
             <TextView
                 android:id="@+id/issDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/issHeadline"
+                android:layout_below="@id/issImageView"
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
@@ -74,10 +47,10 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/issHeadline" />
+                />
 
             <TextView
-                android:id="@+id/issName"
+                android:id="@+id/issTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -99,12 +72,12 @@
                 android:id="@+id/issImageView"
                 android:layout_width="320dp"
                 android:layout_height="133dp"
-                android:layout_below="@id/issName"
+                android:layout_below="@id/issTitle"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/issName"
+                app:layout_constraintTop_toBottomOf="@+id/issTitle"
                 app:srcCompat="@drawable/iss_default" />
         </RelativeLayout>
 

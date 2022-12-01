@@ -6,6 +6,8 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 //import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
@@ -21,6 +23,10 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 
 //import java.util.ArrayList;
@@ -32,18 +38,14 @@ import com.google.gson.GsonBuilder;
  * create an instance of this fragment.
  */
 public class ISS extends Fragment {
+    private static ArrayList<IssReportsObj> issReportsArrayList;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-   // private RecyclerView iss_UpdatesRecyclerView;
 
-   // private ISS_RecyclerViewAdapter iss_UpdatesAdapter;
-    //private ArrayList<ISS_Updates> iss_objectArrayList;
-
-   // String Iss_UpdatesUrl = "https://api.spaceflightnewsapi.net/v3/reports";
 
 
     // TODO: Rename and change types of parameters
@@ -87,20 +89,7 @@ public class ISS extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-//        iss_UpdatesRecyclerView = getView().findViewById(R.id.issRecyclerView);
 //
-//
-//        // below line we are creating a new array list
-//        iss_objectArrayList = new ArrayList<>();
-////        issReportsApi();
-//
-//        // calling method to
-//        // build recycler view.
-////        buildRecyclerView();
-//
-//      /*  IssUpdates_RecyclerViewAdapter adapter = new IssUpdates_RecyclerViewAdapter(context, iss_objectArrayList);
-//        recyclerView.setAdapter(adapter);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(context));*/
 
     }
 
@@ -108,16 +97,19 @@ public class ISS extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        context = getActivity();
+        View v = inflater.inflate(R.layout.fragment_iss, container, false);
+        context = this.getActivity();
+        Log.d("Aash", context.toString());
         locationApi();
-        return inflater.inflate(R.layout.fragment_iss, container, false);
+        reportApi();
+        return v;
     }
 
     public void locationApi() {
         Log.d("Enguerran", "Loaded the location api req (line 112)");
         String Url = "https://api.wheretheiss.at/v1/satellites/25544";
 
-        RequestQueue requestQueue = Volley.newRequestQueue(context);
+        RequestQueue requestQueue = Volley.newRequestQueue(this.getActivity());
 
         StringRequest objectRequest = new StringRequest(Url, new Response.Listener<String>() {
             @Override
@@ -155,6 +147,58 @@ public class ISS extends Fragment {
         });
         requestQueue.add(objectRequest);
 
+    }
+
+
+    public void reportApi(){
+        String Url = "https://api.spaceflightnewsapi.net/v3/reports";
+
+
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+
+        StringRequest objectRequest = new StringRequest(Url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d("Response", response);
+                GsonBuilder gsonBuilder = new GsonBuilder();
+                Gson gson = gsonBuilder.create();
+
+
+
+                try {
+                    Type listType = new TypeToken<ArrayList<IssReportsObj>>(){}.getType();
+                    issReportsArrayList = gson.fromJson(response, listType);
+
+
+
+                    for( IssReportsObj n : issReportsArrayList) {
+                        Log.d("Iss_Reports", n.toString());
+                    }
+
+
+
+                    RecyclerView recyclerView = getView().findViewById(R.id.sRecyclerView);
+
+
+                    ISS_RecyclerViewAdapter adapter = new ISS_RecyclerViewAdapter(context, issReportsArrayList);
+                    recyclerView.setNestedScrollingEnabled(false);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                    recyclerView.setAdapter(adapter);
+
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("Response", "error");
+            }
+        });
+
+        requestQueue.add(objectRequest);
     }
 
 

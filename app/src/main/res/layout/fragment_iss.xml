@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="scroll view">
@@ -52,21 +52,16 @@
                 android:layout_centerHorizontal="true"
                 android:text="Iss location" />
 
-            <TextView
-                android:id="@+id/issDesc"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:gravity="center"
-                android:layout_centerHorizontal="true"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_below="@id/issLocation"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="300dp"
-                android:background="@drawable/iss_viewbg"
-                android:textSize="30dp"
-                android:text="Iss Desc" />
+                android:layout_marginTop="20dp" />
+
         </RelativeLayout>
 
     </LinearLayout>
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
