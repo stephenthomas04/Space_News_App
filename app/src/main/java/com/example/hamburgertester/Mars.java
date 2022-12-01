@@ -90,10 +90,11 @@ public class Mars extends Fragment {
 
 
         String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-
-        Integer offsetDay = Integer.parseInt(date.substring(0,2)) - 15;
-
+        Log.d("roverR", date);
+        Integer offsetDay = Integer.parseInt(date.substring(0,2)) - 5;
+        Log.d("roverR", date);
         date = date.substring(6) + "-" + date.substring(3,5) + "-" + offsetDay;
+        Log.d("roverR", date);
 
         String api_key = "vzch0p2dvpdzzKxLNnosLvbbwDxVxb3nqsjlXkYB";
         String Url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date="+date+ "&api_key=" + api_key;
