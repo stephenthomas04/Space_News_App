@@ -1,35 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hostFragmentLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@drawable/spacebackground"
-    tools:context=".Solar_System">
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <TextView
-        android:layout_width="310dp"
-        android:layout_height="105dp"
-        android:gravity="center"
-        android:layout_gravity="top"
-        android:layout_marginTop="300dp"
-        android:layout_marginLeft="50dp"
-        android:textStyle="bold"
-        android:text="Solar Systems Loading...."
-        android:textColor="@color/white"
-        android:textSize="40dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <ProgressBar
-        android:id="@+id/progress_circular"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="70dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginTop="100dp"
-        android:scrollbarSize="24dp"
-        android:indeterminate="true"
-        android:indeterminateTint="@color/white" />
+            <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
 
-
-</FrameLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

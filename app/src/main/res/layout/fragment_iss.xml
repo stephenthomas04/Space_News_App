@@ -42,17 +42,31 @@
             android:background="@drawable/iss_gradient">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/space_grotesk"
+                android:gravity="center"
+                android:text="ISS Location"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="50dp" />
+
+
+            <TextView
                 android:id="@+id/issLocation"
                 android:layout_width="300dp"
                 android:layout_height="200dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="70dp"
                 android:background="@drawable/iss_viewbg"
                 android:gravity="center"
                 android:text="Iss location"
-                android:textStyle="bold"
+                android:fontFamily="@font/open_sans"
                 android:textColor="@color/black"
-                android:textSize="38dp" />
+                android:textSize="38dp"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/sRecyclerView"
