@@ -18,9 +18,9 @@
 
     <string name="issDefaultInfo">Payloads: Antioxidant Protection: Experiment Containers were installed into Kubik-5. The PROtection MEdiated by antioxidant nanoTEchnOlogy against neuronal damage in space (PROMETEO) (Antioxidant Protection) investigation proposes the use of biocompatible and biodegradable polydopamine-based nanoparticles to provide antioxidant protection to neurons undergoing exposure to altered gravity and cosmic radiation. Cellbox-3: Cellbox-3 Experiment Containers were installed into the …</string>
 
-    <string name="aashmanDesc">Mainly focused on backend development. He created the beginning implementation for API request that where used through out the app. He is responsible for creating the News, Mars, and Rocket Launch screens.</string>
+    <string name="aashmanDesc">Mainly focused on backend development. He created the beginning implementation for API request that where used through out the app. He is responsible for the data seen in all screens.</string>
 
-    <string name="ST_desc">Mainly focused UI and design. He is responsible for the cartoonistic theme used through out the app. He worked on implementing animations that were used in the various screens and the scroll view to make a smooth user interface. </string>
+    <string name="ST_desc">Mainly focused UI and design. He is responsible for the cartoonistic theme used throughout the app. Implemented animations, the scroll view, and fragments to make a smooth user interface. He is responsible for the UI seen in all screens</string>
 
 
     <string name="En_desc">Mainly focused on backend development.</string>

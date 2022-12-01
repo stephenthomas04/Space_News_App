@@ -20,5 +20,6 @@
     <color name="tan">#D3D3D3</color>
     <color name="mars_red">#c1440e</color>
     <color name="dark_grey">#545454</color>
+    <color name="medium_gray">#c0c0c0</color>
     <color name="orange">#FF5F1F</color>
 </resources>

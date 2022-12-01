@@ -39,17 +39,20 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/marsbg">
+            android:background="@drawable/iss_gradient">
+
             <TextView
                 android:id="@+id/issLocation"
                 android:layout_width="300dp"
                 android:layout_height="200dp"
-                android:gravity="center"
-                android:textSize="30dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/iss_viewbg"
-                android:layout_centerHorizontal="true"
-                android:text="Iss location" />
+                android:gravity="center"
+                android:text="Iss location"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="38dp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/sRecyclerView"

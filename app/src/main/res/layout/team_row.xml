@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:cardElevation="8dp"
-        android:backgroundTint="#c0c0c0">
+        android:backgroundTint="@color/medium_gray">
 
         <RelativeLayout
             android:layout_width="300dp"
@@ -39,7 +39,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/profilePic"
+                android:gravity="top"
+                android:layout_marginTop="-18dp"
                 android:layout_centerHorizontal="true"
+                android:fontFamily="@font/space_grotesk"
                 android:text="John Smith"
                 android:textColor="@color/black"
                 android:textSize="30dp"
@@ -51,10 +54,15 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/teamName"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="10dp"
-                android:textColor="@color/black"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/open_sans"
+                android:textStyle="bold"
                 android:gravity="center"
                 android:text="@string/aashmanDesc"
+                android:textColor="@color/black"
                 android:textSize="15dp" />
 
 

@@ -129,7 +129,7 @@ public class ISS extends Fragment {
 
                     //set info from class here
                     issLocation = (TextView) getView().findViewById(R.id.issLocation);
-                    issLocation.setText(iss.getLatitude() + " , " + iss.getLongitude());
+                    issLocation.setText(getLat + " , " + getLong);
                     Log.d("Enguerran", "overshot");
                 } catch (Exception e) {
 

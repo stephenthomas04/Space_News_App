@@ -26,9 +26,6 @@
             >
 
 
-
-
-
             <TextView
                 android:id="@+id/issDesc"
                 android:layout_width="wrap_content"
@@ -39,15 +36,14 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/comfortaa"
+                android:fontFamily="@font/open_sans"
                 android:gravity="center"
                 android:text="@string/issDefaultInfo"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/issTitle"
@@ -57,7 +53,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="10dp"
-                android:fontFamily="@font/open_sans"
+                android:fontFamily="@font/space_grotesk"
                 android:gravity="center"
                 android:text="Iss Update"
                 android:textAllCaps="true"
