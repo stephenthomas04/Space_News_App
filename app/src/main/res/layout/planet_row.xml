@@ -25,57 +25,24 @@
             android:layout_height="wrap_content"
             >
 
-            <TextView
-                android:id="@+id/newsHeadline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/planetImage"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/chivo_regular"
-                android:gravity="center"
-                android:text="@string/Title"
-                android:textColor="@color/light_blue"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/planetImage" />
 
-            <TextView
-                android:id="@+id/publishDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/planetInfo"
-                android:layout_centerHorizontal="true"
-                android:layout_marginEnd="16dp"
-                android:layout_toRightOf="@id/planetName"
-                android:fontFamily="@font/comfortaa"
-                android:text="Date"
-                android:textColor="@color/black"
-                android:textStyle="italic"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+
 
             <TextView
                 android:id="@+id/planetInfo"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/newsHeadline"
+                android:layout_height="250dp"
+                android:layout_below="@id/planetImage"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:fontFamily="@font/open_sans"
                 android:gravity="center"
-                android:text="summary"
+                android:text="@string/earth_info"
                 android:textColor="@color/black"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/newsHeadline" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/planetName"
@@ -87,7 +54,7 @@
                 android:layout_marginRight="10dp"
                 android:fontFamily="@font/space_grotesk"
                 android:gravity="center"
-                android:text="Article"
+                android:text="Planet Name"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="25dp"
@@ -98,15 +65,14 @@
 
             <ImageView
                 android:id="@+id/planetImage"
-                android:layout_width="320dp"
-                android:layout_height="133dp"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
                 android:layout_below="@id/planetName"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/planetName"
-                app:srcCompat="@drawable/galaxy" />
+                app:srcCompat="@drawable/earth" />
         </RelativeLayout>
 
 

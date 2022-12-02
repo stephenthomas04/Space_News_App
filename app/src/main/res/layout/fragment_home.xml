@@ -60,7 +60,20 @@
                             android:textColor="@color/white"
                             android:textSize="14dp" />
 
-                        <androidx.recyclerview.widget.RecyclerView
+                    <TextView
+                        android:id="@+id/teamTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Meet the Team..."
+                        android:textColor="@color/white"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/teamRecycler"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" />

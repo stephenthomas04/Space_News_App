@@ -92,10 +92,10 @@ public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_Recycler
         public MyViewHolder(@NonNull View itemView, NewsInterface newsInterface) {
             super(itemView);
 
-            image = itemView.findViewById(R.id.imageView);
-            article = itemView.findViewById(R.id.newsName);
+            image = itemView.findViewById(R.id.planetImage);
+            article = itemView.findViewById(R.id.planetName);
             title = itemView.findViewById(R.id.newsHeadline);
-            desc = itemView.findViewById(R.id.newsDesc);
+            desc = itemView.findViewById(R.id.planetInfo);
             date = itemView.findViewById(R.id.publishDate);
 
             itemView.setOnClickListener(new View.OnClickListener() {

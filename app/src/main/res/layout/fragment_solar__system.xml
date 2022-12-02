@@ -18,8 +18,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="600dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/sun" />
+
             <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/sRecyclerView"
+            android:id="@+id/pRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1" />

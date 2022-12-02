@@ -30,7 +30,7 @@
                 android:id="@+id/issDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/issImageView"
+                android:layout_below="@id/issTitle"
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
@@ -64,17 +64,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/issImageView"
-                android:layout_width="320dp"
-                android:layout_height="133dp"
-                android:layout_below="@id/issTitle"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/issTitle"
-                app:srcCompat="@drawable/iss_default" />
         </RelativeLayout>
 
 

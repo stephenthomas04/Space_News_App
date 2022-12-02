@@ -45,28 +45,6 @@ public class ISS_RecyclerViewAdapter extends RecyclerView.Adapter<ISS_RecyclerVi
     public void onBindViewHolder(@NonNull ISS_RecyclerViewAdapter.issViewHolder holder, int position) {
         holder.issTitle.setText(reportsObjArrayList.get(position).getReportTitle());
         holder.summary.setText(reportsObjArrayList.get(position).getSummary());
-
-        String imageUrl = reportsObjArrayList.get(position).getImageUrl();
-        Glide.with(context)
-                .load(imageUrl)
-                .placeholder(R.drawable.ic_baseline_downloading_24)
-                .error(R.drawable.ic_baseline_error_outline_24)
-                .centerCrop()
-                .override(320,133)
-                .listener(new RequestListener<Drawable>() {
-                    @Override
-                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                        // log exception
-                        Log.e("TAG", "Error loading image", e);
-                        return false; // important to return false so the error placeholder can be placed
-                    }
-
-                    @Override
-                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                        return false;
-                    }
-                })
-                .into(holder.image);
     }
 
     @Override
@@ -77,13 +55,11 @@ public class ISS_RecyclerViewAdapter extends RecyclerView.Adapter<ISS_RecyclerVi
 
 
     public static class issViewHolder extends RecyclerView.ViewHolder{
-        ImageView image;
         TextView issTitle, summary;
 
         public issViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            image = itemView.findViewById(R.id.issImageView);
             issTitle = itemView.findViewById(R.id.issTitle);
             summary = itemView.findViewById(R.id.issDesc);
 

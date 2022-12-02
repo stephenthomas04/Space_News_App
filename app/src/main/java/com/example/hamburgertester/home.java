@@ -90,7 +90,7 @@ public class home extends Fragment {
 
     public void teamMethod(ArrayList<TeamsObj> team){
         Drawable aash = ContextCompat.getDrawable(getActivity(), R.drawable.aashman_pic);
-        Drawable steph = ContextCompat.getDrawable(getActivity(), R.drawable.stephen_profilepic);
+        Drawable steph = ContextCompat.getDrawable(getActivity(), R.drawable.stephen_pic);
         Drawable eng = ContextCompat.getDrawable(getActivity(), R.drawable.enguerranpfp);
 
 
