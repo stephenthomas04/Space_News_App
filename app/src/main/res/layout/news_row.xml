@@ -35,7 +35,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/chivo_regular"
                 android:gravity="center"
-                android:text="@string/Title"
+                android:text="@string/newsTitle"
                 android:textColor="@color/light_blue"
                 android:textSize="20dp"
                 android:textStyle="bold"
