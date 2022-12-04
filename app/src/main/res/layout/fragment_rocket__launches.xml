@@ -33,8 +33,9 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="235dp"
                     android:gravity="center"
-                    android:background="@drawable/search_view_background"
-                    android:text="TBD - To be Determined"
+                    android:fontFamily="@font/open_sans"
+                    android:background="@drawable/rocket_keybg"
+                    android:text="TBD - To Be Determined"
                     android:textColor="@color/black"
                     android:textStyle="bold"/>
                 <TextView
@@ -45,8 +46,9 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="5dp"
                     android:gravity="center"
-                    android:background="@drawable/search_view_background"
-                    android:text="TBC - To be Confirmed"
+                    android:fontFamily="@font/open_sans"
+                    android:background="@drawable/rocket_keybg"
+                    android:text="TBC - To Be Confirmed"
                     android:textColor="@color/black"
                     android:textStyle="bold"/>
 

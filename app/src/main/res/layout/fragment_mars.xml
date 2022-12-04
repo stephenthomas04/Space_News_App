@@ -48,7 +48,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="5dp"
-                        android:fontFamily="@font/chivo_regular"
+                        android:fontFamily="@font/space_grotesk"
                         android:text="@string/roverTitle"
                         android:textColor="@color/grey"
                         android:textSize="60dp"

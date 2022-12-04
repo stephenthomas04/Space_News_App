@@ -41,7 +41,6 @@ public class MarsRover_RecyclerViewAdapter extends RecyclerView.Adapter<MarsRove
 
     @Override
     public void onBindViewHolder(MarsRover_RecyclerViewAdapter.roverViewHolder holder, int position) {
-        holder.sol.setText(results.get(position).getSol());
         holder.date.setText(results.get(position).getEarth_date());
 
         String imageUrl = results.get(position).getImg_src();
@@ -81,8 +80,6 @@ public class MarsRover_RecyclerViewAdapter extends RecyclerView.Adapter<MarsRove
 
             image = itemView.findViewById(R.id.image);
             date = itemView.findViewById(R.id.earthDate);
-            sol = itemView.findViewById(R.id.sol);
-
         }
     }
 }

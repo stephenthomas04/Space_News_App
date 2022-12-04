@@ -24,15 +24,15 @@ import com.bumptech.glide.request.target.Target;
 import java.util.ArrayList;
 
 public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_RecyclerViewAdapter.MyViewHolder> {
-    private final NewsInterface newsInterface;
+    private final AppInterface appInterface;
 
     Context context;
     ArrayList<NewsObj> newsArrayList;
 
-    public news_RecyclerViewAdapter(Context context, ArrayList<NewsObj> newsArrayList,  NewsInterface newsInterface){
+    public news_RecyclerViewAdapter(Context context, ArrayList<NewsObj> newsArrayList,  AppInterface appInterface){
         this.context = context;
         this.newsArrayList = newsArrayList;
-        this.newsInterface =newsInterface;
+        this.appInterface = appInterface;
     }
 
     @NonNull
@@ -40,7 +40,7 @@ public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_Recycler
     public news_RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.news_row,parent,false);
-        return new news_RecyclerViewAdapter.MyViewHolder(view, newsInterface);
+        return new news_RecyclerViewAdapter.MyViewHolder(view, appInterface);
     }
 
     @Override
@@ -89,7 +89,7 @@ public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_Recycler
         ImageView image;
         TextView article, title, desc, date;
 
-        public MyViewHolder(@NonNull View itemView, NewsInterface newsInterface) {
+        public MyViewHolder(@NonNull View itemView, AppInterface appInterface) {
             super(itemView);
 
             image = itemView.findViewById(R.id.planetImage);
@@ -101,10 +101,10 @@ public class news_RecyclerViewAdapter extends RecyclerView.Adapter<news_Recycler
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(newsInterface != null){
+                    if(appInterface != null){
                         int position = getAdapterPosition();
                         if(position != RecyclerView.NO_POSITION){
-                            newsInterface.onItemClick(position);
+                            appInterface.onItemClick(position);
                         }
                     }
                 }

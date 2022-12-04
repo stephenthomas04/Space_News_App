@@ -13,7 +13,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -32,11 +31,11 @@ import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Apod#newInstance} factory method to
+ * Use the {@link News#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Apod extends Fragment implements NewsInterface {
-    NewsInterface newsInterface = this;
+public class News extends Fragment implements AppInterface {
+    AppInterface appInterface = this;
     Context thisContext;
     ArrayList<NewsObj> newsArrayList = new ArrayList<>();
     String articleName = "Astronomy Picture of the Day";
@@ -50,7 +49,7 @@ public class Apod extends Fragment implements NewsInterface {
     private String mParam1;
     private String mParam2;
 
-    public Apod() {
+    public News() {
         // Required empty public constructor
     }
 
@@ -63,8 +62,8 @@ public class Apod extends Fragment implements NewsInterface {
      * @return A new instance of fragment ProfileFragment_Apod.
      */
     // TODO: Rename and change types and number of parameters
-    public Apod newInstance(String param1, String param2) {
-        Apod fragment = new Apod();
+    public News newInstance(String param1, String param2) {
+        News fragment = new News();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -173,7 +172,7 @@ public class Apod extends Fragment implements NewsInterface {
                     RecyclerView recyclerView = getView().findViewById(R.id.sRecyclerView);
 
 
-                    news_RecyclerViewAdapter adapter = new news_RecyclerViewAdapter(context, newsArrayList, newsInterface);
+                    news_RecyclerViewAdapter adapter = new news_RecyclerViewAdapter(context, newsArrayList, appInterface);
                     recyclerView.setLayoutManager(new LinearLayoutManager(context));
                     recyclerView.setAdapter(adapter);
 

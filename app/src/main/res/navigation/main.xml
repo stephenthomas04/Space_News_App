@@ -11,7 +11,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/apodMenu"
-        android:name="com.example.hamburgertester.Apod"
+        android:name="com.example.hamburgertester.News"
         android:label="APOD"
         tools:layout="@layout/fragment_apod" />
 

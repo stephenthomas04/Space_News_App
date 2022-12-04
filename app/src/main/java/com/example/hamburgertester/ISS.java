@@ -3,6 +3,8 @@ package com.example.hamburgertester;
 import static java.lang.Math.floor;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -37,7 +39,8 @@ import java.util.ArrayList;
  * Use the {@link ISS#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ISS extends Fragment {
+public class ISS extends Fragment implements AppInterface {
+    AppInterface issInterface = this;
     private static ArrayList<IssReportsObj> issReportsArrayList;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -129,7 +132,7 @@ public class ISS extends Fragment {
 
                     //set info from class here
                     issLocation = (TextView) getView().findViewById(R.id.issLocation);
-                    issLocation.setText(getLat + " , " + getLong);
+                    issLocation.setText("Lat: "+getLat + "\nLong: " + getLong);
                     Log.d("Enguerran", "overshot");
                 } catch (Exception e) {
 
@@ -180,7 +183,7 @@ public class ISS extends Fragment {
                     RecyclerView recyclerView = getView().findViewById(R.id.sRecyclerView);
 
 
-                    ISS_RecyclerViewAdapter adapter = new ISS_RecyclerViewAdapter(context, issReportsArrayList);
+                    ISS_RecyclerViewAdapter adapter = new ISS_RecyclerViewAdapter(context, issReportsArrayList, issInterface);
                     recyclerView.setNestedScrollingEnabled(false);
                     recyclerView.setLayoutManager(new LinearLayoutManager(context));
                     recyclerView.setAdapter(adapter);
@@ -208,6 +211,15 @@ public class ISS extends Fragment {
         total = 0.001 * floor(x * 1000.0); // Before it was 0.01 * floor(x * 100) to return a single decimal point
         return total;
 
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        String url = issReportsArrayList.get(position).getReportUrl();
+
+        Intent viewIntent = new Intent("android.intent.action.VIEW",
+                Uri.parse(url));
+        startActivity(viewIntent);
     }
 }
 

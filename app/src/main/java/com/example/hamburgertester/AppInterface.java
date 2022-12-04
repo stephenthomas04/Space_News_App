@@ -1,5 +1,5 @@
 package com.example.hamburgertester;
 
-public interface NewsInterface {
+public interface AppInterface {
     void onItemClick(int position);
 }
