@@ -28,7 +28,10 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,6 +51,8 @@ public class Satellites extends Fragment {
     ArrayList<Satellite> satelliteArrayListMainActivity;
     RecyclerView satelliteRecyclerView;
     Activity activity = getActivity();
+    private RequestQueue queue;
+    private JSONArray getText;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -91,107 +96,47 @@ public class Satellites extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        //URL: https://api.n2yo.com/rest/v1/satellite/above/=42.0947/88.0648/100/70/0//&apiKey=3DM8MB-57EGHM-ZBX8TF-4SV3
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         context = getActivity();
 
-        satelliteArrayListMainActivity = new ArrayList<>();
-        getData(context, satelliteArrayListMainActivity);
-        // Inflate the layout for this fragment
-
-        //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
-        //satelliteRecyclerView.setLayoutManager(linearLayoutManager);
-        //satelliteRecyclerView =  getView().findViewById(R.id.satelliteRecyclerView);
-        //https://stackoverflow.com/questions/35489177/recyclerview-with-null-pointer-exception
-        // Old return return inflater.inflate(R.layout.fragment_satellites, container, false);
-
-        View rootView = inflater.inflate(R.layout.fragment_satellites, container, false);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
-
-
-        RecyclerView recyclerView = rootView.findViewById(R.id.satelliteRecyclerView);
-        Satellite_RecyclerViewAdapter adapter = new Satellite_RecyclerViewAdapter(satelliteArrayListMainActivity,rootView.getContext());
-
-
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(layoutManager);
-
-        return rootView;
-
 
        // return inflater.inflate(R.layout.fragment_satellites, container, false);
     }
 
+
+
+
     public void getData(Context context, ArrayList<Satellite> Satellite){
+        String Url = "https://api.n2yo.com/rest/v1/satellite/above/=42.0947/88.0648/100/70/0//&apiKey=3DM8MB-57EGHM-ZBX8TF-4SV3";
 
-        RequestQueue queue = Volley.newRequestQueue(context);
-        //JSONArray satellite = jsonResponse.getJSONArray("positions");
+        StringRequest objectRequest = new StringRequest(Url, new Response.Listener<String>() {
+            RequestQueue requestQueue = Volley.newRequestQueue(context);
 
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url1, null, new Response.Listener<JSONArray>() {
-            @Override
+            public void onResponse(String response) {
+                GsonBuilder gsonBuilder = new GsonBuilder();
+                Gson gson = gsonBuilder.create();
 
-            public void onResponse(JSONArray response) {
-                satelliteRecyclerView.setVisibility(View.VISIBLE);
-                for (int i = 0; i < response.length(); i++) {
-                    // creating a new json object and
-                    // getting each object from our json array.
-                    Log.i("Enguerran", "Before Try");
-                    try {
-                        //https://stackoverflow.com/questions/17136769/how-to-parse-jsonarray-in-android
-                        Log.i("Enguerran", "After Try");
-                        TextView textView = getView().findViewById(R.id.satNameTestTV);
-                        // we are getting each json object.
-                        JSONObject responseObj = response.getJSONObject(i);
-                        // now we get our response from API in json object format.
-                        // in below line we are extracting a string with
-                        // its key value from our json object.
-                        // similarly we are extracting all the strings from our json object.
-                        String satelliteLatitude = responseObj.getString("satlatitude");
-                        String satelliteLongitude = responseObj.getString("satlongitude");
-                        String satAltitude = responseObj.getString("sataltitude");
-                        String satName = responseObj.getString("satname");
-
-                        textView.setText(satelliteLatitude);
-
-                        Log.i("Enguerran", satelliteLatitude);
-
-                        Satellite SatelliteTryCatch = new Satellite(satName,satelliteLatitude,satelliteLongitude,satAltitude);
-
-                        // setting adapter to
-                        // our recycler view.
-
-                        Satellite.set(0,SatelliteTryCatch);
-                        satelliteAdapter.notifyItemChanged(0);
-
-
-                        Log.i("Enguerran" , "Satellite items put in array");
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                }
 
             }
 
-
-        },new Response.ErrorListener() {
-
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), "Fail to get the data..", Toast.LENGTH_SHORT).show();
-                Log.i("Enguerran", "Satellites failed to get data");
-            }
         });
 
-        queue.add(jsonArrayRequest);
+
+
+
     }
+
+
+
 
 
 }

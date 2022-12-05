@@ -7,69 +7,51 @@ public class Satellite {
 
      //https://www.geeksforgeeks.org/how-to-extract-data-from-json-array-in-android-using-volley-library/
 
-     private String name;
-     private String satLatitude;
-     private String satLongitude;
-     private String satAltitude;
 
+     public String satname;
+     public double satlat;
+     public double satlng;
+     public double satalt; //In order for api
 
-
-     public Satellite(String name, String satLatitude, String satLongitude, String satAltitude) {
-          this.name = name;
-          this.satLatitude = satLatitude;
-          this.satLongitude = satLongitude;
-          this.satAltitude = satAltitude;
-
+     public Satellite(String satname, double satlat, double satlng, double satalt) {
+          this.satname = satname;
+          this.satlat = satlat;
+          this.satlng = satlng;
+          this.satalt = satalt;
      }
 
-     public String getName() {
-          return name;
+     public String getSatname() {
+          return satname;
      }
 
-     public void setName(String name) {
-          this.name = name;
+     public void setSatname(String satname) {
+          this.satname = satname;
      }
 
-     public String getSatLatitude() {
-          return satLatitude;
+     public double getSatlat() {
+          return satlat;
      }
 
-     public void setSatLatitude(String satLatitude) {
-          this.satLatitude = satLatitude;
+     public void setSatlat(double satlat) {
+          this.satlat = satlat;
      }
 
-     public String getSatLongitude() {
-          return satLongitude;
+     public double getSatlng() {
+          return satlng;
      }
 
-     public void setSatLongitude(String satLongitude) {
-          this.satLongitude = satLongitude;
+     public void setSatlng(double satlng) {
+          this.satlng = satlng;
      }
 
-     public String getSatAltitude() {
-          return satAltitude;
+     public double getSatalt() {
+          return satalt;
      }
 
-     public void setSatAltitude(String satAltitude) {
-          this.satAltitude = satAltitude;
+     public void setSatalt(double satalt) {
+          this.satalt = satalt;
      }
-
-     class info{
-
-          private ArrayList<info> Info;
-
-          public info(ArrayList<info> info) {
-               Info = info;
-          }
-
-          public ArrayList<info> getInfo() {
-               return Info;
-          }
-
-          public void setInfo(ArrayList<info> info) {
-               Info = info;
-          }
-     }
+}
 
 
       /*
@@ -105,5 +87,5 @@ public class Satellite {
   ]
 }
          */
-}
+
 
