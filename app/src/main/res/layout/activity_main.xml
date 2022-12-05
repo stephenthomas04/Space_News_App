@@ -38,10 +38,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
-                android:fontFamily="@font/amiko_semibold"
+                android:fontFamily="@font/space_grotesk"
                 android:gravity="center"
                 android:paddingRight="27dp"
-                android:text="SPACE APP"
+                android:text="PTS SPACE"
                 android:textColor="@color/white"
                 android:textSize="45sp"
                 android:textStyle="bold" />
