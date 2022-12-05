@@ -40,6 +40,11 @@
         android:name="com.example.hamburgertester.Rocket_Launches"
         android:label="Rocket_Launches"
         tools:layout="@layout/fragment_rocket__launches"/>
+    <fragment
+        android:id="@+id/google_mapsMENU"
+        android:name="com.example.hamburgertester.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
 
 
 </navigation>

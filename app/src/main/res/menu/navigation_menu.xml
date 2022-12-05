@@ -31,4 +31,8 @@
         android:id="@+id/rocket_launchesMenu"
         android:icon="@drawable/rocket"
         android:title="ROCKET LAUNCHES"/>
+    <item
+        android:id="@+id/google_mapsMENU"
+        android:icon="@drawable/maps"
+        android:title="GOOGLE MAPS"/>
 </menu>

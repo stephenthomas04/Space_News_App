@@ -3,6 +3,7 @@ package com.example.hamburgertester;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 , WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
+        
 
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
 

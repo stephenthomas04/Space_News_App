@@ -20,7 +20,7 @@
 
     //Mars Rover strings
     <string name="roverProgram_info">The goal of the Mars Exploration Program is to explore Mars and to provide a continuous flow of scientific information and discovery through a carefully selected series of robotic orbiters, landers and mobile laboratories interconnected by a high-bandwidth Mars/Earth communications network.</string>
-     <string name="rover_info">Curiosity is a car-sized Mars rover designed to explore the Gale crater on Mars as part of NASAs Mars Science Laboratory mission. Curiosity was launched from Cape Canaveral on 26 November 2011, at 15:02:00 UTC and landed on Aeolis Palus inside Gale crater on Mars on 6 August 2012, 05:17:57 UTC.</string>
+    <string name="rover_info">Curiosity is a car-sized Mars rover designed to explore the Gale crater on Mars as part of NASAs Mars Science Laboratory mission. Curiosity was launched from Cape Canaveral on 26 November 2011, at 15:02:00 UTC and landed on Aeolis Palus inside Gale crater on Mars on 6 August 2012, 05:17:57 UTC.</string>
     <string name="roverTitle"><u>Mars Rover</u></string>
 
 
@@ -34,7 +34,6 @@
     <string name="satelliteSampleLong">Longitude: 88.0648</string>
     <string name="satelliteSampleAlt">Altitude: 741</string>
     <!-- These are the fremd coords :) -->
-
 
 
     //Solar System Strings
