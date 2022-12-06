@@ -22,12 +22,12 @@ public class Satellite {
      }
 }
 class Above{
-     public String satname;
-     public double satlat;
-     public double satlng;
-     public double satalt; //In order for api
+     String satname;
+     String satlat;
+     String satlng;
+     String satalt; //In order for api
 
-     public Above(String satname, double satlat, double satlng, double satalt) {
+     public Above(String satname, String satlat, String satlng, String satalt) {
           this.satname = satname;
           this.satlat = satlat;
           this.satlng = satlng;
@@ -42,27 +42,27 @@ class Above{
           this.satname = satname;
      }
 
-     public double getSatlat() {
+     public String getSatlat() {
           return satlat;
      }
 
-     public void setSatlat(double satlat) {
+     public void setSatlat(String satlat) {
           this.satlat = satlat;
      }
 
-     public double getSatlng() {
+     public String getSatlng() {
           return satlng;
      }
 
-     public void setSatlng(double satlng) {
+     public void setSatlng(String satlng) {
           this.satlng = satlng;
      }
 
-     public double getSatalt() {
+     public String getSatalt() {
           return satalt;
      }
 
-     public void setSatalt(double satalt) {
+     public void setSatalt(String satalt) {
           this.satalt = satalt;
      }
 

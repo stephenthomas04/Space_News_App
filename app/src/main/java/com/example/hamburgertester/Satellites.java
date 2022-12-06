@@ -60,6 +60,7 @@ public class Satellites extends Fragment {
     private RequestQueue queue;
     private JSONArray getText;
     Satellite satellite;
+    Above above;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -102,7 +103,6 @@ public class Satellites extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         //URL: https://api.n2yo.com/rest/v1/satellite/above/=42.0947/88.0648/100/70/0//&apiKey=3DM8MB-57EGHM-ZBX8TF-4SV3
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -112,26 +112,17 @@ public class Satellites extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         context = getActivity();
-
 
         getData(context);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_satellites, container, false);
-
-
-       // return inflater.inflate(R.layout.fragment_satellites, container, false);
+       //OLD  return inflater.inflate(R.layout.fragment_satellites, container, false);
     }
-
-
-
 
     public void getData(Context context){
 
         String Url = "https://api.n2yo.com/rest/v1/satellite/above/=42.0947/88.0648/100/70/0//&apiKey=WZAM25-MVDR8V-XDEA4R-4YP4";
-
-
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
@@ -139,18 +130,27 @@ public class Satellites extends Fragment {
             @Override
 
             public void onResponse(String response) {
-                Log.d("marsstatus", response);
+                Log.d("Enguerran", response);
                 GsonBuilder gsonBuilder = new GsonBuilder();
                 Gson gson = gsonBuilder.create();
 
-
                 try {
-                    Type listType = new TypeToken<ArrayList<Satellite>>(){}.getType();
-                    aboveArrayList = gson.fromJson(response, listType);
-                    for(Above n : aboveArrayList) {
-                        Log.d("Enguerran", n.toString());
-                    }
+                    ArrayList<Above> newAboveArrayList = new ArrayList<>();
+                    satellite = gson.fromJson(response, Satellite.class);
+                    Log.d("Enguerran", "Object Parsed, line 143");
 
+                    aboveArrayList = satellite.getAbove();
+
+                    //OLD CODE Type listType = new TypeToken<ArrayList<Satellite>>(){}.getType();
+                    //OLD CODE aboveArrayList = gson.fromJson(response, listType);
+                    for(Above n : newAboveArrayList) {
+                        Log.d("Enguerran", n.getSatname());
+                    }
+                    if(aboveArrayList.size() >= 15){
+                        for (int i = 0; i < 15; i++) {
+                            newAboveArrayList.add(aboveArrayList.get(i));
+                        }
+                    }
 
                         Log.d("Enguerran", "object parsed");
 
@@ -158,14 +158,17 @@ public class Satellites extends Fragment {
 
                         RecyclerView recyclerView = getView().findViewById(R.id.satelliteRecyclerView);
 
-                        Satellite_RecyclerViewAdapter adapter = new Satellite_RecyclerViewAdapter(satelliteArrayListMainActivity,context);
+                        Satellite_RecyclerViewAdapter adapter = new Satellite_RecyclerViewAdapter(newAboveArrayList,context);
 
                         recyclerView.setAdapter(adapter);
                         recyclerView.setLayoutManager(layoutManager);
 
+                        Log.d("Enguerran", "End of Try");
+
 
                 } catch (Exception e){
                     e.printStackTrace();
+                    Log.d("Enguerran", "Catch");
                 }
 
             }
