@@ -32,11 +32,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -126,7 +128,7 @@ public class Satellites extends Fragment {
 
     public void getData(Context context){
 
-        String Url = "https://api.n2yo.com/rest/v1/satellite/above/=42.0947/88.0648/100/70/0//&apiKey=3DM8MB-57EGHM-ZBX8TF-4SV3ey";
+        String Url = "https://api.n2yo.com/rest/v1/satellite/above/=42.0947/88.0648/100/70/0//&apiKey=WZAM25-MVDR8V-XDEA4R-4YP4";
 
 
 
@@ -142,8 +144,12 @@ public class Satellites extends Fragment {
 
 
                 try {
+                    Type listType = new TypeToken<ArrayList<Satellite>>(){}.getType();
+                    satelliteArrayListMainActivity = gson.fromJson(response, listType);
+                    for(Satellite n : satelliteArrayListMainActivity) {
+                        Log.d("Enguerran", n.toString());
+                    }
 
-                    satellite = gson.fromJson(response, Satellite.class);
 
                     Log.d("Enguerran", "object parsed");
 

@@ -37,10 +37,10 @@ public class Satellite_RecyclerViewAdapter extends RecyclerView.Adapter<Satellit
     public void onBindViewHolder(@NonNull Satellite_RecyclerViewAdapter.ViewHolder holder, int position) {
         // setting data to our views of recycler view.
         Satellite satellite = satelliteArrayList.get(position);
-        holder.SatelliteNameTV.setText(satellite.getName());
-        holder.SatelliteLatitude.setText(satellite.getSatLongitude());
-        holder.SatelliteLongitude.setText(satellite.getSatLongitude()); //TEMPORARY
-        holder.SatelliteAltitude.setText(satellite.getSatAltitude());
+        holder.SatelliteNameTV.setText(satellite.getSatname());
+        holder.SatelliteLatitude.setText((int) satellite.getSatlat());
+        holder.SatelliteLongitude.setText((int) satellite.getSatlng()); //TEMPORARY
+        holder.SatelliteAltitude.setText((int) satellite.getSatalt());
 
     }
 
