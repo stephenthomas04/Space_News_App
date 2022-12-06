@@ -16,12 +16,12 @@ import java.util.ArrayList;
 public class Satellite_RecyclerViewAdapter extends RecyclerView.Adapter<Satellite_RecyclerViewAdapter.ViewHolder> {
 
     // creating a variable for array list and context.
-    private ArrayList<Satellite> satelliteArrayList;
+    private ArrayList<Above> aboveArrayList;
     private Context context;
 
     // creating a constructor for our variables.
-    public Satellite_RecyclerViewAdapter(ArrayList<Satellite> courseModalArrayList, Context context) {
-        this.satelliteArrayList = courseModalArrayList;
+    public Satellite_RecyclerViewAdapter(ArrayList<Above> courseModalArrayList, Context context) {
+        this.aboveArrayList = courseModalArrayList;
         this.context = context;
     }
 
@@ -37,10 +37,12 @@ public class Satellite_RecyclerViewAdapter extends RecyclerView.Adapter<Satellit
     public void onBindViewHolder(@NonNull Satellite_RecyclerViewAdapter.ViewHolder holder, int position) {
         // setting data to our views of recycler view.
         Satellite satellite = satelliteArrayList.get(position);
+        Above above;
+
         holder.SatelliteNameTV.setText(satellite.getSatname());
         holder.SatelliteLatitude.setText((int) satellite.getSatlat());
         holder.SatelliteLongitude.setText((int) satellite.getSatlng()); //TEMPORARY
-        holder.SatelliteAltitude.setText((int) satellite.getSatalt());
+        holder.SatelliteAltitude.setText((satellite.)
 
     }
 

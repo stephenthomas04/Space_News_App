@@ -7,13 +7,27 @@ public class Satellite {
 
      //https://www.geeksforgeeks.org/how-to-extract-data-from-json-array-in-android-using-volley-library/
 
+     ArrayList<Above> above;
 
+     public Satellite(ArrayList<Above> above) {
+          this.above = above;
+     }
+
+     public ArrayList<Above> getAbove() {
+          return above;
+     }
+
+     public void setAbove(ArrayList<Above> above) {
+          this.above = above;
+     }
+}
+class Above{
      public String satname;
      public double satlat;
      public double satlng;
      public double satalt; //In order for api
 
-     public Satellite(String satname, double satlat, double satlng, double satalt) {
+     public Above(String satname, double satlat, double satlng, double satalt) {
           this.satname = satname;
           this.satlat = satlat;
           this.satlng = satlng;
@@ -51,6 +65,8 @@ public class Satellite {
      public void setSatalt(double satalt) {
           this.satalt = satalt;
      }
+
+
 }
 
 

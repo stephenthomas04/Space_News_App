@@ -54,6 +54,7 @@ public class Satellites extends Fragment {
     Context context;
     Satellite_RecyclerViewAdapter satelliteAdapter;
     ArrayList<Satellite> satelliteArrayListMainActivity;
+    ArrayList<Above> aboveArrayList;
     RecyclerView satelliteRecyclerView;
     Activity activity = getActivity();
     private RequestQueue queue;
@@ -145,22 +146,22 @@ public class Satellites extends Fragment {
 
                 try {
                     Type listType = new TypeToken<ArrayList<Satellite>>(){}.getType();
-                    satelliteArrayListMainActivity = gson.fromJson(response, listType);
-                    for(Satellite n : satelliteArrayListMainActivity) {
+                    aboveArrayList = gson.fromJson(response, listType);
+                    for(Above n : aboveArrayList) {
                         Log.d("Enguerran", n.toString());
                     }
 
 
-                    Log.d("Enguerran", "object parsed");
+                        Log.d("Enguerran", "object parsed");
 
-                    LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
+                        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
 
-                    RecyclerView recyclerView = getView().findViewById(R.id.satelliteRecyclerView);
+                        RecyclerView recyclerView = getView().findViewById(R.id.satelliteRecyclerView);
 
-                    Satellite_RecyclerViewAdapter adapter = new Satellite_RecyclerViewAdapter(satelliteArrayListMainActivity,context);
+                        Satellite_RecyclerViewAdapter adapter = new Satellite_RecyclerViewAdapter(satelliteArrayListMainActivity,context);
 
-                    recyclerView.setAdapter(adapter);
-                    recyclerView.setLayoutManager(layoutManager);
+                        recyclerView.setAdapter(adapter);
+                        recyclerView.setLayoutManager(layoutManager);
 
 
                 } catch (Exception e){
