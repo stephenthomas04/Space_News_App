@@ -37,7 +37,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,6 +56,7 @@ public class Satellites extends Fragment {
     Activity activity = getActivity();
     private RequestQueue queue;
     private JSONArray getText;
+    Satellite satellite;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -109,34 +113,68 @@ public class Satellites extends Fragment {
         context = getActivity();
 
 
+        getData(context);
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_satellites, container, false);
+
+
        // return inflater.inflate(R.layout.fragment_satellites, container, false);
     }
 
 
 
 
-    public void getData(Context context, ArrayList<Satellite> Satellite){
-        String Url = "https://api.n2yo.com/rest/v1/satellite/above/=42.0947/88.0648/100/70/0//&apiKey=3DM8MB-57EGHM-ZBX8TF-4SV3";
+    public void getData(Context context){
+
+        String Url = "https://api.n2yo.com/rest/v1/satellite/above/=42.0947/88.0648/100/70/0//&apiKey=3DM8MB-57EGHM-ZBX8TF-4SV3ey";
+
+
+
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
 
         StringRequest objectRequest = new StringRequest(Url, new Response.Listener<String>() {
-            RequestQueue requestQueue = Volley.newRequestQueue(context);
+            @Override
 
             public void onResponse(String response) {
+                Log.d("marsstatus", response);
                 GsonBuilder gsonBuilder = new GsonBuilder();
                 Gson gson = gsonBuilder.create();
 
 
-            }
+                try {
 
+                    satellite = gson.fromJson(response, Satellite.class);
+
+                    Log.d("Enguerran", "object parsed");
+
+                    LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
+
+                    RecyclerView recyclerView = getView().findViewById(R.id.satelliteRecyclerView);
+
+                    Satellite_RecyclerViewAdapter adapter = new Satellite_RecyclerViewAdapter(satelliteArrayListMainActivity,context);
+
+                    recyclerView.setAdapter(adapter);
+                    recyclerView.setLayoutManager(layoutManager);
+
+
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("Response", "error");
+            }
         });
 
-
-
-
+        requestQueue.add(objectRequest);
     }
-
-
-
-
-
 }
+
+
+
+
+
+
