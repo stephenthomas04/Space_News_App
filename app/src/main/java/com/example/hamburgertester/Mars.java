@@ -90,7 +90,7 @@ public class Mars extends Fragment {
 
 
         String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-        Integer offsetDay = Integer.parseInt(date.substring(0,2)) - 15;
+        Integer offsetDay = Integer.parseInt(date.substring(0,2)) - 5;
         Integer month = Integer.parseInt(date.substring(3,5));
 
         if(offsetDay <= 0){
@@ -117,18 +117,13 @@ public class Mars extends Fragment {
             @Override
 
             public void onResponse(String response) {
-                Log.d("marsstatus", response);
                 GsonBuilder gsonBuilder = new GsonBuilder();
                 Gson gson = gsonBuilder.create();
 
-
                 try {
-
                     ArrayList<Images> newImagesArrayList = new ArrayList<>();
-
                     rover = gson.fromJson(response, MarsObj.class);
                     imagesArrayList = rover.getPhotos();
-                    Log.d("marsstatus", "object parsed");
 
                     if(imagesArrayList.size() >= 15){
                         for (int i = 0; i < 15; i++) {
@@ -137,17 +132,10 @@ public class Mars extends Fragment {
                     }
 
                     LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
-
                     RecyclerView recyclerView = getView().findViewById(R.id.sRecyclerView);
-
                     MarsRover_RecyclerViewAdapter adapter = new MarsRover_RecyclerViewAdapter(context, newImagesArrayList);
-
                     recyclerView.setAdapter(adapter);
                     recyclerView.setLayoutManager(layoutManager);
-
-                    for(Images n : imagesArrayList) {
-                        Log.d("marsstatusSol", n.getImg_src());
-                    }
 
 
                 } catch (Exception e){
