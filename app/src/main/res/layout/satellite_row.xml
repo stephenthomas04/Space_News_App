@@ -29,17 +29,14 @@
                 android:id="@+id/satelliteNameRow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/SatelliteTitleNameRow"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-
                 android:layout_marginTop="17dp"
-
-                android:fontFamily="@font/chivo_regular"
+                android:fontFamily="@font/space_grotesk"
                 android:gravity="center"
                 android:text="@string/sampleSatelliteName"
-                android:textColor="@color/light_blue"
-                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textSize="35sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -47,14 +44,14 @@
                 android:id="@+id/satelliteLatitude"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/SatelliteTitleNameRow"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="72dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/comfortaa"
+                android:layout_marginTop="85dp"
+                android:layout_marginBottom="1dp"
+                android:fontFamily="@font/open_sans"
                 android:gravity="center"
                 android:text="@string/satelliteSampleLat"
                 android:textColor="@color/black"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -68,35 +65,17 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="22dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/comfortaa"
+                android:fontFamily="@font/open_sans"
                 android:gravity="center"
                 android:text="@string/satelliteSampleLong"
                 android:textColor="@color/black"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/satelliteLatitude" />
 
-            <TextView
-                android:id="@+id/SatelliteTitleNameRow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="10dp"
-                android:fontFamily="@font/open_sans"
-                android:gravity="center"
-                android:text="Satellites"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/SatelliteAltitude"
@@ -107,14 +86,12 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
 
-
-                android:layout_marginTop="20dp"
-
                 android:layout_marginBottom="18dp"
-                android:fontFamily="@font/comfortaa"
+                android:fontFamily="@font/open_sans"
                 android:gravity="center"
                 android:text="@string/satelliteSampleAlt"
                 android:textColor="@color/black"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>

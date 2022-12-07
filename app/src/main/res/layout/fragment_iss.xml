@@ -62,9 +62,9 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="70dp"
                 android:background="@drawable/iss_viewbg"
+                android:fontFamily="@font/open_sans"
                 android:gravity="center"
                 android:text="Iss location"
-                android:fontFamily="@font/open_sans"
                 android:textColor="@color/black"
                 android:textSize="38dp"
                 android:textStyle="bold" />
