@@ -27,12 +27,14 @@
     //Iss strings
     <string name="issDefaultInfo">Payloads: Antioxidant Protection: Experiment Containers were installed into Kubik-5. The PROtection MEdiated by antioxidant nanoTEchnOlogy against neuronal damage in space (PROMETEO) (Antioxidant Protection) investigation proposes the use of biocompatible and biodegradable polydopamine-based nanoparticles to provide antioxidant protection to neurons undergoing exposure to altered gravity and cosmic radiation. Cellbox-3: Cellbox-3 Experiment Containers were installed into the …</string>
     <string name="issTitle"><u>Iss Update</u></string>
+    <string name="iss_location"><u>ISS Location</u></string>
 
     //Satellite Strings
     <string name="sampleSatelliteName">Sputnik 1</string>
     <string name="satelliteSampleLat">Latitude: 42.0947</string>
     <string name="satelliteSampleLong">Longitude: 88.0648</string>
     <string name="satelliteSampleAlt">Altitude: 741</string>
+    <string name="satellites"><u>Satellites</u></string>
     <!-- These are the fremd coords :) -->
 
 

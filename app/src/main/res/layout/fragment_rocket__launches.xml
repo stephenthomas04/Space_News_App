@@ -38,20 +38,22 @@
                     android:gravity="center"
                     android:text="TBD - To Be Determined"
                     android:textColor="@color/black"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="170dp"
                     android:layout_height="30dp"
-                    android:backgroundTint="@color/orange"
                     android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
                     android:layout_marginLeft="5dp"
-                    android:gravity="center"
-                    android:fontFamily="@font/open_sans"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/rocket_keybg"
+                    android:backgroundTint="@color/orange"
+                    android:fontFamily="@font/open_sans"
+                    android:gravity="center"
                     android:text="TBC - To Be Confirmed"
                     android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 

@@ -49,17 +49,20 @@
                         android:layout_marginTop="4dp"
                         android:fontFamily="@font/space_grotesk"
                         android:gravity="center"
-                        android:text="Satellites"
+                        android:text="@string/satellites"
                         android:textColor="@color/black"
-                        android:textSize="50dp"
+                        android:textSize="60dp"
                         android:textStyle="bold" />
 
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/satelliteRecyclerView"
-                        android:layout_width="450dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="105dp" />
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="90dp"
+                        android:layout_marginRight="15dp"
+                        android:foregroundGravity="center" />
 
 
                 </RelativeLayout>

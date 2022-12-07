@@ -40,19 +40,19 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:fontFamily="@font/comfortaa"
+                    android:textStyle="bold"
                     android:text="00:00:00"
                     android:textColor="@color/black"
-                    android:textSize="35dp"
-                    android:textStyle="bold" />
+                    android:textSize="35dp" />
 
                 <TextView
                     android:id="@+id/rocketName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="50dp"
                     android:layout_marginRight="10dp"
-                    android:fontFamily="@font/open_sans"
+                    android:fontFamily="@font/space_grotesk"
                     android:gravity="center"
                     android:text="Rocket Name"
                     android:textColor="@color/black"
@@ -61,11 +61,12 @@
 
                 <TextView
                     android:id="@+id/date"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/countDown"
                     android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/comic_neue_light"
+                    android:gravity="center"
+                    android:fontFamily="@font/comfortaa"
                     android:text="Date"
                     android:textColor="@color/black"
                     android:textSize="20dp"
@@ -97,7 +98,7 @@
                     android:text="Company Name"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:textStyle="bold" />
+                     />
 
                 <TextView
                     android:id="@+id/status"
@@ -121,11 +122,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/date"
                     android:layout_centerHorizontal="true"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
                     android:fontFamily="@font/space_grotesk"
                     android:gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:textSize="25dp"
-                    android:text="Status: " />
+                    android:text="Status: "
+                    android:textSize="25dp" />
 
             </RelativeLayout>
 

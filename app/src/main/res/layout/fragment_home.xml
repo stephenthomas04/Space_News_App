@@ -51,7 +51,7 @@
 
                         <TextView
                             android:id="@+id/homeDesc"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="180dp"
                             android:layout_gravity="center"
                             android:layout_margin="10dp"
@@ -59,9 +59,10 @@
                             android:fontFamily="@font/open_sans"
                             android:gravity="center"
                             android:paddingLeft="1dp"
+                            android:textStyle="bold"
                             android:text="The purpose of our app is to provide daily space content to users who use our app. We would do this by including a homepage which contains things like the astronomy picture of the day, the headlines of the day, the next rocket launches coming up and info about planets like earth and mars. All our info is requested by NASA Api's that help us reach our target audience is anyone who enjoys learning and reading about space and takes passion to the current events going on around space."
                             android:textColor="@color/white"
-                            android:textSize="14dp" />
+                            android:textSize="13dp" />
 
                     <TextView
                         android:id="@+id/teamTitle"
