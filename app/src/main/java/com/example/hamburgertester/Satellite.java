@@ -26,12 +26,23 @@ class Above{
      String satlat;
      String satlng;
      String satalt; //In order for api
+     String launchDate;
 
-     public Above(String satname, String satlat, String satlng, String satalt) {
+
+     public Above(String satname, String satlat, String satlng, String satalt, String launchDate) {
           this.satname = satname;
           this.satlat = satlat;
           this.satlng = satlng;
           this.satalt = satalt;
+          this.launchDate = launchDate;
+     }
+
+     public String getLaunchDate() {
+          return launchDate;
+     }
+
+     public void setLaunchDate(String launchDate) {
+          this.launchDate = launchDate;
      }
 
      public String getSatname() {

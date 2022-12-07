@@ -61,6 +61,8 @@ public class Satellites extends Fragment {
     private JSONArray getText;
     Satellite satellite;
     Above above;
+    int randomSat = 0;
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -146,9 +148,11 @@ public class Satellites extends Fragment {
                     for(Above n : newAboveArrayList) {
                         Log.d("Enguerran", n.getSatname());
                     }
+
                     if(aboveArrayList.size() >= 15){
                         for (int i = 0; i < 15; i++) {
-                            newAboveArrayList.add(aboveArrayList.get(i));
+                            randomSat = (int)Math.floor(Math.random() * 1050 + 1);
+                            newAboveArrayList.add(aboveArrayList.get(randomSat));
                         }
                     }
 

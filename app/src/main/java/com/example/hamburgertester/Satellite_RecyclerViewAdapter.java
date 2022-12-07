@@ -46,6 +46,7 @@ public class Satellite_RecyclerViewAdapter extends RecyclerView.Adapter<Satellit
         holder.SatelliteLatitude.setText("Latitude: " +above.getSatlat());
         holder.SatelliteLongitude.setText("Longitude: " + above.getSatlng());
         holder.SatelliteAltitude.setText("Altitude: " +above.getSatalt());
+        holder.SatelliteLaunchDate.setText("Launch Date: " + above.getLaunchDate());
 
         Log.d("Enguerran", "OnBindView "+above.getSatname());
         Log.d("Enguerran", "OnBindView "+above.getSatlat());
@@ -63,7 +64,8 @@ public class Satellite_RecyclerViewAdapter extends RecyclerView.Adapter<Satellit
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // creating variables for our views.
-        private TextView SatelliteNameTV, SatelliteLatitude, SatelliteLongitude,SatelliteAltitude;
+        private TextView SatelliteNameTV, SatelliteLatitude, SatelliteLongitude,SatelliteAltitude,
+        SatelliteLaunchDate;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -74,6 +76,8 @@ public class Satellite_RecyclerViewAdapter extends RecyclerView.Adapter<Satellit
             SatelliteLongitude = itemView.findViewById(R.id.SatelliteLongitude);
             SatelliteAltitude = itemView.findViewById(R.id.SatelliteAltitude);
             SatelliteNameTV = itemView.findViewById(R.id.satelliteNameRow);
+            SatelliteLaunchDate = itemView.findViewById(R.id.SatelliteDateLaunched);
+
         }
     }
 }

@@ -11,7 +11,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="25dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="8dp"
         app:cardBackgroundColor="@color/baige"
@@ -22,7 +22,7 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="279dp">
+            android:layout_height="339dp">
 
 
             <TextView
@@ -78,22 +78,42 @@
 
 
             <TextView
+                android:id="@+id/SatelliteDateLaunched"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/SatelliteAltitude"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/open_sans"
+                android:gravity="center"
+                android:text="Date Launched"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SatelliteAltitude" />
+
+            <TextView
                 android:id="@+id/SatelliteAltitude"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/SatelliteLongitude"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-
-                android:layout_marginBottom="18dp"
+                android:layout_below="@id/SatelliteLongitude"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/open_sans"
                 android:gravity="center"
                 android:text="@string/satelliteSampleAlt"
                 android:textColor="@color/black"
                 android:textSize="25sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SatelliteLongitude" />
         </RelativeLayout>
 
 
