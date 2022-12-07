@@ -90,7 +90,7 @@ public class Mars extends Fragment {
 
 
         String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-        Integer offsetDay = Integer.parseInt(date.substring(0,2)) - 15;
+        Integer offsetDay = Integer.parseInt(date.substring(0,2)) - 5;
         Integer month = Integer.parseInt(date.substring(3,5));
 
         if(offsetDay <= 0){
