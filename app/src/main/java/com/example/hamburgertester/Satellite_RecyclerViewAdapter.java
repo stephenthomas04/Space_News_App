@@ -43,9 +43,9 @@ public class Satellite_RecyclerViewAdapter extends RecyclerView.Adapter<Satellit
         Above above = aboveArrayList.get(position);
         Log.d("Enguerran", "Inside the onBindViewHolder");
         holder.SatelliteNameTV.setText(above.getSatname());
-        holder.SatelliteLatitude.setText(above.getSatlat());
-        holder.SatelliteLongitude.setText( above.getSatlng());
-        holder.SatelliteAltitude.setText(above.getSatalt());
+        holder.SatelliteLatitude.setText("Latitude: " +above.getSatlat());
+        holder.SatelliteLongitude.setText("Longitude: " + above.getSatlng());
+        holder.SatelliteAltitude.setText("Altitude: " +above.getSatalt());
 
         Log.d("Enguerran", "OnBindView "+above.getSatname());
         Log.d("Enguerran", "OnBindView "+above.getSatlat());

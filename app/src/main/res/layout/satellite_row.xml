@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="5dp"
         app:cardCornerRadius="20dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" >
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="279dp">
 
 
@@ -32,9 +32,9 @@
                 android:layout_below="@+id/SatelliteTitleNameRow"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="108dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="106dp"
+
+                android:layout_marginTop="17dp"
+
                 android:fontFamily="@font/chivo_regular"
                 android:gravity="center"
                 android:text="@string/sampleSatelliteName"
@@ -49,9 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/SatelliteTitleNameRow"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="10dp"
                 android:layout_marginTop="72dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
@@ -68,9 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/satelliteLatitude"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="10dp"
                 android:layout_marginTop="22dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
@@ -110,10 +106,10 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="114dp"
+
 
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="114dp"
+
                 android:layout_marginBottom="18dp"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
