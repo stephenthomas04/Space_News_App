@@ -30,7 +30,7 @@
     <string name="iss_location"><u>ISS Location</u></string>
 
     //Satellite Strings
-    <string name="sampleSatelliteName">Sputnik 1</string>
+    <string name="sampleSatelliteName"><u>Sputnik 1</u></string>
     <string name="satelliteSampleLat">Latitude: 42.0947</string>
     <string name="satelliteSampleLong">Longitude: 88.0648</string>
     <string name="satelliteSampleAlt">Altitude: 741</string>
