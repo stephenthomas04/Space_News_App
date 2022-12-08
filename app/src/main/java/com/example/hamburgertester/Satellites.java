@@ -151,7 +151,7 @@ public class Satellites extends Fragment {
 
                     if(aboveArrayList.size() >= 15){
                         for (int i = 0; i < 15; i++) {
-                            randomSat = (int)Math.floor(Math.random() * 100 + 1);
+                            randomSat = (int)Math.floor(Math.random() * 1200 + 1);
                             newAboveArrayList.add(aboveArrayList.get(randomSat));
                         }
                     }

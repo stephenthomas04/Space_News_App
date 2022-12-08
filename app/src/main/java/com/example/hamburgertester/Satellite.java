@@ -46,6 +46,7 @@ class Above{
      }
 
      public String getSatname() {
+          satname = satname.substring(0,6);
           return satname;
      }
 
