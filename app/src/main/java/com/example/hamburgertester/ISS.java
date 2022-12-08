@@ -123,10 +123,7 @@ public class ISS extends Fragment implements AppInterface {
 
                 try {
                     ISS_Object iss = gson.fromJson(response, ISS_Object.class);
-
-
                     //The round num function rounds things to the decimal place
-
                     double getLat = roundNum(iss.getLatitude());
                     double getLong = roundNum(iss.getLongitude());
 
@@ -139,8 +136,6 @@ public class ISS extends Fragment implements AppInterface {
                     e.printStackTrace();
                     Log.d("Enguerran", "catch");
                 }
-
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -156,9 +151,7 @@ public class ISS extends Fragment implements AppInterface {
     public void reportApi(){
         String Url = "https://api.spaceflightnewsapi.net/v3/reports";
 
-
         RequestQueue requestQueue = Volley.newRequestQueue(context);
-
         StringRequest objectRequest = new StringRequest(Url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -166,22 +159,16 @@ public class ISS extends Fragment implements AppInterface {
                 GsonBuilder gsonBuilder = new GsonBuilder();
                 Gson gson = gsonBuilder.create();
 
-
-
                 try {
                     Type listType = new TypeToken<ArrayList<IssReportsObj>>(){}.getType();
                     issReportsArrayList = gson.fromJson(response, listType);
-
 
 
                     for( IssReportsObj n : issReportsArrayList) {
                         Log.d("Iss_Reports", n.toString());
                     }
 
-
-
                     RecyclerView recyclerView = getView().findViewById(R.id.sRecyclerView);
-
 
                     ISS_RecyclerViewAdapter adapter = new ISS_RecyclerViewAdapter(context, issReportsArrayList, issInterface);
                     recyclerView.setNestedScrollingEnabled(false);

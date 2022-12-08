@@ -86,9 +86,7 @@ public class Rocket_Launches extends Fragment {
     public void rocketsRequest(Context context){
 
         String Url = "https://ll.thespacedevs.com/2.2.0/launch/upcoming/";
-
         RequestQueue requestQueue = Volley.newRequestQueue(context);
-
         StringRequest objectRequest = new StringRequest(Url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -105,10 +103,6 @@ public class Rocket_Launches extends Fragment {
                     recyclerView.setNestedScrollingEnabled(false);
                     recyclerView.setLayoutManager(new LinearLayoutManager(context));
                     recyclerView.setAdapter(adapter);
-
-
-
-
                 } catch (Exception e){
                     e.printStackTrace();
                 }
