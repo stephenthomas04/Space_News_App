@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hamburgertester">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+<!--    <uses-permission android:name="android.permission.INTERNET"/>-->
+<!--    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>-->
+<!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>-->
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -20,10 +20,10 @@
         android:theme="@style/Theme.HamburgerTester"
         tools:targetApi="31">
 
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyANVytte3d6GVTZ8DHwo70VaMCk0pcWUyo">
-        </meta-data>
+<!--        <meta-data-->
+<!--            android:name="com.google.android.geo.API_KEY"-->
+<!--            android:value="AIzaSyANVytte3d6GVTZ8DHwo70VaMCk0pcWUyo">-->
+<!--        </meta-data>-->
 
         <activity android:name=".MainActivity"
             android:exported="true" />

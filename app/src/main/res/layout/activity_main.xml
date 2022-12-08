@@ -59,10 +59,6 @@
             app:navGraph="@navigation/main"
             tools:layout_editor_absoluteX="0dp" />
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/frame_layout"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
